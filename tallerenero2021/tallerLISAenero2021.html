@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Taller LISA Enero 2021</title>
+    <meta charset="utf-8" />
+    <meta name="author" content=".small[Juan Carlos Castillo    Departamento de Sociología - UCH / COES   ]" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-progressBar/progress-bar.js"></script>
+    <link rel="stylesheet" href="custom_lisa.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: front middle center
+
+
+
+
+
+
+
+<style>.xe__progress-bar__container {
+  top:0;
+  opacity: 1;
+  position:absolute;
+  right:0;
+  left: 0;
+}
+.xe__progress-bar {
+  height: 0.25em;
+  background-color: red;
+  width: calc(var(--slide-current) / var(--slide-total) * 100%);
+}
+.remark-visible .xe__progress-bar {
+  animation: xe__progress-bar__wipe 200ms forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+@keyframes xe__progress-bar__wipe {
+  0% { width: calc(var(--slide-previous) / var(--slide-total) * 100%); }
+  100% { width: calc(var(--slide-current) / var(--slide-total) * 100%); }
+}</style>
+
+&lt;!---
+About macros.js: permite escalar las imágenes como [scale 50%](path to image), hay si que grabar ese archivo js en el directorio.
+---&gt;
+
+
+
+![:scale 90%](https://lisa-coes.netlify.app/img/logo.png)
+
+### .black[Laboratorio de Investigación Social] Abierta
+
+![:scale 8%](https://coes.cl/wp-content/uploads/COES_Logo_sello1.png)
+
+###lisa-coes.com 
+
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+![](https://slack-imgs.com/?c=1&amp;o1=ro&amp;url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FFHz_DDRWQAIJ8JD.jpg)
+
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+&lt;br&gt;
+## A. Ciencia abierta: Crisis y herramientas 
+
+## B. Pre-registros 
+
+## C. Pre-prints   
+
+
+---
+class: roja, middle, right
+
+.pull-left[
+# ¿Crisis de apertura en ciencia?
+]
+
+.pull-right-wide[
+
+### 1. Transparencia
+### 2. Reproducibilidad 
+### 3. Acceso
+]
+
+---
+class: roja, middle, right
+
+.pull-left[
+# ¿Crisis de apertura en ciencia?
+]
+
+.pull-right-wide[
+
+### 1. **.yellow[Transparencia]**
+### 2. Reproducibilidad 
+### 3. Acceso
+]
+
+---
+## Flujo de investigación científica y ciencia abierta
+
+&lt;br&gt;
+
+![](flujo_2.png)
+
+---
+## Flujo de investigación científica y ciencia abierta
+
+&lt;br&gt;
+
+![](flujo_trans.png)
+
+---
+# Transparencia 1: Diseño
+
+&lt;br&gt;
+.center[
+### Transparentar el **diseño** de investigación consiste en hacer públicas las hipótesis y la metodología ANTES de comenzar a realizar los análisis]
+---
+# Transparencia 1: Diseño
+
+Permite evitar situaciones como:
+
+
+- Presionar los análisis para publicar resultados "relevantes" (rechazar `\(H_0\)` ) -&gt; **.red[p-hacking]**
+
+--
+
+- **.red[HARKing]**: Hypothesis After the Results are Known
+
+
+  
+---
+# Transparencia 2: Datos
+
+- Dificultades en el acceso y la documentación de la información levantada  en la investigación
+
+--
+
+- Barreras la reproducibilidad y al avance de investigaciones con datos muchas veces levantados con fondos públicos
+
+
+---
+class: roja, middle, right
+
+.pull-left[
+# ¿Crisis de apertura en ciencia?
+]
+
+.pull-right-wide[
+
+### 1. Transparencia
+### 2. **.yellow[Reproducibilidad]** 
+### 3. Acceso
+]
+
+---
+# Reproducibilidad
+
+![](flujo_rep.png)
+
+
+---
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+.pull-left-wide[
+![:scale 95%](reproducibility_science.png)
+]
+.pull-right-narrow[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+... alrededor de un **40%!** (... varía por disciplina)
+]
+---
+## ¿Por qué ocurre la crisis de reproducibilidad?
+
+
+
+- pobre documentación metodológica
+
+- sesgo hacia búsqueda y publicación de resultados significativos (p-hacking), atribuido a la presión por publicar
+
+- en algunos casos, falseamiento de datos/análisis
+
+---
+class: roja, middle, right
+
+.pull-left[
+# ¿Crisis de apertura en ciencia?
+]
+
+.pull-right-wide[
+
+### 1. Transparencia
+### 2. Reproducibilidad
+### 3. **.yellow[Acceso]** 
+]
+
+---
+# Acceso
+
+![](flujo_acceso.png)
+
+---
+## El ciclo actual de publicación científica
+.center[
+![:scale 60%](ciclocerrado.png)
+]
+
+.right[
+.tiny[
+(Adaptado de: [https://creativecommons.org/about/program-areas/open-access/](https://creativecommons.org/about/program-areas/open-access/))
+]
+]
+---
+class: middle, center
+
+.pull-left[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+# Barreras de pago
+]
+.pull-right[
+.left[
+![:scale 70%](https://localist-images.azureedge.net/photos/723383/huge/3b15ca9bd709e6738e42326fa3f35ff4a3357bb9.jpg)
+]
+]
+
+---
+# Márgenes de ganancia
+
+.center[
+![:scale 70%](profits.png)
+]
+
+---
+.pull-left-narrow[
+## Beneficios acceso abierto
+
+&lt;br&gt;
+&lt;br&gt;
+
+.tiny[
+Adaptado de: [http://whyopenresearch.org/#](http://whyopenresearch.org/)
+]
+]
+
+.pull-right-wide[
+.center[
+![:scale 92%](openbeneficios.png)
+]
+
+]
+
+
+---
+# Resumen
+
+&lt;br&gt;
+![:scale 140%](esquema_general.png)
+
+---
+class: liblue
+
+# Contenidos
+
+## 1. .pink[El problema:] Prácticas cuestionables de investigación
+## 2. .pink[Una alternativa:] Pre-registros, ¿qué son?
+## 3. .pink[¿Cómo se usa?:] Plantillas y OSF (Open Science Framework)
+
+
+---
+class: liblue
+
+# Contenidos
+
+## 1️. .pink[El problema:] .yellow[Prácticas cuestionables de investigación]
+## 2. .pink[Una alternativa:] Pre-registros, ¿qué son?
+## 3. .pink[¿Cómo se usa?:] Plantillas y OSF (Open Science Framework)
+
+
+&lt;!-- --- --&gt;
+&lt;!-- class: middle --&gt;
+
+&lt;!-- ![](../02-bases_ciencia_abierta/prox-sem.png) --&gt;
+&lt;!-- Fuente: [Ciencia Social Abierta (2021, sesión 3)](https://cienciasocialabierta.netlify.app/class/03-class/) --&gt;
+---
+class: middle, center
+
+# El caso de Pedro
+
+---
+
+
+&lt;!-- --- --&gt;
+&lt;!-- - Pedro investiga la relación entre el tiempo de .pink[afiliación sindical] (x) y .green[participación en huelgas] (y).  --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - .red[No encuentra] resultados esperados en base a su hipótesis (tiempo de afiliación sindical impacta positivamente en la participación en huelgas) --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Ajusta la variable tiempo, .bold[eliminando casos] que llevan menos de 2 años en la empresa, obteniendo una diferencia significativa con probabilidad de error _p_ &lt;0.05 --&gt;
+
+&lt;!-- -- --&gt;
+
+&lt;!-- - Finalmente .bold[excluye] a trabajadores a plazo fijo, manteniendo solo aquellos con contrato indefinido, obteniendo un _p_ &lt;0.01 --&gt;
+
+&lt;!-- --- --&gt;
+
+- Pedro accede una base de datos con información sobre trabajadores sindicalizados en distintas empresas del país. 
+
+--
+
+- .bold[Sin tener una hipótesis previa], correlaciona  las variables: .green[participación en huelga] (1), .pink[tiempo de afiliación sindical] (2) y .orange[tipo de contrato] (3)
+
+--
+
+- Observa que hay una correlación positiva entre tiempo sindicalizado y participación en huelgas (_r_ = 0,32)
+
+--
+
+- Posterior a mirar los datos establece una hipótesis: a mayor .pink[tiempo de afiliación sindical] (x) existe mayor .green[participación en huelgas] (y)
+
+---
+
+- .red[No encuentra] resultados esperados en base a su hipótesis (tiempo de afiliación sindical impacta positivamente en la participación en huelgas)
+
+--
+
+- Ajusta la variable tiempo, .bold[eliminando casos] que llevan .pink[menos de 2 años sindicalizados en la empresa], obteniendo una asociación significativa con probabilidad de error _p_ &lt;0.05
+
+--
+
+- Finalmente .bold[excluye] a trabajadores a .orange[plazo fijo], manteniendo solo aquellos con contrato indefinido, obteniendo un _p_ &lt;0.01
+
+# .center[🤔?]
+---
+
+.center[
+![:scale 75%](triangle-publish.PNG)
+
+.small[Triángulo del fraude de D. A. Cressey aplicado a las .bold[malas prácticas de investigación]]
+]
+
+---
+class: middle
+
+las .red[prácticas cuestionables de investigación] refieren a las:
+
+&gt;  _"acciones que violan los valores tradicionales de la empresa de investigación y que pueden ser perjudiciales para el proceso de investigación"_ (National Academies of Science 1992 en Steneck, 2006, p. 58).
+
+---
+# Algunos ejemplos 
+
+- presentar resultados exploratorios como si fueran guiados por teorías
+
+  - **HARKing** (Hypothesizing After Results are Known)
+
+- buscar/reportar selectivamente aquellos resultados que si calzan con las hipótesis
+
+  - **p-hacking**
+
+
+.center[
+🔎 Detalles en: [lisa-coes.github.io/lisa-book/](https://lisa-coes.github.io/lisa-book/por-qu%C3%A9.html#pr%C3%A1cticas-cuestionables-de-investigaci%C3%B3n-qrp) 🔎
+]
+---
+# Consecuencias
+
+- el problema *no es la exploración de datos*, sino su uso en reporte selectivo de resultados de investigación
+
+--
+
+- incrementa la posibilidad de rechazar erróneamente `\(H_0\)`
+
+--
+
+- exageraciones de efectos estimados, perjudicando la replicabilidad
+
+--
+
+- se confirma lo que uno está buscando, no lo que entregan los datos (y pierde sentido el recolectar datos, y hacer investigación empírica)
+
+---
+class: liblue
+
+# Contenidos
+
+## 1. .pink[El problema:] Prácticas cuestionables de investigación
+## 2. .pink[Una alternativa:] .yellow[Pre-registros, ¿qué son?]
+## 3. .pink[¿Cómo se usa?:] Plantillas y OSF (Open Science Framework)
+
+
+
+---
+class: middle
+
+## ¿Qué es un pre-registro?
+
+_Un .bolder[pre-registro] es una marca .red[temporal] que busca dar cuenta del diseño de una investigación: .pink[(1) principales hipótesis], .pink[(2) recolección de datos] y .pink[(3) plan de análisis.]_
+
+
+---
+# Características de un pre-registro
+
+- se crea un registro permanente y disponible del plan del estudio .orange[antes de mirar los datos]
+
+- establece una fecha de publicación
+
+- accesible y con opción de resguardo de anonimato de autores (p.ej. OSF)
+
+- .bold[objetivo principal:]  diferenciar aspectos especificados a priori (hipótesis y análisis) de aquellos más exploratorios 
+
+
+---
+# Ventajas de pre-registros
+
+.pull-left[
+- transparencia del diseño
+
+- eficiencia en el análisis
+
+- mantener el foco en la .bold[teoría]
+
+- .red[no impide explorar], solo diferenciar .orange[intuiciones exploratorias] de .green[ hipótesis confirmatorias]]
+
+.pull-right[
+![](badge.png)
+]
+
+---
+
+#  Importancia de las hipótesis confirmatorias
+
+--
+
+* la evidencia previa e hipótesis guiadas por teoría:
+--
+  
+  * permite delimitar correctamente el .orange[fenómeno a explicar] (_explanandum_) y
+  * establecer cuál(es) conceptos/variables lo explican (_explanans_)
+  * la .pink[discusión] de resultados abre el camino para investigaciones posteriores
+
+---
+# hombros de gigante vs conejos del sombrero
+
+.center[
+.pull-left[
+![](check-yes.png)
+
+![:scale 60%](https://juancarloscastillo.github.io/jc-castillo/documents/talleres-cursos/escritura-academica/standing.png)]
+
+.pull-right[
+![](check-no.png)
+
+![:scale 40%](https://media0.giphy.com/media/MFlhfP81IpKgaN50fq/giphy.gif)
+]
+]
+
+
+
+---
+# Tipos de preregistro
+
+- **Preregistro (sin revisión)**: simplemente detallar hipótesis, datos y análisis y registar en repositorio apropiado
+
+--
+
+- **Reporte registrado (con revisión)** : 
+  - se somete a revisión en revista que permita esta opción
+  - de ser aceptado, se publicará independiente de sus resultados
+  - permite lidiar con el [.bold[sesgo de publicación]](https://lisa-coes.github.io/lisa-book/por-qu%C3%A9.html#pr%C3%A1cticas-cuestionables-de-investigaci%C3%B3n-qrp)
+
+--
+- **Reporte preregistrado de replicación**: para estudios de replicación (misma hipótesis y método, distintos datos)
+
+
+---
+class: liblue
+
+# Contenidos
+
+## 1. .pink[El problema:] Prácticas cuestionables de investigación
+## 2. .pink[Una alternativa:] Pre-registros, ¿qué son?
+## 3. .pink[¿Cómo se usa?:] .yellow[Plantillas y OSF (Open Science Framework)]
+
+---
+# Plantillas de pre-registro (templates)
+
+<table class="table table-striped table-bordered table-condensed table-responsive" style="font-size: 14px; width: auto !important; margin-left: auto; margin-right: auto;">
+   <thead>
+      <tr>
+         <th style="text-align:left;">
+            Plantilla
+         </th>
+         <th style="text-align:left;">
+            Descripción
+         </th>
+         <th style="text-align:left;">
+            Nombre
+         </th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+            Genéricas
+         </td>
+         <td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+            Se pueden usar para cualquier tipo de estudio, contienen preguntas generales. Las más conocidas son AsPredicted y OSF Estándar.
+         </td>
+         <td style="text-align:left;">
+            <a href="https://aspredicted.org/" style="     ">AsPredicted</a>
+         </td>
+      </tr>
+      <tr>
+         <td style="text-align:left;">
+            <a href="https://osf.io/preprints/metaarxiv/epgjd/" style="     ">OSF Standard</a>
+         </td>
+      </tr>
+      <tr>
+         <td style="text-align:left;">
+            Datos primarios
+         </td>
+         <td style="text-align:left;">
+            Las plantillas genéricas son suficientes para este tipo de estudios. Sin embargo, existe una plantilla en particular que se utiliza en el caso de que el preregistro del estudio se haya hecho en un documento a parte y no en OSF. Esta plantilla registra la forma en la que se recolectaron los datos.
+         </td>
+         <td style="text-align:left;">
+            <a href="https://osf.io/9j6d7/" style="     ">OSF-Standard Pre-Data Collection Registration</a>
+         </td>
+      </tr>
+      <tr>
+         <td style="text-align:left;">
+            Datos secundarios
+         </td>
+         <td style="text-align:left;">
+            Se utilizan cuando los datos a utilizar son secundarios, por ejemplo, bases de datos de encuestas o datos administrativos.
+         </td>
+         <td style="text-align:left;">
+            <a href="https://osf.io/p26rq/" style="     ">Template Preregistration of Preexisting Data</a>
+         </td>
+      </tr>
+      <tr>
+         <td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+            Replicación
+         </td>
+         <td style="text-align:left;vertical-align: middle !important;" rowspan="2">
+            Se utilizan cuando el objetivo de un estudio es la replicación de otro estudio. Existe una plantilla para antes de elaborar la replicación y otra para después.
+         </td>
+         <td style="text-align:left;">
+            <a href="https://osf.io/4jd46/" style="     ">Replication Recipe: Preregistration</a>
+         </td>
+      </tr>
+      <tr>
+         <td style="text-align:left;">
+            <a href="https://osf.io/9rp6j/" style="     ">Replication Recipe: Post-Completion</a>
+         </td>
+      </tr>
+      <tr>
+         <td style="text-align:left;">
+            Registered reports
+         </td>
+         <td style="text-align:left;">
+            Se utilizan cuando un artículo ha pasado la primera revisión por pares bajo el modelo de&nbsp;registered reports.
+         </td>
+         <td style="text-align:left;">
+            <a href="https://osf.io/gm36s/" style="     ">Registered Reports Protocol</a>
+         </td>
+      </tr>
+   </tbody>
+</table>
+
+Fuente: [lisa-coes.com/01componentes/](https://lisa-coes.com/01componentes/)
+
+---
+# Características de plantillas
+
+- formato de pre-registro que especifica .red[campos a completar] con información necesaria
+
+- existen distintas alternativas según .red[diseño de investigación]
+
+- asociadas a plataformas y plantillas de publicación
+
+---
+## Campos típicos e información apropiada
+
+&lt;iframe src="datacolada.png" 
+            height="500" 
+            width="400" 
+            marginwidth="50" 
+            scrolling="yes"&gt;
+&lt;/iframe&gt;
+
+---
+
+.center[[![:scale 50%](asPredicted.png)](https://aspredicted.org/)]
+
+- desarrollado por el [Credibility Lab](https://credlab.wharton.upenn.edu/) de Wharton
+
+- formulario simple y rápido en linea
+
+- queda almacenado y disponible
+
+---
+class: middle
+
+.pull-left-narrow[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+[![:scale 90%](osf.png)](https://osf.io/)
+
+]
+
+.pull-right-wide[
+
+## Open Science Framework
+
+- .bold[entorno] de apertura de proyectos de investigación completos (más allá de los pre-registros)
+
+- se pueden pre-registrar estudios asociados a un proyecto ya generado en OSF, o de manera independiente
+
+- disponibilidad de [múltiples plantillas de pre-registro](https://osf.io/zab38/wiki/home/)
+]
+
+
+&lt;!-- .center[![:scale 80%](osf-prereg1.png)] --&gt;
+&lt;!-- --- --&gt;
+&lt;!-- .center[![:scale 80%](osf-prereg2.png)] --&gt;
+&lt;!-- --- --&gt;
+&lt;!-- .center[![:scale 80%](osf-prereg3.png)] --&gt;
+
+
+---
+class: middle, center
+
+
+&lt;div style="position: relative; width: 100%; height: 0; padding-top: 45.2500%;
+   padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+   border-radius: 8px; will-change: transform;"&gt;
+   &lt;p&gt;&lt;iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAEqfJU0Al4/watch?embed"&gt;
+      &lt;/iframe&gt;
+   &lt;/p&gt;
+&lt;/div&gt;
+
+
+
+---
+class: liblue
+
+# Resumen
+
+### - prácticas cuestionables de investigación: incentivos perversos
+
+### - investigación exploración vs. hallazgos guiados por teoría (hipótesis confirmatorias)
+
+### - pre-registros: ventajas éticas y de eficiencia 
+
+### - plantillas, campos y accesibilidad
+
+
+---
+
+# Referencias
+
+.small[
+
+- [Abril-Ruiz, A. (2019). Manzanas podridas: Malas prácticas de investigación y ciencia descuidada. 10.31234/osf.io/z82mh](10.31234/osf.io/z82mh)
+- [Laboratorio Investigación Social Abierta](lisa-coes.com)
+- [How To Properly Preregister A Study](http://datacolada.org/64)
+- [Lindsay et al (2016) Research Preregistration 101.](https://www.psychologicalscience.org/observer/research-preregistration-101)
+- [Nosek, B. A., Ebersole, C. R., DeHaven, A. C., &amp; Mellor, D. T. (2018). The preregistration revolution. Proceedings of the National Academy of Sciences, 115(11), 2600–2606. https://doi.org/10.1073/pnas.1708274114
+](https://www.pnas.org/content/115/11/2600) 
+- [OSF Preregistration resources](https://www.cos.io/initiatives/prereg)
+
+
+
+
+]
+  
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://multinivel.netlify.com/docpres/xaringan_custom/macros.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url("../lisa_icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 17.5em;
+  right: -1.2em;
+  width: 110px;
+  height: 70px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
