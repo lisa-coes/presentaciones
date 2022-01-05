@@ -56,7 +56,7 @@ About macros.js: permite escalar las imágenes como [scale 50%](path to image), 
 
 
 
-![:scale 90%](https://lisa-coes.netlify.app/img/logo.png)
+![:scale 90%](https://github.com/lisa-coes/lisa-book/blob/main/images/lisa.png?raw=true)
 
 ### .black[Laboratorio de Investigación Social] Abierta
 
@@ -283,55 +283,53 @@ Adaptado de: [http://whyopenresearch.org/#](http://whyopenresearch.org/)
 <br>
 ![:scale 140%](esquema_general.png)
 
----
-class: liblue
-
-# Contenidos
-
-## 1. .pink[El problema:] Prácticas cuestionables de investigación
-## 2. .pink[Una alternativa:] Pre-registros, ¿qué son?
-## 3. .pink[¿Cómo se usa?:] Plantillas y OSF (Open Science Framework)
-
 
 ---
-class: liblue
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+<br>
+## A. Ciencia abierta: Crisis y herramientas 
 
-# Contenidos
+## B. .yellow[Pre-registros] 
 
-## 1️. .pink[El problema:] .yellow[Prácticas cuestionables de investigación]
-## 2. .pink[Una alternativa:] Pre-registros, ¿qué son?
-## 3. .pink[¿Cómo se usa?:] Plantillas y OSF (Open Science Framework)
-
-
-<!-- --- -->
-<!-- class: middle -->
-
-<!-- ![](../02-bases_ciencia_abierta/prox-sem.png) -->
-<!-- Fuente: [Ciencia Social Abierta (2021, sesión 3)](https://cienciasocialabierta.netlify.app/class/03-class/) -->
----
-class: middle, center
-
-# El caso de Pedro
+## C. Pre-prints   
 
 ---
+class: roja, middle, right
 
+.pull-left[
 
-<!-- --- -->
-<!-- - Pedro investiga la relación entre el tiempo de .pink[afiliación sindical] (x) y .green[participación en huelgas] (y).  -->
+# Pre-registros
 
-<!-- -- -->
+]
 
-<!-- - .red[No encuentra] resultados esperados en base a su hipótesis (tiempo de afiliación sindical impacta positivamente en la participación en huelgas) -->
+.pull-right-wide[
 
-<!-- -- -->
+### 1. Prácticas cuestionables de investigación
+### 2. Pre-registros
+### 3. Plantillas y OSF
+]
 
-<!-- - Ajusta la variable tiempo, .bold[eliminando casos] que llevan menos de 2 años en la empresa, obteniendo una diferencia significativa con probabilidad de error _p_ <0.05 -->
+---
+class: roja, right
 
-<!-- -- -->
+.pull-left[
 
-<!-- - Finalmente .bold[excluye] a trabajadores a plazo fijo, manteniendo solo aquellos con contrato indefinido, obteniendo un _p_ <0.01 -->
+# Pre-registros
 
-<!-- --- -->
+]
+
+.pull-right-wide[
+
+### 1. .yellow[Prácticas cuestionables de investigación]
+### 2. Pre-registros
+### 3. Plantillas y OSF
+]
+
+---
+## El caso de Pedro
 
 - Pedro accede una base de datos con información sobre trabajadores sindicalizados en distintas empresas del país. 
 
@@ -376,22 +374,7 @@ las .red[prácticas cuestionables de investigación] refieren a las:
 >  _"acciones que violan los valores tradicionales de la empresa de investigación y que pueden ser perjudiciales para el proceso de investigación"_ (National Academies of Science 1992 en Steneck, 2006, p. 58).
 
 ---
-# Algunos ejemplos 
-
-- presentar resultados exploratorios como si fueran guiados por teorías
-
-  - **HARKing** (Hypothesizing After Results are Known)
-
-- buscar/reportar selectivamente aquellos resultados que si calzan con las hipótesis
-
-  - **p-hacking**
-
-
-.center[
-🔎 Detalles en: [lisa-coes.github.io/lisa-book/](https://lisa-coes.github.io/lisa-book/por-qu%C3%A9.html#pr%C3%A1cticas-cuestionables-de-investigaci%C3%B3n-qrp) 🔎
-]
----
-# Consecuencias
+# Algunas consecuencias
 
 - el problema *no es la exploración de datos*, sino su uso en reporte selectivo de resultados de investigación
 
@@ -408,15 +391,20 @@ las .red[prácticas cuestionables de investigación] refieren a las:
 - se confirma lo que uno está buscando, no lo que entregan los datos (y pierde sentido el recolectar datos, y hacer investigación empírica)
 
 ---
-class: liblue
+class: roja, right
 
-# Contenidos
+.pull-left[
 
-## 1. .pink[El problema:] Prácticas cuestionables de investigación
-## 2. .pink[Una alternativa:] .yellow[Pre-registros, ¿qué son?]
-## 3. .pink[¿Cómo se usa?:] Plantillas y OSF (Open Science Framework)
+# Pre-registros
 
+]
 
+.pull-right-wide[
+
+### 1. Prácticas cuestionables de investigación
+### 2. .yellow[Pre-registros]
+### 3. Plantillas y OSF
+]
 
 ---
 class: middle
@@ -464,26 +452,10 @@ _Un .bolder[pre-registro] es una marca .red[temporal] que busca dar cuenta del d
 --
   
   * permite delimitar correctamente el .orange[fenómeno a explicar] (_explanandum_) y
+  
   * establecer cuál(es) conceptos/variables lo explican (_explanans_)
+  
   * la .pink[discusión] de resultados abre el camino para investigaciones posteriores
-
----
-# hombros de gigante vs conejos del sombrero
-
-.center[
-.pull-left[
-![](check-yes.png)
-
-![:scale 60%](https://juancarloscastillo.github.io/jc-castillo/documents/talleres-cursos/escritura-academica/standing.png)]
-
-.pull-right[
-![](check-no.png)
-
-![:scale 40%](https://media0.giphy.com/media/MFlhfP81IpKgaN50fq/giphy.gif)
-]
-]
-
-
 
 ---
 # Tipos de preregistro
@@ -502,16 +474,23 @@ _Un .bolder[pre-registro] es una marca .red[temporal] que busca dar cuenta del d
 
 
 ---
-class: liblue
+class: roja, right
 
-# Contenidos
+.pull-left[
 
-## 1. .pink[El problema:] Prácticas cuestionables de investigación
-## 2. .pink[Una alternativa:] Pre-registros, ¿qué son?
-## 3. .pink[¿Cómo se usa?:] .yellow[Plantillas y OSF (Open Science Framework)]
+# Pre-registros
+
+]
+
+.pull-right-wide[
+
+### 1. Prácticas cuestionables de investigación
+### 2. Pre-registros
+### 3. .yellow[Plantillas y OSF]
+]
 
 ---
-# Plantillas de pre-registro (templates)
+# Plantillas de pre-registro
 
 ```{r echo=FALSE}
 shiny::includeHTML(path = "tab-preregister.html")
@@ -519,34 +498,24 @@ shiny::includeHTML(path = "tab-preregister.html")
 
 Fuente: [lisa-coes.com/01componentes/](https://lisa-coes.com/01componentes/)
 
----
-# Características de plantillas
+<!-- --- -->
+<!-- # Características de plantillas -->
 
-- formato de pre-registro que especifica .red[campos a completar] con información necesaria
+<!-- - formato de pre-registro que especifica .red[campos a completar] con información necesaria -->
 
-- existen distintas alternativas según .red[diseño de investigación]
+<!-- - existen distintas alternativas según .red[diseño de investigación] -->
 
-- asociadas a plataformas y plantillas de publicación
+<!-- - asociadas a plataformas y plantillas de publicación -->
 
----
-## Campos típicos e información apropiada
+<!-- --- -->
+<!-- ## Campos típicos e información apropiada -->
 
-<iframe src="datacolada.png" 
-            height="500" 
-            width="400" 
-            marginwidth="50" 
-            scrolling="yes">
-</iframe>
-
----
-
-.center[[![:scale 50%](asPredicted.png)](https://aspredicted.org/)]
-
-- desarrollado por el [Credibility Lab](https://credlab.wharton.upenn.edu/) de Wharton
-
-- formulario simple y rápido en linea
-
-- queda almacenado y disponible
+<!-- <iframe src="datacolada.png"  -->
+<!--             height="500"  -->
+<!--             width="400"  -->
+<!--             marginwidth="50"  -->
+<!--             scrolling="yes"> -->
+<!-- </iframe> -->
 
 ---
 class: middle
@@ -572,36 +541,62 @@ class: middle
 - disponibilidad de [múltiples plantillas de pre-registro](https://osf.io/zab38/wiki/home/)
 ]
 
+---
 
-<!-- .center[![:scale 80%](osf-prereg1.png)] -->
-<!-- --- -->
-<!-- .center[![:scale 80%](osf-prereg2.png)] -->
-<!-- --- -->
-<!-- .center[![:scale 80%](osf-prereg3.png)] -->
+## Pre-registrar un estudio
+
+- .red[Paso 0:] Crear un usuario en el [Open Science Framework](https://osf.io/) 
+
+.center[[![:scale 85%](osf-prereg-paso0.PNG)](https://accounts.osf.io/login?service=https://osf.io/dashboard/)]
+
+---
+
+- .red[Paso 1:] Ingresar al sitio web y seleccionar .green[.bold[OSFREGISTRIES]]: 
+
+.center[[![:scale 95%](osf-preg-taller1.PNG)](https://osf.io/registries?view_only=)]
+
+---
+* .red[Paso 2:] Hacer click en .blue[.bold[Add New]] para crear una nueva entrada
+
+.center[[![:scale 93%](osf-preg-taller2.png)](https://osf.io/registries?view_only=)]
+
+---
+* .red[Paso 3:] Configurar la nueva entrada
+
+.center[[![:scale 85%](osf-preg-taller3.gif)](https://osf.io/registries/osf/new)]
 
 
 ---
-class: middle, center
+* .red[Paso 4:] Completar Metadata
 
+.center[![:scale 85%](osf-preg-taller4.gif)]
 
-<div style="position: relative; width: 100%; height: 0; padding-top: 45.2500%;
-   padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-   border-radius: 8px; will-change: transform;">
-   <p><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAEqfJU0Al4/watch?embed">
-      </iframe>
-   </p>
-</div>
+---
+* .red[Paso 5:] Completar campos de pre-registro y publicar
 
+.center[![:scale 85%](osf-preg-taller5.gif)]
 
 
 ---
-class: liblue
+# Estudios pre-registrados
+
+.medium[
+* Miranda, D., Iturra, J. C., & Herrera Leighton, A. (2021, December 30). Participación ciudadana juvenil: entre la Reproducción social y la socialización política. [https://doi.org/10.17605/OSF.IO/5N6J4](https://doi.org/10.17605/OSF.IO/5N6J4)
+
+* Castillo, J. C., Miranda, D., Iturra, J. C., Meneses, F. J., & Venegas, M. (2021, January 29). La socialización de la meritocracia: el efecto de la familia y la escuela. [https://doi.org/10.17605/OSF.IO/FAZDX](https://doi.org/10.17605/OSF.IO/FAZDX)
+
+* Maldonado, L., Castillo, J. C., Iturra, J. C., & Meneses, F. J. (2019, November 19). Does knowledge about inequality and poverty affects the perception of opportunities and meritocracy? An experimental test in Chile. [https://doi.org/10.17605/OSF.IO/3TEWB](https://doi.org/10.17605/OSF.IO/3TEWB)
+
+* Castillo, J. C., Iturra, J. C., Meneses, F. J., & Maldonado, L. (2019, November 21). Perceptions and Preferences for Meritocracy Scale  (PPM-S). [https://doi.org/10.17605/OSF.IO/Z45Y2](https://doi.org/10.17605/OSF.IO/Z45Y2 )
+]
+---
+class: roja, left
 
 # Resumen
 
-### - prácticas cuestionables de investigación: incentivos perversos
+### - prácticas cuestionables de investigación
 
-### - investigación exploración vs. hallazgos guiados por teoría (hipótesis confirmatorias)
+### - investigación exploración vs. hallazgos guiados por teoría
 
 ### - pre-registros: ventajas éticas y de eficiencia 
 
@@ -621,9 +616,6 @@ class: liblue
 - [Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution. Proceedings of the National Academy of Sciences, 115(11), 2600–2606. https://doi.org/10.1073/pnas.1708274114
 ](https://www.pnas.org/content/115/11/2600) 
 - [OSF Preregistration resources](https://www.cos.io/initiatives/prereg)
-
-
-
 
 ]
   
