@@ -438,8 +438,16 @@ _Un .bolder[pre-registro] es una marca .red[temporal] que busca dar cuenta del d
 
 - .red[no impide explorar], solo diferenciar .orange[intuiciones exploratorias] de .green[ hipótesis confirmatorias]]
 
+- .bold[Encontrable]: se genera un .blue[.bold[DOI]] que permite citar
+
+- Puede evitar conflictos por co-autorias
+
+- Evitar situaciones de plagio 
+
 .pull-right[
-![](badge.png)
+.center[
+![:scale 30%](badge.png)
+]
 ]
 
 ---
@@ -472,7 +480,6 @@ _Un .bolder[pre-registro] es una marca .red[temporal] que busca dar cuenta del d
 --
 - **Reporte preregistrado de replicación**: para estudios de replicación (misma hipótesis y método, distintos datos)
 
-
 ---
 class: roja, right
 
@@ -489,7 +496,23 @@ class: roja, right
 ### 3. .yellow[Plantillas y OSF]
 ]
 
+
 ---
+# Respositorios
+
+* [**Open Science Framework**](https://osf.io/) - la más ampliamente aplicable en las ciencias sociales
+
+* [**AsPredicted.org**](https://aspredicted.org/) - Utilizado principalmente en el ámbito de la psicología
+
+* [**AEA Registry**](http://www.socialscienceregistry.org/) - Se utiliza principalmente en economía
+
+* [**EGAP**](https://egap.org/registry/)  - Ciencia Política principalmente
+
+
+Fuente: [meta-meta-resources.org](https://meta-meta-resources.org/running-studies/preparation/pre-reg-repos/)
+
+---
+
 # Plantillas de pre-registro
 
 ```{r echo=FALSE}
@@ -543,7 +566,7 @@ class: middle
 
 ---
 
-## Pre-registrar un estudio
+## Pre-registrar un estudio en el OSF
 
 - .red[Paso 0:] Crear un usuario en el [Open Science Framework](https://osf.io/) 
 
@@ -576,6 +599,27 @@ class: middle
 
 .center[![:scale 85%](osf-preg-taller5.gif)]
 
+---
+##  Anonimizar y compartir
+
+.pull-left[
+* Podemos compartir el pre-registro con nuestras autorías 
+
+* Es posible anonimizar para enviar el artículo a revisión (peer review)
+
+* Esto permite que el pre-registro sea revisado sin identificar autorías
+
+* Luego, es posible desanonimizar el pre-registro y mostrar autorías
+]
+
+.pull-right[
+<br><br> 
+.center[![:scale 100%](https://pubs.rsc.org/en/Content/Image/GA/D1SC90122B)]
+]
+
+---
+
+.center[![:scale 95%](osf-preg-taller6.gif)]
 
 ---
 # Estudios pre-registrados
@@ -594,13 +638,13 @@ class: roja, left
 
 # Resumen
 
-### - prácticas cuestionables de investigación
+### - .small[prácticas cuestionables de investigación]
 
-### - investigación exploración vs. hallazgos guiados por teoría
+### - .small[investigación exploración vs. hallazgos guiados por teoría]
 
-### - pre-registros: ventajas éticas y de eficiencia 
+### - .small[pre-registros: ventajas éticas y de eficiencia]
 
-### - plantillas, campos y accesibilidad
+### - .small[plantillas, campos y accesibilidad]
 
 
 ---
