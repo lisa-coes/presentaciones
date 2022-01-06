@@ -54,15 +54,15 @@ xaringanExtra::use_progress_bar(color = "red", location = "top")
 About macros.js: permite escalar las imágenes como [scale 50%](path to image), hay si que grabar ese archivo js en el directorio.
 --->
 
+.right[
+![:scale 5%](https://coes.cl/wp-content/uploads/COES_Logo_sello1.png)
+]
+![:scale 95%](https://github.com/lisa-coes/lisa-book/blob/main/images/lisa.png?raw=true)
+
+### .medium[**.black[Laboratorio de Investigación Social] .red[Abierta]]**
 
 
-![:scale 90%](https://github.com/lisa-coes/lisa-book/blob/main/images/lisa.png?raw=true)
-
-### .black[Laboratorio de Investigación Social] Abierta
-
-![:scale 8%](https://coes.cl/wp-content/uploads/COES_Logo_sello1.png)
-
-###lisa-coes.com 
+### [.red[lisa-coes.com]](https://lisa-coes.com/) 
 
 
 ---
@@ -85,155 +85,85 @@ class: inverse
 
 ## C. Pre-prints   
 
-
 ---
-class: roja, middle, right
-
-.pull-left[
-# ¿Crisis de apertura en ciencia?
-]
-
-.pull-right-wide[
-
-### 1. Transparencia
-### 2. Reproducibilidad 
-### 3. Acceso
-]
-
----
-class: roja, middle, right
-
-.pull-left[
-# ¿Crisis de apertura en ciencia?
-]
-
-.pull-right-wide[
-
-### 1. **.yellow[Transparencia]**
-### 2. Reproducibilidad 
-### 3. Acceso
-]
-
----
-## Flujo de investigación científica y ciencia abierta
-
-<br>
-
-![](flujo_2.png)
-
----
-## Flujo de investigación científica y ciencia abierta
-
-<br>
-
-![](flujo_trans.png)
-
----
-# Transparencia 1: Diseño
-
-<br>
-.center[
-### Transparentar el **diseño** de investigación consiste en hacer públicas las hipótesis y la metodología ANTES de comenzar a realizar los análisis]
----
-# Transparencia 1: Diseño
-
-Permite evitar situaciones como:
-
-
-- Presionar los análisis para publicar resultados "relevantes" (rechazar $H_0$ ) -> **.red[p-hacking]**
-
---
-
-- **.red[HARKing]**: Hypothesis After the Results are Known
-
-
-  
----
-# Transparencia 2: Datos
-
-- Dificultades en el acceso y la documentación de la información levantada  en la investigación
-
---
-
-- Barreras la reproducibilidad y al avance de investigaciones con datos muchas veces levantados con fondos públicos
-
-
----
-class: roja, middle, right
-
-.pull-left[
-# ¿Crisis de apertura en ciencia?
-]
-
-.pull-right-wide[
-
-### 1. Transparencia
-### 2. **.yellow[Reproducibilidad]** 
-### 3. Acceso
-]
-
----
-# Reproducibilidad
-
-![](flujo_rep.png)
-
-
----
-## ¿Qué porcentaje de los estudios publicados son reproducibles?
-
-.pull-left-wide[
-![:scale 95%](reproducibility_science.png)
-]
-.pull-right-narrow[
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-... alrededor de un **40%!** (... varía por disciplina)
-]
----
-## ¿Por qué ocurre la crisis de reproducibilidad?
-
-
-
-- pobre documentación metodológica
-
-- sesgo hacia búsqueda y publicación de resultados significativos (p-hacking), atribuido a la presión por publicar
-
-- en algunos casos, falseamiento de datos/análisis
-
----
-class: roja, middle, right
-
-.pull-left[
-# ¿Crisis de apertura en ciencia?
-]
-
-.pull-right-wide[
-
-### 1. Transparencia
-### 2. Reproducibilidad
-### 3. **.yellow[Acceso]** 
-]
-
----
-# Acceso
-
-![](flujo_acceso.png)
-
----
-## El ciclo actual de publicación científica
-.center[
-![:scale 60%](ciclocerrado.png)
-]
-
+class: inverse
 .right[
-.tiny[
-(Adaptado de: [https://creativecommons.org/about/program-areas/open-access/](https://creativecommons.org/about/program-areas/open-access/))
+# **.orange[Programa]**
 ]
+<br>
+## A. **.yellow[Ciencia abierta: Crisis y herramientas]**
+
+## B. Pre-registros 
+
+## C. Pre-prints   
+
+
+
+---
+class: roja, middle, right
+
+.pull-left[
+# ¿Crisis de apertura en ciencia?
 ]
+
+.pull-right-wide[
+
+# .yellow[El problema]
+]
+
+---
+## Principios éticos de la ciencia 
+.center[
+![:scale 65%](mertonprincipios.png)
+]
+
+.right[.small[
+(Merton, 1942, 1973)]]
+
+---
+# ¿Se cumplen los principios de la ciencia?
+
+- Investigación de Anderson et al (2007), pregunta a más de 3000 investigadores sobre cumplimiento de principios de la ciencia Mertonianos (agregan dos más: gobernanza y calidad)
+
+- Dos grupos de académicos: carrera temprana y carrera intermedia
+
+- Para todos los principios identifica normas y contranormas:
+
+---
+.center[
+![:scale 80%](tableanderson.png)
+]
+
+---
+.center[
+![:scale 75%](anderson.png)
+]
+.right[.small[Normas y contra-normas de la ética científica (Anderson, 2007)]]
+
+
+---
+class: roja, middle, right
+
+.pull-left[
+# ¿Crisis de apertura en ciencia?
+]
+
+.pull-right-wide[
+
+### 1. Transparencia
+### 2. Reproducibilidad 
+### 3. Acceso
+]
+
+---
+<br>
+
+![](flujo.png)
+---
+<br>
+ 
+
+![](flujo-acceso.png)
 ---
 class: middle, center
 
@@ -259,30 +189,74 @@ class: middle, center
 
 ---
 .pull-left-narrow[
-## Beneficios acceso abierto
-
 <br>
-<br>
-
-.tiny[
-Adaptado de: [http://whyopenresearch.org/#](http://whyopenresearch.org/)
-]
+![](https://i.pinimg.com/originals/d3/93/93/d39393c978cec32e2598c1d1261ace4f.jpg)
 ]
 
 .pull-right-wide[
-.center[
-![:scale 92%](openbeneficios.png)
+
+### Modelo actual de publicación científica:
+- las vacas hacen leche (se ordeñan solas)
+
+- otras vacas revisan la leche (gratis)
+
+- las vacas le pagan al granjero para distribuir la leche
+
+- luego el granjero le vende la leche de vuelta a las vacas
 ]
 
+---
+<br>
+ 
+
+![](flujo-rep.png)
+
+---
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+.pull-left-wide[
+![:scale 95%](reproducibility_science.png)
 ]
+.pull-right-narrow[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+... alrededor de un **40%!** (... varía por disciplina)
+]
+
+---
+class: center
+
+![](nature-reproducibility-crisis.jpeg)
+
+.small[
+Fuente: [Baker (2016) 1,500 scientists lift the lid on reproducibility - Nature](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)]
+
+---
+<br>
+ 
+![](flujo-trans.png)
 
 
 ---
-# Resumen
-
 <br>
-![:scale 140%](esquema_general.png)
+ 
+![](flujo-herramientas.png)
 
+
+---
+class: middle center
+
+![:scale 40%](christensen.png)
+
+---
+class: middle center
+Más info:
+
+#lisa-coes.com
 
 ---
 class: inverse
@@ -478,6 +452,7 @@ _Un .bolder[pre-registro] es una marca .red[temporal] que busca dar cuenta del d
   - permite lidiar con el [.bold[sesgo de publicación]](https://lisa-coes.github.io/lisa-book/por-qu%C3%A9.html#pr%C3%A1cticas-cuestionables-de-investigaci%C3%B3n-qrp)
 
 --
+
 - **Reporte preregistrado de replicación**: para estudios de replicación (misma hipótesis y método, distintos datos)
 
 ---
@@ -498,7 +473,7 @@ class: roja, right
 
 
 ---
-# Respositorios
+## Algunos repositorios de pre-prints
 
 * [**Open Science Framework**](https://osf.io/) - la más ampliamente aplicable en las ciencias sociales
 
@@ -512,8 +487,7 @@ class: roja, right
 Fuente: [meta-meta-resources.org](https://meta-meta-resources.org/running-studies/preparation/pre-reg-repos/)
 
 ---
-
-# Plantillas de pre-registro
+## Plantillas de pre-registro
 
 ```{r echo=FALSE}
 shiny::includeHTML(path = "tab-preregister.html")
@@ -602,7 +576,7 @@ class: middle
 ---
 ##  Anonimizar y compartir
 
-.pull-left[
+.pull-left-wide[
 * Podemos compartir el pre-registro con nuestras autorías 
 
 * Es posible anonimizar para enviar el artículo a revisión (peer review)
@@ -612,7 +586,7 @@ class: middle
 * Luego, es posible desanonimizar el pre-registro y mostrar autorías
 ]
 
-.pull-right[
+.pull-right-narrow[
 <br><br> 
 .center[![:scale 100%](https://pubs.rsc.org/en/Content/Image/GA/D1SC90122B)]
 ]
@@ -622,9 +596,9 @@ class: middle
 .center[![:scale 95%](osf-preg-taller6.gif)]
 
 ---
-# Estudios pre-registrados
+# Algunos ejemplos ...
 
-.medium[
+.small[
 * Miranda, D., Iturra, J. C., & Herrera Leighton, A. (2021, December 30). Participación ciudadana juvenil: entre la Reproducción social y la socialización política. [https://doi.org/10.17605/OSF.IO/5N6J4](https://doi.org/10.17605/OSF.IO/5N6J4)
 
 * Castillo, J. C., Miranda, D., Iturra, J. C., Meneses, F. J., & Venegas, M. (2021, January 29). La socialización de la meritocracia: el efecto de la familia y la escuela. [https://doi.org/10.17605/OSF.IO/FAZDX](https://doi.org/10.17605/OSF.IO/FAZDX)
@@ -636,7 +610,7 @@ class: middle
 ---
 class: roja, left
 
-# Resumen
+# Resumen pre-registros
 
 ### - .small[prácticas cuestionables de investigación]
 
@@ -654,12 +628,200 @@ class: roja, left
 .small[
 
 - [Abril-Ruiz, A. (2019). Manzanas podridas: Malas prácticas de investigación y ciencia descuidada. 10.31234/osf.io/z82mh](10.31234/osf.io/z82mh)
+
 - [Laboratorio Investigación Social Abierta](lisa-coes.com)
+
 - [How To Properly Preregister A Study](http://datacolada.org/64)
+
 - [Lindsay et al (2016) Research Preregistration 101.](https://www.psychologicalscience.org/observer/research-preregistration-101)
+
 - [Nosek, B. A., Ebersole, C. R., DeHaven, A. C., & Mellor, D. T. (2018). The preregistration revolution. Proceedings of the National Academy of Sciences, 115(11), 2600–2606. https://doi.org/10.1073/pnas.1708274114
 ](https://www.pnas.org/content/115/11/2600) 
+
 - [OSF Preregistration resources](https://www.cos.io/initiatives/prereg)
 
 ]
+
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+<br>
+## A. Ciencia abierta: Crisis y herramientas 
+
+## B. Pre-registros
+
+## C. .yellow[Pre-prints]
+
+---
+<br>
+
+![](flujo-trans.png)
+
+---
+# Bases
+
+- [Declaración de Budapest 2002](https://www.budapestopenaccessinitiative.org/read)
+
+.medium[
+_By .red["open access"] to this literature, we mean its **free availability on the public internet**, permitting any users to read, download, copy, distribute, print, search, or link to the full texts of these articles, crawl them for indexing, pass them as data to software, or use them for any other lawful purpose, without financial, legal, or technical barriers other than those inseparable from gaining access to the internet itself._ 
+
+_The .red[only constraint] on reproduction and distribution, and the only role for copyright in this domain, should be to give **authors control over the integrity of their work** and the right to **be properly acknowledged and cited.**_]
+
+---
+# Bases
+
+- [Declaración de Berlin 2003](https://openaccess.mpg.de/67605/berlin_declaration_engl.pdf)
+
+.medium[
+1. The author(s) and right holder(s) of such contributions grant(s) to all users a free, irrevocable,
+worldwide, right of access to, and a license to copy, use, distribute, transmit and display the work
+publicly ...
+
+2. A complete version of the work and all supplemental materials, including a copy of the permission
+as stated above, in an appropriate standard electronic format is deposited (and thus published) in at
+least one online repository
+
+]
+
+
+.small[Más información: [European Comission Open Acces](https://ec.europa.eu/research/participants/docs/h2020-funding-guide/cross-cutting-issues/open-access-data-management/open-access_en.htm) ]
+---
+class: inverse, middle, center
+
+# Rutas de accesibilidad
+
+---
+
+.center[
+![:scale 72%](greengold.gif)
+]
+
+---
+
+.center[
+![](pre-post-pub.png)
+]
+
+---
+class: middle
+
+Información sobre políticas de acceso de las revistas: [https://v2.sherpa.ac.uk/romeo/](https://v2.sherpa.ac.uk/romeo/)
+
+---
+class: roja, bottom, right
+
+# Pre-prints
+
+---
+# Preprints
+
+- Los preprints o pre-impresos son publicaciones abiertas de un reporte de investigación, por lo general un artículo, antes de un proceso de revisión por pares
+
+- El objetivo general hacer disponibles y difundir reportes de investigación
+
+- Son referenciables / citables / accesibles
+
+- Pueden ser una versión inicial/borrador o una versión final
+
+- Concepto general: **ciencia en tiempo real**
+
+---
+
+![](preprints.jpg)
+---
+
+![:scale 70%](preprints_final.png)
+
+.small[
+[https://www.natureindex.com/news-blog/what-biorxivs-first-thirty-thousand-preprints-reveal-about-biologists](https://www.natureindex.com/news-blog/what-biorxivs-first-thirty-thousand-preprints-reveal-about-biologists)
+]
+---
+.center[
+![:scale 60%](preprints_march.png)
+]
+---
+
+![](preprint_surge.png)
+
+---
+.center[
+![](covid_preprints.png)]
+
+---
+
+.pull-left-narrow[
+![](socarxiv.jpg)
+
+[socopen.org](https://socopen.org/)
+
+]
+
+.pull-right-wide[
+- Servicio de pre-prints de ciencias sociales vinculado al OSF
+
+- Permite subir documentos (pdf) fácilmente desde proyectos OSF
+
+- Tiene un sistema de _moderación_, un equipo de moderadores realiza un filtro grueso para determinar el carácter académico del pre-print
+
+- Otorga un DOI (digital object identifier), que permite su citación y rastreo académico
+]
+
+---
+.center[
+![:scale 55%](socarxiv-submit.png)
+]
+---
+
+.center[
+![:scale 55%](socarxiv-submit2.png)
+]
+---
+## Sobre las licencias de trabajos abiertos
+
+- permiten resguardar el derecho de propiedad y reconocimiento (atribución) de quienes crean la obra
+
+- diferentes elementos:
+  - posibilidad de "derivar" (adaptar) y publicar un nuevo producto
+  - posibilidad de generar derivados comerciales
+  - posibilidad de que derivados tengan distintas licencias
+  
+- más información: [https://creativecommons.org/licenses/](https://creativecommons.org/licenses/)
+
+
+---
+class: roja
+
+## **.yellow[Resumen Pre-prints]**
+
+###- Políticas y rutas de acceso abierto
+
+###- Auge creciente de preprints
+
+###- Publicación en Socarxiv
+
+###- Publicación abierta en tiempo real
+
+---
+
+![](https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FFHz_DDRWQAIJ8JD.jpg)
+
+---
+class: front center
+.right[
+![:scale 5%](https://coes.cl/wp-content/uploads/COES_Logo_sello1.png)
+]
+![:scale 95%](https://github.com/lisa-coes/lisa-book/blob/main/images/lisa.png?raw=true)
+
+### .medium[**.black[Laboratorio de Investigación Social] .red[Abierta]]**
+
+
+### [.red[lisa-coes.com]](https://lisa-coes.com/) 
+
+
+
+
+
+
   
