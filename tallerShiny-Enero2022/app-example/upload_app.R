@@ -1,5 +1,4 @@
 #------------------------------------------------------------------------------#
-# Proyect title: "Observatorio de Cohesion Social" 
 # Author(s): Julio Iturra Sanhueza & Juan Carlos Castillo
 # website: https://www.linkedin.com/in/jciturras/
 # e-mail: julioiturrasanhueza@gmail.com
@@ -11,15 +10,12 @@
 
 #Este archivo sirve principalmente para generar el deploy de la app en el servidor de shiny.apps
 
-
 # install.packages('rsconnect')
 # install.packages('here')
 # install.packages("tictoc") #timming de funciones
 
-
 library(rsconnect)
-library(here)
-
+library(tictoc)
 
 # Realizar el login de la cuenta y el token de acceso  --------------------
 
