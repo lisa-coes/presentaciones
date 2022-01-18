@@ -7,3 +7,7 @@ Presentaciones del Laboratorio de Investigación Social Abierta (LISA)
 
 
 [Taller Reproducibilidad Enero 2022 - Aprendiendo Metodología por Valentina](https://lisa-coes.github.io/presentaciones/tallerRmarkdown-IPOEnero2022/taller-reprod-enero2022.html)
+
+[Taller Introducción a Shiny Enero 2022 - Aprendiendo Metodología por Valentina](https://lisa-coes.github.io/presentaciones/tallerShiny-Enero2022/taller-shiny-enero2022.html)
+
+

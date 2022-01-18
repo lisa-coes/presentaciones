@@ -141,11 +141,20 @@ _Data graphics visually display measures quantities by means of the combine use 
 
 Una buena visualización debe:
 
+--
+
 - inducir al observador a centrarse en lo substantivo 
+
+--
 
 - evitar distorsiones (e.g. ejes o magnitudes)
 
+--
+
 - claridad de su objetivo: descripción, exploración, cuadros u ornamental 
+
+--
+
 - ser fiel a lo que dicen los datos
 
 ---
@@ -159,7 +168,10 @@ Una buena visualización debe:
 
 
 ---
-class: middle, center
+class: center
+
+.small[.left[En una escala de 1 a 5 ¿Cuál es la proporción de impuestos que deberían pagar las personas de mayores ingresos?]]
+
 ![](tax-1.png)
 
 ---
@@ -298,9 +310,9 @@ server &lt;- function(input, output) {
 
 .pull-left-narrow[
 
-* Renders: sirven para renderizar un output en creado en `server`
+* **Renders**: sirven para renderizar un output en creado en `server`
 
-* Outputs: sirven para mostrar el renderizado en el `ui`
+* **Outputs**: sirven para mostrar el renderizado en el `ui`
 
 ]
 .pull-right-wide[
@@ -320,11 +332,11 @@ server &lt;- function(input, output) {
 
 Permite aagregar un input de checkbox para especificar qué datos se visualizan se muestran en una tabla
 
-1. ui: debes agregar un input widget (control) con el que el usuario pueda interactuar
+1. `ui`: debes agregar un input widget (control) con el que el usuario pueda interactuar
 
-2. ui: agregar un output definiendo la tabla y su posición
+2. `ui`: agregar un output definiendo la tabla y su posición
 
-3. server: agregar una reacción que crea una tabla .red[solo si] se pone en el checkbox
+3. `server`: agregar una reacción que crea una tabla .red[solo si] se pone en el checkbox
 
 ---
 class: middle
@@ -402,9 +414,9 @@ Para agregar una tabla de resuymen de estadísticos para una nueva variable `sco
 
 
 1. Calcular la nueva variable
-2. ui: agregar un box input para interactuar y seleccionar
-3. ui: agregar un output defininendo la tabla
-4. server: agregar un reactivo para que muestre la tabla
+2. `ui`: agregar un box input para interactuar y seleccionar
+3. `ui`: agregar un output defininendo la tabla
+4. `server`: agregar un reactivo para que muestre la tabla
 
 
 ---
@@ -515,8 +527,8 @@ server &lt;- function(input, output) {
 .center[
 ![:scale 60%](https://shiny.rstudio.com/images/reactivity_diagrams/roles.png)
 ]
--- 
 
+--
 * evitan programar repetitivamente y encadenan procesos en `server`
 
 ---
@@ -530,7 +542,7 @@ server &lt;- function(input, output) {
 
 * `Reactive endpoint`: algo que aparece en panel, como un gráfico, tabla o valores 
 
-* unn _source_ puede estar vinculado a múltiples _endpoints_, y viceversa
+* un _source_ puede estar vinculado a múltiples _endpoints_, y viceversa
 
 ---
 
@@ -591,7 +603,7 @@ output$scatterplot &lt;- renderPlot({
 ]
 
 ---
-* ui &amp; server: Usamos movie_subset() para hacer un print del número de observaciones
+* `ui` &amp; `server`: Usamos movie_subset() para hacer un print del número de observaciones
 
 En ui:
 
@@ -607,7 +619,7 @@ mainPanel(
 
 ---
 
-En server:
+En `server`:
 .medium[
 
 
@@ -622,64 +634,10 @@ output$n &lt;- renderUI({
 
 ]
 
----
 
 
-```r
-ui &lt;- fluidPage(
-  # Sidebar layout con las definiciones de input y output
-  sidebarLayout(
-    # Inputs: selecciona variables de un plot
-    sidebarPanel(
-      # Selecciona variable para el eje Y
-      selectInput(inputId = "y", label = "Y-axis:",
-                  choices = c("rating", "votes", "budget", "length", "year"), 
-                  selected = "rating"),
-      # Selecciona variable para el eje X
-      selectInput(inputId = "x", label = "X-axis:",
-                  choices = c("rating", "votes", "budget", "length","year"), 
-                  selected = "budget"),
-      selectInput(inputId = "selected_type",
-                  label = "Selecciona clasificación:",
-                  choices = levels(movies$mpaa),
-                  selected = "NC-17")
-    ), 
-    # Output: Show scatterplot
-    mainPanel(
-      # mostrar scatterplot
-      plotOutput(outputId = "scatterplot"),
-      # mostrar el N de peliculas
-      uiOutput(outputId = "n"),
-    )
-  )
-)
-```
 
 
-```r
-# Define las funciones de server
-server &lt;- function(input, output) {
-  # Crea un scatter plot
-  output$scatterplot &lt;- renderPlot({
-    ggplot(data = movies_subset(), # usamos el data reactivo!
-           aes_string(x = input$x, y = input$y)) +  
-    geom_point()
-  })
-  # crea una tabla resumen
-  movies_subset &lt;- reactive({
-    # viene del UI
-    req(input$selected_type)
-    # filtra base de datos
-    filter(movies, mpaa %in% input$selected_type)
-  }) #termina data reactivo
-  output$n &lt;- renderUI({
-  HTML(paste0("El gráfico muestra la relación entre la audiencia y la crítica de ",
-             nrow(movies_subset()), 
-             " películas ", 
-             "&lt;b&gt;", input$selected_type, "&lt;/b&gt;"))
-  }) #termina output de N de muestra
-}   # Termina server
-```
 
 
 
@@ -771,7 +729,7 @@ dashboardHeader(title = "Mi dashboard",
 
 ---
 
-# Side bar
+# Sidebar
 
 .pull-left[
 * se utiliza normalmente para la navegación rápida. 
@@ -964,11 +922,17 @@ ui &lt;-
 ---
 # Organizar la app
 
-
+--
 * En una carpeta se deben almacenar: código y datos
+--
+
 * Otros adcionales: archivos css, html, Rmarkdown
 
+--
+
 Sugerimos usar RStudio y crear un proyecto de una Shiny app:
+
+--
 
 ![:scale 100%](shiny4.PNG)
 
@@ -1068,6 +1032,13 @@ tictoc::toc() #término...
 ```
 
 ]
+
+---
+## Resultado
+
+&lt;iframe src="https://juitsa.shinyapps.io/app-example/" width="100%" height="550" style="border:none;"&gt;
+
+
 ---
 class: inverse
 
@@ -1077,7 +1048,7 @@ class: inverse
 
 ### - Elaboración de una Shiny app
 
-### - Usar Shinydashboard para ui
+### - Usar Shinydashboard para interfaz
 
 ### - Publicar App en shinyapps.io
 
@@ -1117,9 +1088,10 @@ class: front middle
  # .red[**Introducción a la Visualización de Datos con Shiny**]
  
  .espaciosimple[
-.small[Julio Iturra - COES] / 
-.small[[coes.cl/julio-iturra/](https://coes.cl/integrantes/julio-iturra/)]
-
+.medium[Julio Iturra] &lt;br&gt;
+.small[Centro de Estudios de Conflicto y Cohesión Social]
+&lt;br&gt;
+.small[[coes.cl/julio-iturra](https://coes.cl/integrantes/julio-iturra/)]
 ]
 ]
 ]
