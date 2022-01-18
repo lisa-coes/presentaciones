@@ -226,7 +226,7 @@ Se sugiere:
 
 En general debes tener presente: 
 
-- **siempre** correr el script.R completo, por partes.
+- **siempre** correr el script.R completo, no por partes.
 
 - la mejor forma de saber dónde hay un error en el código en tu App
 
@@ -539,9 +539,7 @@ server &lt;- function(input, output) {
 
 
 * `Reactive source`: el input que proviene de la interfaz de usuario o `ui`
-
 * `Reactive endpoint`: algo que aparece en panel, como un gráfico, tabla o valores 
-
 * un _source_ puede estar vinculado a múltiples _endpoints_, y viceversa
 
 ---
@@ -646,9 +644,7 @@ output$n &lt;- renderUI({
 #  Reactlog
 
 * Cuando usamos muchas expresiones reactivas en una App, se pueden crear dependencias complicadas.
-
 * El reactlog es una representación gráfica de la estructura de dependencias, además entrega información detallada respecto de lo que está ocurriendo "tras bambalinas".
-
 * Para usar:
 
   1. En una sesion de R nueva, escribe : `options(shiny.reactlog = TRUE)`
