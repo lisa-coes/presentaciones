@@ -1,5 +1,5 @@
 ---
-title: "Taller LISA Enero 2021"
+title: "Ibero Ciencia Abierta"
 author: ".small[Juan Carlos Castillo <br><br> Departamento de Sociología - UCH / COES <br><br>]"
 date: "2do Sem 2021"
 output:
@@ -85,6 +85,11 @@ Sociología, Universidad de Chile]
 ]
 ]
 ]
+
+---
+class: center
+<br>
+![:scale 80%](https://jc-castillo.com/media/albums/gallery/standards.png)
 
 
 ---
