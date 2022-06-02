@@ -1,0 +1,1234 @@
+---
+title: "Taller LISA Enero 2021"
+author: ".small[Juan Carlos Castillo <br><br> Departamento de Sociología - UCH / COES <br><br>]"
+date: "2do Sem 2021"
+output:
+  xaringan::moon_reader:
+    css: ["custom_lisa.css"] # "../ninjutsu.css", paraflipbook
+    includes:
+      after_body: "../insert-logo.html"
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "https://multinivel.netlify.com/docpres/xaringan_custom/macros.js"
+    seal: false # esto omite title slide automática
+---
+class: front middle
+
+
+
+```{r setup, include=FALSE, cache = FALSE}
+require("knitr")
+options(htmltools.dir.version = FALSE)
+pacman::p_load(RefManageR)
+# bib <- ReadBib("../../bib/electivomultinivel.bib", check = FALSE)
+opts_chunk$set(warning=FALSE,
+             message=FALSE,
+             echo=FALSE,
+             cache = FALSE, fig.width=7, fig.height=5.2)
+pacman::p_load(flipbookr, tidyverse)
+```
+
+
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css"))
+xaringanExtra::use_progress_bar(color = "red", location = "top")
+xaringanExtra::use_clipboard()
+# xaringanExtra::use_share_again()
+# xaringanExtra::use_scribble()
+```
+
+<!---
+About macros.js: permite escalar las imágenes como [scale 50%](path to image), hay si que grabar ese archivo js en el directorio.
+--->
+
+.pull-left-narrow[
+
+![](flyer-Vale.png)
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+![:scale 15%](https://coes.cl/wp-content/uploads/COES_Logo_sello1.png)
+]
+
+.pull-right-wide[
+
+
+
+.right[
+
+ # .red[**Introducción a la Visualización de Datos con Shiny**]
+ 
+ .espaciosimple[
+.medium[Julio Iturra] <br>
+.small[Centro de Estudios de Conflicto y Cohesión Social]
+<br>
+.small[[coes.cl/julio-iturra](https://coes.cl/integrantes/julio-iturra/)]
+]
+]
+]
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+class: middle center
+![:scale 95%](https://github.com/lisa-coes/lisa-book/blob/main/images/lisa.png?raw=true)
+
+### .medium[**.black[Laboratorio de Investigación Social] .red[Abierta]]**
+
+
+### [.red[lisa-coes.com]](https://lisa-coes.com/) 
+
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+## A. Visualización
+
+## B. Shiny
+
+## C. Shinydashboard 
+
+## D. shinyapps.io
+
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+## A. **.yellow[Visualización]**
+
+## B. Shiny
+
+## C. Shinydashboard 
+
+## D. shinyapps.io
+
+---
+## Ciencia abierta 
+<br>
+ 
+![](flujo-herramientas.png)
+
+
+---
+class: middle
+
+_Data graphics visually display measures quantities by means of the combine use of points, lines, a coordinate system, numbers, symbols, words, shading, and color._ 
+
+.right[Edward Tufte (2000)]
+
+---
+# Excelencia gráfica
+
+Una buena visualización debe:
+
+--
+
+- inducir al observador a centrarse en lo substantivo 
+
+--
+
+- evitar distorsiones (e.g. ejes o magnitudes)
+
+--
+
+- claridad de su objetivo: descripción, exploración, cuadros u ornamental 
+
+--
+
+- ser fiel a lo que dicen los datos
+
+---
+# ¿Es información real?
+
+- Puede serlo, pero...
+
+$$\text{Factor mentira} = \frac{\text{tamaño del efecto mostrado}}{\text{tamaño del efecto en los datos}}$$
+- honestidad vs manipulación
+- claridad debe primar
+
+
+---
+class: center
+
+.small[.left[En una escala de 1 a 5 ¿Cuál es la proporción de impuestos que deberían pagar las personas de mayores ingresos?]]
+
+![](tax-1.png)
+
+---
+class: middle, center
+![](tax-2.png)
+
+---
+class: center, middle
+
+![:scale 120%](https://media.biobiochile.cl/wp-content/uploads/2017/11/grafico-sebastian-piera-victimizacion-730x350.jpg)
+---
+class:: center, middle
+![:scale 90%](https://www.theclinic.cl/wp-content/uploads/2020/11/cadem-porcentaje-tw.png)
+---
+
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+## A. Visualización
+
+## B. **.yellow[Shiny]**
+
+## C. Shinydashboard 
+
+## D. shinyapps.io
+---
+# Qué es Shiny
+
+.pull-left[
+- `Shiny` es una librería de R que hace más fácil construir applicaciones web interactivas directamente desde R.
+
+- puedes hospedar aplicaciones localmente o en un servidor web, incluirlas en documentos R Markdown o construir _Dashboards_
+]
+
+.pull-right[
+![](https://www.worldbank.org/content/dam/photos/780x439/2021/apr/Shiny-logo.png)
+]
+---
+# Para comenzar
+
+Se sugiere:
+
+- tener familiaridad con el lenguaje de programación `R`
+
+- conocer librerías del **Tidyverse**, especialmente `ggplot2` y `dplyr`
+
+- tener instalado en tu computadora una versión actualizada de RStudio
+
+---
+# Tips
+
+En general debes tener presente: 
+
+- **siempre** correr el script.R completo, no por partes.
+
+- la mejor forma de saber dónde hay un error en el código en tu App
+
+- atención al detalle: uso de .red[commas] e .red[indentación]
+
+---
+# Anatomía de una Shiny app
+
+![](shiny-body.PNG)
+
+Fuente: Datacamp
+
+
+---
+# Comencemos
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(shiny)
+load("movies.rdata")
+```
+
+
+```{r echo=TRUE,eval=F}
+library(shiny)
+load("movies.rdata")
+ui <- fluidPage()
+server <- function(input, output) {}
+shinyApp(ui = ui, server = server)
+```
+
+---
+class: middle
+.tiny[
+```{r echo=TRUE, eval=F}
+# Define el UI (user interface de tu app)
+ui <- fluidPage(
+  # Sidebar layout con las definiciones de input y output
+  sidebarLayout(
+    # Inputs: selecciona variables de un plot
+    sidebarPanel(
+      # Selecciona variable para el eje Y
+      selectInput(inputId = "y", label = "Y-axis:",
+                  choices = c("rating", "votes", 
+                              "budget", "length", "year"), 
+                  selected = "rating"),
+      # Selecciona variable para el eje X
+      selectInput(inputId = "x", label = "X-axis:",
+                  choices = c("rating", "votes", 
+                              "budget", "length","year"), 
+                  selected = "budget")
+    ), 
+    # Output: Show scatterplot
+    mainPanel(
+      plotOutput(outputId = "scatterplot")
+    )
+  )
+)
+
+```
+
+
+]
+
+---
+class: middle
+.medium[
+
+```{r echo=TRUE, eval=F}
+# Define la funcion en server para crear el plot
+server <- function(input, output) { 
+# Crear objeto scatterplot que la funcion plotOutput en el ui
+  output$scatterplot <- renderPlot({
+    ggplot(data = movies, aes_string(x = input$x, y = input$y)) +
+      geom_point()
+  })
+}
+```
+
+]
+---
+# Tipos de output
+
+.pull-left-narrow[
+
+* **Renders**: sirven para renderizar un output en creado en `server`
+
+* **Outputs**: sirven para mostrar el renderizado en el `ui`
+
+]
+.pull-right-wide[
+
+![:scale 100%](https://enrdados.netlify.app/post/2020-02-06-shiny-facil-con-flexdashboard-iv_files/outputs.png)
+
+]
+---
+# Tipos de inputs
+
+.center[
+![:scale 60%](https://www2.stat.duke.edu/courses/Spring20/sta199.002/slides/images/input-details.png)
+]
+
+---
+# checkboxInput
+
+Permite agregar un input de checkbox para especificar qué datos se visualizan se muestran en una tabla
+
+1. `ui`: debes agregar un input widget (control) con el que el usuario pueda interactuar
+
+2. `ui`: agregar un output definiendo la tabla y su posición
+
+3. `server`: agregar una reacción que crea una tabla .red[solo si] se pone en el checkbox
+
+---
+class: middle
+
+.tiny[
+
+```{r echo=TRUE}
+ui <- fluidPage(
+  # Sidebar layout con las definiciones de input y output
+  sidebarLayout(
+    # Inputs: selecciona variables de un plot
+    sidebarPanel(
+      # Selecciona variable para el eje Y
+      selectInput(inputId = "y", label = "Y-axis:",
+                  choices = c("rating", "votes", "budget", "length", "year"), 
+                  selected = "rating"),
+      # Selecciona variable para el eje X
+      selectInput(inputId = "x", label = "X-axis:",
+                  choices = c("rating", "votes", "budget", "length","year"), 
+                  selected = "budget"),
+      checkboxInput(inputId = "show_data", # reactivo 
+              label = "Show data table",
+              value = TRUE)
+    ), 
+    # Output: Show scatterplot
+    mainPanel(
+      plotOutput(outputId = "scatterplot"),
+      # mostrar tabla
+      DT::dataTableOutput(outputId = "moviestable"),
+    )
+  )
+)
+```
+
+]
+
+---
+
+.small[
+
+```{r echo=TRUE}
+# Define las funciones de server
+server <- function(input, output) {
+  # Crea un scatter plot
+  output$scatterplot <- renderPlot({
+    ggplot(data = movies, aes_string(x = input$x, y = input$y)) +
+    geom_point()
+  })
+  # crea una tabla
+  output$moviestable <- DT::renderDataTable({ #funcion 1
+    #condicional a si show_data es activado
+    if (input$show_data) { #funcion 2 
+      DT::datatable( 
+        data = movies %>% select(1:7),
+        options = list(pageLength = 10),
+        rownames = FALSE
+      ) #termina datatable
+    } # termina funcion 2    
+  }   # termina funcion 1
+  )   # termina renderDataTable()
+}     # termina la server
+```
+
+
+]
+
+```{r eval=FALSE, include=FALSE}
+shinyApp(ui = ui, server = server)
+```
+
+---
+# renderTable()
+
+Para agregar una tabla de resuymen de estadísticos para una nueva variable `score_ratio = movies$rating/movies$votes`
+
+
+1. Calcular la nueva variable
+2. `ui`: agregar un box input para interactuar y seleccionar
+3. `ui`: agregar un output defininendo la tabla
+4. `server`: agregar un reactivo para que muestre la tabla
+
+
+---
+class: middle
+.tiny[
+
+```{r echo=TRUE}
+ui <- fluidPage(
+  # Sidebar layout con las definiciones de input y output
+  sidebarLayout(
+    # Inputs: selecciona variables de un plot
+    sidebarPanel(
+      # Selecciona variable para el eje Y
+      selectInput(inputId = "y", label = "Y-axis:",
+                  choices = c("rating", "votes", "budget", "length", "year"), 
+                  selected = "rating"),
+      # Selecciona variable para el eje X
+      selectInput(inputId = "x", label = "X-axis:",
+                  choices = c("rating", "votes", "budget", "length","year"), 
+                  selected = "budget"),
+      checkboxGroupInput(inputId = "selected_title_type",
+                         label = "Select title year:",
+                         choices = levels(movies$quantile_rank),
+                         selected = levels(movies$quantile_rank))
+    ), 
+    # Output: Show scatterplot
+    mainPanel(
+      # mostrar scatterplot
+      plotOutput(outputId = "scatterplot"),
+      # mostrar tabla resumen
+      tableOutput(outputId = "summarytable"),
+    )
+  )
+)
+```
+
+]
+
+---
+
+# Creamos variables nuevas
+
+```{r echo=TRUE}
+movies <- movies %>%
+  mutate(score_ratio = rating/votes,
+         quantile_rank = ntile(year,4))
+
+movies$quantile_rank <-
+  factor(movies$quantile_rank,
+         labels = c("1890 - 1966",
+                    "1967 - 1992",
+                    "1993 - 2005",
+                    "2006 - 2011"))
+```
+---
+class: middle
+.tiny[
+
+```{r echo=TRUE}
+# Define las funciones de server
+server <- function(input, output) {
+  # Crea un scatter plot
+  output$scatterplot <- renderPlot({
+    ggplot(data = movies, aes_string(x = input$x, y = input$y)) +  
+    geom_point()
+  })
+  # crea una tabla resumen
+  output$summarytable <- renderTable({
+    movies %>%
+      filter(quantile_rank %in% input$selected_title_type) %>%
+      group_by(mpaa) %>%
+      summarise(
+        Mean = mean(score_ratio),
+        SD = sd(score_ratio),
+        n = n() 
+        )
+    }, # termina la funcion dentro de renderTable()
+  striped = TRUE,
+  spacing = "l",
+  align = "lccr",
+  digits = 4,
+  width = "90%",
+  caption = "Score ratio (rating / votos) resumen estadístico según MPAA rating."
+  ) # termina renderTable() 
+}   # Termina server
+```
+
+
+]
+
+```{r eval=FALSE, include=FALSE}
+shinyApp(ui = ui, server = server)
+```
+
+
+---
+
+# Reactivos
+
+--
+
+* un elemento reactivo o _reactive_ se refiere a una cadena de eventos relacionada entre acciones. 
+--
+
+* existen elementos de origen (_source_), conductores (_conductor_)  y de llegada (_endpoints_)
+
+.center[
+![:scale 60%](https://shiny.rstudio.com/images/reactivity_diagrams/roles.png)
+]
+
+--
+* evitan programar repetitivamente y encadenan procesos en `server`
+
+---
+
+# sources y endpoints
+
+.center[![:scale 40%](https://shiny.rstudio.com/images/reactivity_diagrams/01_hello.png)]
+
+
+* `Reactive source`: el input que proviene de la interfaz de usuario o `ui`
+* `Reactive endpoint`: algo que aparece en panel, como un gráfico, tabla o valores 
+* un _source_ puede estar vinculado a múltiples _endpoints_, y viceversa
+
+---
+
+# Reactive conductors
+
+* es un componente que se encuentra entre un source y un endpoint
+
+* un conductor puede ser dependiente (child) y tener una dependencia (parent)
+
+  - `Sources` solamente pueden ser parents (pueden **tener** dependientes)
+  - `Endpoint` solamente pueden ser child (pueden **ser** dependientes)
+
+
+.center[![:scale 40%](https://shiny.rstudio.com/images/reactivity_diagrams/conductor.png)]
+
+---
+# Usemos reactives
+
+* `ui`: Agregar un elemento a la interfaz para que el usuario pueda elegir un tipo de película
+
+```{r echo=TRUE, eval=F}
+selectInput(inputId = "selected_type",
+            label = "Selecciona clasificación:",
+            choices = levels(movies$mpaa),
+            selected = "NC-17")
+```
+
+---
+
+* `server`: Filtra la base de datos por el tipo de clasificación elegida por el usuario
+
+```{r echo=TRUE, eval=F}
+#creamos el objeto reactivo, 
+movies_subset <- reactive({  
+  # viene del UI
+  req(input$selected_type) 
+  # filtra base de datos
+  filter(movies, mpaa %in% input$selected_type) 
+})
+```
+
+---
+
+* `server`: Usamos `movie_subset()` (el cual es reactivo) para plotear
+
+.medium[
+```{r echo=TRUE, eval=F}
+output$scatterplot <- renderPlot({
+  #usamos el dataframe reactivo
+    ggplot(data = movies_subset(), 
+           aes_string(x = input$x, y = input$y)) +
+      geom_point()
+})
+```
+]
+
+---
+* `ui` & `server`: Usamos movie_subset() para hacer un print del número de observaciones
+
+En ui:
+
+```{r echo=TRUE, eval=F}
+mainPanel(
+  …
+  # Print number of obs plotted
+  uiOutput(outputId = "n"),
+  …
+  )
+```
+
+---
+
+En `server`:
+.medium[
+
+```{r echo=TRUE, eval=F}
+output$n <- renderUI({
+  HTML(paste0("El gráfico muestra la relación entre   <br>
+             la audiencia y la críticade <br>",
+             nrow(movies_subset()),
+             " <b>", input$selected_type, "</b> películas."))
+})
+```
+
+]
+
+
+```{r eval=FALSE, include=FALSE}
+ui <- fluidPage(
+  # Sidebar layout con las definiciones de input y output
+  sidebarLayout(
+    # Inputs: selecciona variables de un plot
+    sidebarPanel(
+      # Selecciona variable para el eje Y
+      selectInput(inputId = "y", label = "Y-axis:",
+                  choices = c("rating", "votes", "budget", "length", "year"), 
+                  selected = "rating"),
+      # Selecciona variable para el eje X
+      selectInput(inputId = "x", label = "X-axis:",
+                  choices = c("rating", "votes", "budget", "length","year"), 
+                  selected = "budget"),
+      selectInput(inputId = "selected_type",
+                  label = "Selecciona clasificación:",
+                  choices = levels(movies$mpaa),
+                  selected = "NC-17")
+    ), 
+    # Output: Show scatterplot
+    mainPanel(
+      # mostrar scatterplot
+      plotOutput(outputId = "scatterplot"),
+      # mostrar el N de peliculas
+      uiOutput(outputId = "n"),
+    )
+  )
+)
+```
+
+```{r eval=FALSE, include=FALSE}
+# Define las funciones de server
+server <- function(input, output) {
+  # Crea un scatter plot
+  output$scatterplot <- renderPlot({
+    ggplot(data = movies_subset(), # usamos el data reactivo!
+           aes_string(x = input$x, y = input$y)) +  
+    geom_point()
+  })
+  # crea una tabla resumen
+  movies_subset <- reactive({
+    # viene del UI
+    req(input$selected_type)
+    # filtra base de datos
+    filter(movies, mpaa %in% input$selected_type)
+  }) #termina data reactivo
+  output$n <- renderUI({
+  HTML(paste0("El gráfico muestra la relación entre la audiencia y la crítica de ",
+             nrow(movies_subset()), 
+             " películas ", 
+             "<b>", input$selected_type, "</b>"))
+  }) #termina output de N de muestra
+}   # Termina server
+```
+
+```{r eval=FALSE, include=FALSE}
+shinyApp(ui = ui, server = server)
+```
+
+---
+
+#  Reactlog
+
+* Cuando usamos muchas expresiones reactivas en una App, se pueden crear dependencias complicadas.
+* El reactlog es una representación gráfica de la estructura de dependencias, además entrega información detallada respecto de lo que está ocurriendo "tras bambalinas".
+* Para usar:
+
+  1. En una sesion de R nueva, escribe : `options(shiny.reactlog = TRUE)`
+  2. Corre tu app usando `shinyApp(ui = ui, server = server)`
+  3. Dentro de la app, presiona Ctrl + F3
+  
+
+---
+class: middle, center
+
+![](shiny-reactlog.gif)
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+## A. Visualización
+
+## B. Shiny
+
+## C. **.yellow[Shinydashboard]** 
+
+## D. shinyapps.io
+
+
+---
+# Qué es Shinydashboard
+
+* Es una librería de R, que permite elaborar una interfaz con mayores prestaciones visuales y funcionales que el `ui` tradicional de Shiny. 
+* Para usarla debemos correr `install.packages("shinydashboard")`
+
+.small[
+
+```{r echo=TRUE, eval=F}
+library(shiny)
+library(shinydashboard)
+ui <- dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody()
+)
+server <- function(input, output) { }
+shinyApp(ui, server)
+```
+]
+---
+class: middle, center
+
+![:scale 75%](https://rstudio.github.io/shinydashboard/images/blank_dashboard.png)
+---
+# Características
+
+- `dashboardPage()`: cumple la función de generar una base para posicionar los elementos, similar a `fluidPage()` 
+- `dashboardHeader()`: se posicionan los elementos de la barra o header superior
+- `dashboardSidebar()`: barra lateral en la cual podemos incorporar elementos inputs
+- `dashboardBody()`: espacio donde se renderizan los resultados o elementos output, similar a `mainPanel()`
+
+---
+# Header
+
+* Un header puede tener un título y menus desplegables. Por ejemplo:
+
+
+```{r echo=TRUE, eval=F}
+dashboardHeader(title = "Mi dashboard",
+                titleWidth = 10,
+                disable = F)
+```
+
+
+.center[
+![](dash-header.PNG)
+]
+
+```{r eval=FALSE, include=FALSE}
+library(shiny)
+library(shinydashboard)
+ui <- dashboardPage(
+  dashboardHeader(title = "Mi dashboard",
+                titleWidth = 200,
+                disable = F),
+  dashboardSidebar(),
+  dashboardBody()
+)
+server <- function(input, output) { }
+shinyApp(ui, server)
+```
+
+---
+
+# Sidebar
+
+.pull-left[
+* se utiliza normalmente para la navegación rápida. 
+
+* puede contener elementos de menú que se comportan como pestañas en un tabPanel.
+
+* como entradas Shiny, como deslizadores y entradas de texto.
+]
+
+
+.center[![:scale 40%](dash-sidebar.PNG)]
+
+
+---
+class: middle
+
+.small[
+```{r echo=TRUE, eval=F}
+library(shiny)
+library(shinydashboard)
+ui <- dashboardPage(
+  dashboardHeader(title = "Mi dashboard",
+                titleWidth = 200,
+                disable = F),
+  dashboardSidebar(
+    sidebarSearchForm(textId = "searchText", buttonId = "searchButton",
+                      label = "Search..."),
+    sliderInput(inputId = "ola",min = 1,max = 10,value = 5,
+                label = "Hola"),
+    selectInput(inputId = "seleccionar",
+                label = "select",
+                choices = 1:10)
+    ),
+  dashboardBody()
+)
+server <- function(input, output) { }
+shinyApp(ui, server)
+```
+
+]
+
+
+
+---
+
+# Boxes 
+
+* las boxes o cajas permiten incluir todo tipo de inputs y output. 
+* son ajustables en tamaño y color 
+
+
+.center[![:scale 75%](https://rstudio.github.io/shinydashboard/images/body-boxes-basic.png)]
+---
+
+.tiny[
+```{r echo=TRUE, eval=F}
+dashboardBody(fluidRow(
+  box(
+    title = "Histogram",
+    background = "maroon",
+    solidHeader = TRUE,
+    plotOutput("plot4", height = 250)
+  ),
+  box(
+    title = "Inputs",
+    background = "black",
+    "Box content here",
+    br(),
+    "More box content",
+    sliderInput("slider", "Slider input:", 1, 100, 50),
+    textInput("text", "Text input:")
+  )
+))
+)
+```
+]
+
+.center[![:scale 50%](https://rstudio.github.io/shinydashboard/images/body-boxes-header-4.png)]
+
+---
+# Volvamos a las películas
+
+
+* Para adaptar nuestra App original, debemos tener claro qué cosa debemos remplazar.
+* Ahora tenemos un Header, sideBar y body.
+
+
+--
+Manos a la obra..
+.center[
+![:scale 30%](https://c.tenor.com/S4Sz_yvlLn4AAAAC/cats-cat.gif)
+]
+
+---
+
+.tinyest[
+```{r echo=TRUE, eval=F}
+# ORIGINAL
+ui <-
+  fluidPage(# Sidebar layout con las definiciones de input y output
+    sidebarLayout(
+      # Inputs: selecciona variables de un plot
+      sidebarPanel(
+        # Selecciona variable para el eje Y
+        selectInput(
+          inputId = "y",
+          label = "Y-axis:",
+          choices = c("rating", "votes", "budget", "length", "year"),
+          selected = "rating"
+        ),
+        # Selecciona variable para el eje X
+        selectInput(
+          inputId = "x",
+          label = "X-axis:",
+          choices = c("rating", "votes", "budget", "length", "year"),
+          selected = "budget"
+        ),
+        selectInput(
+          inputId = "selected_type",
+          label = "Selecciona clasificación:",
+          choices = levels(movies$mpaa),
+          selected = "NC-17"
+        )
+      ),
+      # Output: Show scatterplot
+      mainPanel(# mostrar scatterplot
+        plotOutput(outputId = "scatterplot"),
+        # mostrar el N de peliculas
+        uiOutput(outputId = "n"),)
+    ))
+```
+]
+
+---
+.tinyest[
+```{r echo=TRUE, eval=F}
+# DASHBOARD
+ui <-
+  dashboardPage(
+    dashboardHeader(
+      title = "Mi dashboard",
+      titleWidth = 200,
+      disable = F
+    ),
+    # Sidebar  con las definiciones de input y output
+    dashboardSidebar(
+      # Inputs: selecciona variables de un plot
+      # Selecciona variable para el eje Y
+      selectInput(
+        inputId = "y",
+        label = "Y-axis:",
+        choices = c("rating", "votes", "budget", "length", "year"),
+        selected = "rating"
+      ),
+      # Selecciona variable para el eje X
+      selectInput(
+        inputId = "x",
+        label = "X-axis:",
+        choices = c("rating", "votes", "budget", "length", "year"),
+        selected = "budget"
+      ),
+      selectInput(
+        inputId = "selected_type",
+        label = "Selecciona clasificación:",
+        choices = levels(movies$mpaa),
+        selected = "NC-17"
+      )
+    ),
+    # Output: Show scatterplot
+    dashboardBody(fluidPage(box(
+      # mostrar scatterplot
+      plotOutput(outputId = "scatterplot"),
+      # mostrar el N de peliculas
+      uiOutput(outputId = "n")
+    )))
+  )
+```
+
+]
+
+```{r eval=FALSE, include=FALSE}
+ui <- dashboardPage(
+  dashboardHeader(
+    title = "Mi dashboard",
+    titleWidth = 200,
+    disable = F
+  ),
+  # Sidebar  con las definiciones de input y output
+  dashboardSidebar(
+    # Inputs: selecciona variables de un plot
+    # Selecciona variable para el eje Y
+    selectInput(
+      inputId = "y",
+      label = "Y-axis:",
+      choices = c("rating", "votes", "budget", "length", "year"),
+      selected = "rating"
+    ),
+    # Selecciona variable para el eje X
+    selectInput(
+      inputId = "x",
+      label = "X-axis:",
+      choices = c("rating", "votes", "budget", "length", "year"),
+      selected = "budget"
+    ),
+    selectInput(
+      inputId = "selected_type",
+      label = "Selecciona clasificación:",
+      choices = levels(movies$mpaa),
+      selected = "NC-17"
+    )
+  ),
+  # Output: Show scatterplot
+  dashboardBody(
+    fluidPage(
+    box(
+    # mostrar scatterplot
+    plotOutput(outputId = "scatterplot"),
+    # mostrar el N de peliculas
+    uiOutput(outputId = "n")
+    )
+  ))
+)
+
+# Define las funciones de server
+server <- function(input, output) {
+  # Crea un scatter plot
+  output$scatterplot <- renderPlot({
+    ggplot(data = movies_subset(), # usamos el data reactivo!
+           aes_string(x = input$x, y = input$y)) +  
+    geom_point()
+  })
+  # crea una tabla resumen
+  movies_subset <- reactive({
+    # viene del UI
+    req(input$selected_type)
+    # filtra base de datos
+    filter(movies, mpaa %in% input$selected_type)
+  }) #termina data reactivo
+  output$n <- renderUI({
+  HTML(paste0("El gráfico muestra la relación entre la audiencia y la crítica de ",
+             nrow(movies_subset()), 
+             " películas ", 
+             "<b>", input$selected_type, "</b>"))
+  }) #termina output de N de muestra
+}   # Termina server
+
+shinyApp(ui = ui, server = server)
+```
+
+
+
+
+---
+# Organizar la app
+
+--
+* En una carpeta se deben almacenar: código y datos
+--
+
+* Otros adcionales: archivos css, html, Rmarkdown
+
+--
+
+Sugerimos usar RStudio y crear un proyecto de una Shiny app:
+
+--
+
+![:scale 100%](shiny4.PNG)
+
+---
+# Organización de la carpeta
+
+```
+│   app-taller.Rproj
+│   server.R
+│   ui.R
+│
+└───input
+    └───datos
+            movies.rdata
+```
+
+* Archivos distintos para `ui` y `server`
+
+---
+class: center
+![:scale 75%](shiny-dash.gif)
+
+---
+
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+## A. Visualización
+
+## B. Shiny
+
+## C. Shinydashboard 
+
+## D. **.yellow[shinyapps.io]**
+
+---
+
+# Qué es shinyapps.io?
+
+* Servicio de la compañía RStudio que permite publicar online una aplicación programada en `Shiny` 
+
+.center[![:scale 75%](shinyapps.PNG)]
+
+
+--- 
+
+# ¿Cómo se usa?
+
+- Primero debes crear un usuario 
+
+.pull-right[.center[![:scale 75%](user-shiny.PNG)]]
+
+
+---
+
+# Deploy desde R
+
+* Para realizar la publicación o _deploy_ en shinyapps.io debemos obtener un Token de acceso:
+
+
+.center[![:scale 75%](token.PNG)]
+
+
+---
+
+# Deploy desde R
+
+* luego hacemos click en "show" y debe aparecer una ventana que permite copiar este código:
+
+.center[![:scale 75%](token-code.PNG)]
+
+* Importante: el "secret" es un acceso a su cuenta, idealmente no lo compartan.
+
+
+---
+
+# Deploy desde R
+
+
+* Ya de vuelta en R debemos realizar ejecutar el siguiente código en el directorio donde se encuentra la app:
+
+.small[
+
+```{r echo=TRUE, eval=F}
+library(rsconnect)
+library(tictoc)
+
+# Realizar el login de la cuenta y el token de acceso  --------------------
+rsconnect::setAccountInfo(name='su_cuenta', #account
+                          token='4E3E38F216E2433D6290D64905056C90',
+                          secret='secreto')
+tictoc::tic() #inicio...
+rsconnect::deployApp(forceUpdate = TRUE) #Subir App al server de shinyapps
+tictoc::toc() #término...
+```
+
+]
+
+Revisar en:  https://juitsa.shinyapps.io/app-example/ 
+
+---
+# Incorporar una app
+
+* usando este código se puede incrustar en un documento html generado en R Markdown:
+
+.tiny[
+```{r echo=TRUE, eval=F}
+<iframe src="https://juitsa.shinyapps.io/app-example/" width="100%" height="550" style="border:none;">
+```
+]
+
+* Permite incorporar una app a un documento y visualizarlo directamente
+---
+## Resultado
+
+<iframe src="https://juitsa.shinyapps.io/app-example/" width="100%" height="550" style="border:none;">
+
+
+---
+# Algunas Apps
+
+
+- Aplicación de Visualización del Observatorio de Cohesión Social: https://juitsa.shinyapps.io/ocs-coes/
+
+- MOVID-19: https://www.movid19.cl/app 
+
+- Graficador del CEP: https://www.cepchile.cl/cep/site/edic/base/port/graficador.html
+
+---
+class: inverse
+
+## .red[Resumen General]
+
+### - Temas sobre visualización
+
+### - Elaboración de una Shiny app
+
+### - Usar Shinydashboard para interfaz
+
+### - Publicar App en shinyapps.io
+
+---
+class: middle center
+Más info:
+
+## web: [lisa-coes.com](https://lisa-coes.com/)
+
+## Github: [github.com/lisa-coes](https://github.com/lisa-coes)
+
+
+---
+class: front middle
+
+.pull-left-narrow[
+
+![](flyer-Vale.png)
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+![:scale 15%](https://coes.cl/wp-content/uploads/COES_Logo_sello1.png)
+]
+
+.pull-right-wide[
+
+
+
+.right[
+
+ # .red[**Introducción a la Visualización de Datos con Shiny**]
+ 
+ .espaciosimple[
+.medium[Julio Iturra] <br>
+.small[Centro de Estudios de Conflicto y Cohesión Social]
+<br>
+.small[[coes.cl/julio-iturra](https://coes.cl/integrantes/julio-iturra/)]
+]
+]
+]
+
+

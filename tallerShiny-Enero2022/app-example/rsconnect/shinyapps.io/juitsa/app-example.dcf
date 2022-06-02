@@ -1,0 +1,10 @@
+name: app-example
+title:
+username:
+account: juitsa
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5463406
+bundleId: 5482939
+url: https://juitsa.shinyapps.io/app-example/
+when: 1642548469.73066
