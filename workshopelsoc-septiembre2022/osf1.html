@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)https://osf.io/5n6j4 -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;padding: 0;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OSF Registries | Participación ciudadana juvenil: entre la Reproducción social y la socialización política.</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./osf1_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./osf1_files/vendor-cefb2e8a06c8a834a26e3b0be6738cf4.css" class="notranslate">
+    <link rel="stylesheet" href="./osf1_files/ember-osf-web-31a04b74bdfd7f2f7e45ef0533cac155.css" class="notranslate">
+    <script async="" src="./osf1_files/analytics.js.descarga"></script><script type="text/x-mathjax-config;executed=true">
+      MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true},
+          skipStartupTypeset: true
+      });
+    </script>
+    <script type="text/javascript" async="" src="./osf1_files/MathJax.js.descarga">
+    </script>
+    
+<meta name="ember-osf-web/config/environment" content="%7B%22modulePrefix%22%3A%22ember-osf-web%22%2C%22environment%22%3A%22production%22%2C%22lintOnBuild%22%3Afalse%2C%22testsEnabled%22%3Afalse%2C%22sourcemapsEnabled%22%3Atrue%2C%22showDevBanner%22%3Afalse%2C%22rootURL%22%3A%22/%22%2C%22assetsPrefix%22%3A%22/ember_osf_web/%22%2C%22locationType%22%3A%22auto%22%2C%22sentryDSN%22%3A%22https%3A//90af8984628e42799a5ec453ef6d6fc4@sentry2-client.cos.io/7%22%2C%22sentryOptions%22%3A%7B%22release%22%3A%22ef19ae7fe4b0dd9ea38a9dea84466471225dd413%22%2C%22ignoreErrors%22%3A%5B%22TransitionAborted%22%5D%7D%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%2C%22_JQUERY_INTEGRATION%22%3Atrue%2C%22_TEMPLATE_ONLY_GLIMMER_COMPONENTS%22%3Atrue%7D%2C%22APP%22%3A%7B%22name%22%3A%22ember-osf-web%22%2C%22version%22%3A%2222.9.0%22%7D%2C%22moment%22%3A%7B%22includeTimezone%22%3A%22all%22%2C%22outputFormat%22%3A%22YYYY-MM-DD%20h%3Amm%20A%20z%22%7D%2C%22metricsAdapters%22%3A%5B%7B%22name%22%3A%22GoogleAnalytics%22%2C%22environments%22%3A%5B%22production%22%5D%2C%22config%22%3A%7B%22id%22%3A%22UA-26813616-1%22%2C%22debug%22%3Afalse%2C%22trace%22%3Afalse%2C%22sendHitTask%22%3Atrue%2C%22setFields%22%3A%7B%22anonymizeIp%22%3Atrue%7D%7D%2C%22dimensions%22%3A%7B%22authenticated%22%3A%22dimension1%22%2C%22resource%22%3A%22dimension2%22%2C%22isPublic%22%3A%22dimension3%22%2C%22isWithdrawn%22%3A%22dimension4%22%2C%22version%22%3A%22dimension5%22%7D%7D%2C%7B%22name%22%3A%22Keen%22%2C%22environments%22%3A%5B%22all%22%5D%2C%22config%22%3A%7B%22public%22%3A%7B%22projectId%22%3A%225797b58fbcb79c2c0fa1a705%22%2C%22writeKey%22%3A%2240b0559c81c37757442b7fdeec4d384c0b2878ca9758ce561c1daa7b4c5cb77b0c9f80c562f313aa23ebef2c97cd70b2cf2af41716dc8fdb682ffaa52ff23441598432e81995e4899df55b6caa32edd3d208a05fd6367f0ac9fdcd2c4023c290%22%7D%2C%22private%22%3A%7B%22projectId%22%3A%225797b5a3709a395e9e29c11d%22%2C%22writeKey%22%3A%2273357414691a69448b9b967b7c56a16602e02ebe3d21f348acd7e717cef40275536f302143758330dfabea49355753dd05ab3865aa675ef2d803c2baa9b591b825689d96e4492c181be6a6631c0328ee9eeb24704ee7beb6c90f9bd5f06cfcb2%22%7D%7D%7D%5D%2C%22OSF%22%3A%7B%22apiNamespace%22%3A%22v2%22%2C%22backend%22%3A%22prod%22%2C%22url%22%3A%22https%3A//osf.io/%22%2C%22apiUrl%22%3A%22https%3A//api.osf.io%22%2C%22apiVersion%22%3A%222.20%22%2C%22apiHeaders%22%3A%7B%22Accept%22%3A%22application/vnd.api+json%3B%20version%3D2.20%22%7D%2C%22learnMoreUrl%22%3A%22https%3A//cos.io/our-products/osf/%22%2C%22renderUrl%22%3A%22https%3A//mfr.osf.io/render%22%2C%22waterbutlerUrl%22%3A%22https%3A//files.osf.io/%22%2C%22helpUrl%22%3A%22http%3A//help.osf.io%22%2C%22shareBaseUrl%22%3A%22https%3A//share.osf.io/%22%2C%22shareApiUrl%22%3A%22https%3A//share.osf.io/api/v2%22%2C%22shareSearchUrl%22%3A%22https%3A//share.osf.io/api/v2/search/creativeworks/_search%22%2C%22devMode%22%3Afalse%2C%22cookieDomain%22%3Anull%2C%22authenticator%22%3A%22authenticator%3Aosf-cookie%22%2C%22cookies%22%3A%7B%22status%22%3A%22osf_status%22%2C%22keenUserId%22%3A%22keenUserId%22%2C%22keenSessionId%22%3A%22keenSessionId%22%2C%22analyticsDismissAdblock%22%3A%22adBlockDismiss%22%2C%22cookieConsent%22%3A%22osf_cookieconsent%22%2C%22outputFeaturePopover%22%3A%22outputFeaturePopover%22%2C%22maintenance%22%3A%22maintenance%22%2C%22csrf%22%3A%22api-csrf%22%2C%22authSession%22%3A%22embosf-auth-session%22%7D%2C%22localStorageKeys%22%3A%7B%22authSession%22%3A%22embosf-auth-session%22%2C%22joinBannerDismissed%22%3A%22slide%22%7D%2C%22casUrl%22%3A%22https%3A//accounts.osf.io%22%2C%22analyticsAttrs%22%3A%7B%22name%22%3A%22data-analytics-name%22%2C%22scope%22%3A%22data-analytics-scope%22%2C%22extra%22%3A%22data-analytics-extra%22%2C%22category%22%3A%22data-analytics-category%22%2C%22action%22%3A%22data-analytics-action%22%7D%2C%22doiUrlPrefix%22%3A%22https%3A//doi.org/%22%2C%22cookieLoginUrl%22%3A%22https%3A//accounts.osf.io/login%22%2C%22oauthUrl%22%3A%22https%3A//accounts.osf.io/oauth2/authorize%22%2C%22isLocal%22%3Afalse%2C%22keenProjectId%22%3A%225797b58fbcb79c2c0fa1a705%22%2C%22orcidClientId%22%3A%22APP-VGLDMYSOHONDWCV8%22%7D%2C%22social%22%3A%7B%22twitter%22%3A%7B%22viaHandle%22%3A%22OSFramework%22%7D%7D%2C%22signUpPolicy%22%3A%7B%22termsLink%22%3A%22https%3A//github.com/CenterForOpenScience/centerforopenscience.org/blob/master/TERMS_OF_USE.md%22%2C%22privacyPolicyLink%22%3A%22https%3A//github.com/CenterForOpenScience/centerforopenscience.org/blob/master/PRIVACY_POLICY.md%22%2C%22cookiesLink%22%3A%22https%3A//github.com/CenterForOpenScience/centerforopenscience.org/blob/master/PRIVACY_POLICY.md%23f-cookies%22%7D%2C%22footerLinks%22%3A%7B%22cos%22%3A%22https%3A//cos.io%22%2C%22statusPage%22%3A%22https%3A//status.cos.io/%22%2C%22apiDocs%22%3A%22https%3A//developer.osf.io/%22%2C%22topGuidelines%22%3A%22http%3A//cos.io/top/%22%2C%22rpp%22%3A%22https%3A//osf.io/ezcuj/wiki/home/%22%2C%22rpcb%22%3A%22https%3A//osf.io/collections/rpcb/discover%22%2C%22twitter%22%3A%22http%3A//twitter.com/OSFramework%22%2C%22facebook%22%3A%22https%3A//www.facebook.com/CenterForOpenScience/%22%2C%22googleGroup%22%3A%22https%3A//groups.google.com/forum/%23%21forum/openscienceframework%22%2C%22github%22%3A%22https%3A//www.github.com/centerforopenscience%22%7D%2C%22support%22%3A%7B%22preregUrl%22%3A%22https%3A//cos.io/prereg/%22%2C%22statusPageUrl%22%3A%22https%3A//status.cos.io%22%2C%22faqPageUrl%22%3A%22https%3A//help.osf.io%22%2C%22supportEmail%22%3A%22support@osf.io%22%2C%22contactEmail%22%3A%22contact@osf.io%22%2C%22consultationUrl%22%3A%22https%3A//cos.io/stats_consulting/%22%2C%22twitterUrl%22%3A%22https%3A//twitter.com/OSFSupport%22%2C%22mailingUrl%22%3A%22https%3A//groups.google.com/forum/%23%21forum/openscienceframework%22%2C%22facebookUrl%22%3A%22https%3A//www.facebook.com/CenterForOpenScience/%22%2C%22githubUrl%22%3A%22https%3A//github.com/centerforopenscience%22%7D%2C%22helpLinks%22%3A%7B%22linkToAProject%22%3A%22https%3A//help.osf.io/hc/en-us/articles/360019930313-Link-to-a-Project%22%7D%2C%22dashboard%22%3A%7B%22popularNode%22%3A%2257tnq%22%2C%22noteworthyNode%22%3A%22z3sg2%22%7D%2C%22featureFlagNames%22%3A%7B%22routes%22%3A%7B%22registries.branded%22%3A%22branded_registries%22%2C%22registries.branded.discover%22%3A%22branded_registries%22%2C%22guid-node.index%22%3A%22ember_project_detail_page%22%2C%22guid-node.drafts.index%22%3A%22ember_edit_draft_registration_page%22%2C%22guid-node.drafts.register%22%3A%22ember_edit_draft_registration_page%22%2C%22guid-user.index%22%3A%22ember_user_profile_page%22%2C%22guid-registration.index%22%3A%22ember_old_registration_detail_page%22%2C%22settings%22%3A%22ember_user_settings_page%22%2C%22settings.profile%22%3A%22ember_user_settings_page%22%2C%22settings.profile.education%22%3A%22ember_user_settings_page%22%2C%22settings.profile.employment%22%3A%22ember_user_settings_page%22%2C%22settings.profile.name%22%3A%22ember_user_settings_page%22%2C%22settings.profile.social%22%3A%22ember_user_settings_page%22%2C%22settings.account%22%3A%22ember_user_settings_account_page%22%2C%22settings.tokens%22%3A%22ember_user_settings_tokens_page%22%2C%22settings.tokens.index%22%3A%22ember_user_settings_tokens_page%22%2C%22settings.tokens.create%22%3A%22ember_user_settings_tokens_page%22%2C%22settings.tokens.edit%22%3A%22ember_user_settings_tokens_page%22%2C%22settings.developer-apps%22%3A%22ember_user_settings_apps_page%22%2C%22settings.developer-apps.index%22%3A%22ember_user_settings_apps_page%22%2C%22settings.developer-apps.create%22%3A%22ember_user_settings_apps_page%22%2C%22settings.developer-apps.edit%22%3A%22ember_user_settings_apps_page%22%2C%22register%22%3A%22ember_auth_register%22%2C%22registries.overview%22%3A%22ember_registries_detail_page%22%2C%22registries.overview.index%22%3A%22ember_registries_detail_page%22%2C%22registries.overview.comments%22%3A%22ember_registries_detail_page%22%2C%22registries.overview.contributors%22%3A%22ember_registries_detail_page%22%2C%22registries.overview.children%22%3A%22ember_registries_detail_page%22%2C%22registries.overview.links%22%3A%22ember_registries_detail_page%22%2C%22registries.start%22%3A%22ember_registries_submission_start%22%2C%22registries.drafts%22%3A%22ember_registries_submission_drafts%22%2C%22registries.drafts.index%22%3A%22ember_registries_submission_drafts%22%2C%22registries.drafts.draft.metadata%22%3A%22ember_edit_draft_registration_page%22%2C%22registries.drafts.draft.page%22%3A%22ember_edit_draft_registration_page%22%2C%22registries.drafts.draft.review%22%3A%22ember_edit_draft_registration_page%22%2C%22registries.forms%22%3A%22ember_registries_submission_forms%22%2C%22registries.forms.help%22%3A%22ember_registries_submission_forms%22%2C%22meetings.index%22%3A%22ember_meetings_page%22%2C%22meetings.detail%22%3A%22ember_meeting_detail_page%22%7D%2C%22navigation%22%3A%7B%22institutions%22%3A%22institutions_nav_bar%22%7D%2C%22storageI18n%22%3A%22storage_i18n%22%2C%22enableInactiveSchemas%22%3A%22enable_inactive_schemas%22%2C%22verifyEmailModals%22%3A%22ember_verify_email_modals%22%2C%22ABTesting%22%3A%7B%22homePageHeroTextVersionB%22%3A%22ab_testing_home_page_hero_text_version_b%22%7D%2C%22registrationFilesPage%22%3A%22ember_registration_files_page%22%2C%22egapAdmins%22%3A%22egap_admins%22%7D%2C%22gReCaptcha%22%3A%7B%22siteKey%22%3A%226Ld2hikTAAAAAAhExltkBtTplSAJCSwAjpvMnOhc%22%2C%22jsUrl%22%3A%22https%3A//recaptcha.net/recaptcha/api.js%3Frender%3Dexplicit%22%7D%2C%22home%22%3A%7B%22youtubeId%22%3A%222TV21gOzfhw%22%7D%2C%22secondaryNavbarId%22%3A%22__secondaryOSFNavbar__%22%2C%22engines%22%3A%7B%22collections%22%3A%7B%22enabled%22%3Atrue%7D%2C%22registries%22%3A%7B%22enabled%22%3Atrue%7D%2C%22handbook%22%3A%7B%22enabled%22%3Afalse%2C%22docGenerationEnabled%22%3Afalse%7D%7D%2C%22ember-cli-tailwind%22%3A%7B%22shouldIncludeStyleguide%22%3Afalse%7D%2C%22ember-cli-mirage%22%3A%7B%22enabled%22%3Afalse%2C%22usingProxy%22%3Afalse%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22changeset-validations%22%3A%7B%22rawOutput%22%3Atrue%7D%2C%22mirageScenarios%22%3A%5B%22loggedIn%22%2C%22dashboard%22%2C%22settings%22%2C%22meetings%22%2C%22registrations%22%5D%2C%22defaultProvider%22%3A%22osf%22%2C%22pageTitle%22%3A%7B%22prepend%22%3Afalse%7D%2C%22ember-collapsible-panel%22%3A%7B%22hasLiquidFire%22%3A%220.30.0%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-faker%22%3A%7B%7D%2C%22ember-a11y-testing%22%3A%7B%22componentOptions%22%3A%7B%22turnAuditOff%22%3Atrue%2C%22excludeAxeCore%22%3Atrue%2C%22axeOptions%22%3A%7B%22iframes%22%3Afalse%2C%22reporter%22%3A%22v2%22%2C%22resultTypes%22%3A%5B%22violations%22%5D%2C%22rules%22%3A%7B%22duplicate-id%22%3A%7B%22enabled%22%3Afalse%7D%2C%22duplicate-id-active%22%3A%7B%22enabled%22%3Afalse%7D%2C%22duplicate-id-aria%22%3A%7B%22enabled%22%3Afalse%7D%7D%7D%7D%7D%2C%22FB_APP_ID%22%3A%221022273774556662%22%2C%22microfeedback%22%3A%7B%22url%22%3A%22https%3A//microfeedback-osf.herokuapp.com/13209/3%22%2C%22pageParams%22%3A%7B%22QuickFiles%22%3A%7B%22componentID%22%3A%2213836%22%2C%22priorityID%22%3A%2210100%22%7D%7D%7D%7D">
+<meta name="analytics-page/config/environment" content="%7B%22modulePrefix%22%3A%22analytics-page%22%2C%22environment%22%3A%22production%22%7D">
+<meta name="collections/config/environment" content="%7B%22environment%22%3A%22production%22%2C%22hostAppName%22%3A%22collections%22%2C%22modulePrefix%22%3A%22collections%22%2C%22OSF%22%3A%7B%22shareSearchUrl%22%3A%22https%3A//share.osf.io/api/v2/search/creativeworks/_search%22%2C%22url%22%3A%22http%3A//localhost%3A5000/%22%7D%2C%22whiteListedProviders%22%3A%5B%22arXiv%22%2C%22bioRxiv%22%2C%22Cogprints%22%2C%22PeerJ%22%2C%22Research%20Papers%20in%20Economics%22%2C%22Preprints.org%22%5D%2C%22ember-collapsible-panel%22%3A%7B%22hasLiquidFire%22%3A%220.30.0%22%7D%2C%22ember-a11y-testing%22%3A%7B%22componentOptions%22%3A%7B%22turnAuditOff%22%3Atrue%2C%22excludeAxeCore%22%3Atrue%2C%22axeOptions%22%3A%7B%22iframes%22%3Afalse%2C%22reporter%22%3A%22v2%22%2C%22resultTypes%22%3A%5B%22violations%22%5D%2C%22rules%22%3A%7B%22duplicate-id%22%3A%7B%22enabled%22%3Afalse%7D%2C%22duplicate-id-active%22%3A%7B%22enabled%22%3Afalse%7D%2C%22duplicate-id-aria%22%3A%7B%22enabled%22%3Afalse%7D%7D%7D%7D%7D%2C%22APP%22%3A%7B%7D%7D">
+<meta name="registries/config/environment" content="%7B%22environment%22%3A%22production%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%7D%2C%22hostAppName%22%3A%22registries%22%2C%22modulePrefix%22%3A%22registries%22%2C%22ember-cli-mirage%22%3A%7B%22enabled%22%3Afalse%7D%2C%22shareBaseURL%22%3A%22https%3A//share.osf.io%22%2C%22shareSearchBaseURL%22%3A%22https%3A//share.osf.io/api/v2/search%22%2C%22indexPageRegistrationIds%22%3A%5B%226tsnj%22%2C%22aurjt%22%2C%22e94t8%22%2C%222tpy9%22%2C%222ds52%22%5D%2C%22externalRegistries%22%3A%5B%7B%22https%22%3Atrue%2C%22name%22%3A%22ClinicalTrials.gov%22%2C%22urlRegex%22%3A%22%5Ehttps%3F%3A//.*clinicaltrials%5C%5C.gov.*%24%22%7D%2C%7B%22https%22%3Atrue%2C%22name%22%3A%22Research%20Registry%22%2C%22urlRegex%22%3A%22%5Ehttps%3F%3A//.*researchregistry%5C%5C.com.*%24%22%7D%5D%2C%22externalLinks%22%3A%7B%22help%22%3A%22https%3A//help.osf.io%22%2C%22donate%22%3A%22https%3A//cos.io/donate%22%7D%2C%22defaultProviderId%22%3A%22osf%22%2C%22ember-collapsible-panel%22%3A%7B%22hasLiquidFire%22%3A%220.30.0%22%7D%2C%22ember-a11y-testing%22%3A%7B%22componentOptions%22%3A%7B%22turnAuditOff%22%3Atrue%2C%22excludeAxeCore%22%3Atrue%2C%22axeOptions%22%3A%7B%22iframes%22%3Afalse%2C%22reporter%22%3A%22v2%22%2C%22resultTypes%22%3A%5B%22violations%22%5D%2C%22rules%22%3A%7B%22duplicate-id%22%3A%7B%22enabled%22%3Afalse%7D%2C%22duplicate-id-active%22%3A%7B%22enabled%22%3Afalse%7D%2C%22duplicate-id-aria%22%3A%7B%22enabled%22%3Afalse%7D%7D%7D%7D%7D%2C%22indexPageRegistrationsQuery%22%3A%226tsnj%20OR%20aurjt%20OR%20e94t8%20OR%202tpy9%20OR%202ds52%22%7D">
+    <meta name="ember-osf-web/config/asset-manifest" content="%7B%22bundles%22%3A%7B%22analytics-page%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22/ember_osf_web/engines-dist/analytics-page/assets/engine-3f27be5b33fbcbc5fb3e79e8f9070b40.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/analytics-page/assets/engine-dcca0badf9265ef31c3d5a0556d4521f.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/analytics-page/assets/engine-vendor-87925e54789c137b94a52b295d308229.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/analytics-page/assets/engine-vendor-efe57ac3da389ed51115537a9bb45d6e.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22collections%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22/ember_osf_web/engines-dist/collections/assets/engine-1319d36426090ef58ef21523f65ab3a0.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/collections/assets/engine-8eda9127fc0982f8a444c073a4b19d9a.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/collections/assets/engine-vendor-077e62b6e6dbcbf0744822e0f690738b.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/collections/assets/engine-vendor-1bd71889fcceac5f114066c8e4597b39.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22registries%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22/ember_osf_web/engines-dist/registries/assets/engine-29257009b917fb25a1de267526e85e96.js%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/registries/assets/engine-cd3da474f20ff8420800d2852712bab0.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/registries/assets/engine-vendor-077e62b6e6dbcbf0744822e0f690738b.css%22%2C%22type%22%3A%22css%22%7D%2C%7B%22uri%22%3A%22/ember_osf_web/engines-dist/registries/assets/engine-vendor-a53b5311520ba40c7519534d51f71723.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%7D%7D">
+  <style id="inert-style">
+[inert] {
+  pointer-events: none;
+  cursor: default;
+}
+
+[inert], [inert] * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script src="./osf1_files/engine-29257009b917fb25a1de267526e85e96.js.descarga"></script><link rel="stylesheet" href="./osf1_files/engine-cd3da474f20ff8420800d2852712bab0.css"><link rel="stylesheet" href="./osf1_files/engine-vendor-077e62b6e6dbcbf0744822e0f690738b.css"><script src="./osf1_files/engine-vendor-a53b5311520ba40c7519534d51f71723.js.descarga"></script>  <meta name="ember-cli-head-start" content="">  <meta id="ember235" name="citation_title" content="Participación ciudadana juvenil: entre la Reproducción social y la socialización política." class="ember-view">
+</meta>
+  <meta id="ember236" name="citation_doi" content="10.17605/OSF.IO/5N6J4" class="ember-view">
+</meta>
+  <meta id="ember237" name="citation_publisher" content="OSF" class="ember-view">
+</meta>
+  <meta id="ember238" name="citation_author" content="Daniel Miranda" class="ember-view">
+</meta>
+  <meta id="ember239" name="citation_author" content="Julio Iturra" class="ember-view">
+</meta>
+  <meta id="ember240" name="citation_author" content="Anais Herrera Leighton" class="ember-view">
+</meta>
+  <meta id="ember241" name="citation_description" content="La persistencia de desigualdades en la participación política y su correspondiente transmisión intergeneracional, mantienen abiertas una serie de interrogantes acerca de como los procesos de socialización reproducen y/o socializan estas desigualdades de una generación a otra. A este respecto, aunque es innegable la importancia de varios agentes de socialización política, existe un amplio consenso que plantea que el principal agente socializador de esta dimensión de la vida es la familia. Sin embargo, existen aún varios elementos necesarios de profundizar para comprender mejor el rol de la familia para el desarrollo de las formas de involucramiento ciudadano de los jóvenes. Primero, no es claro aún si esta transmisión se produce de igual manera con los diferentes tipos de participación. Segundo, si bien la transmisión de ventajas comparativas ha sido abordada ampliamente desde la sociología, expresado por ejemplo en el estudio de la transmisión del logro educacional o el estudio de la reproducción social, existe limitada evidencia acerca de cuáles son los mecanismos a través de los cuales opera esta transmisión en el ámbito político. Finalmente, no es claro si los efectos que tienen las condiciones socioeconómicas y/o las prácticas de socialización en edades tempranas se sostienen a lo largo del tiempo.
+
+Este estudio trata acerca de la siguiente pregunta de investigación general: ¿Cuáles son los factores y mecanismos que explican la transmisión intergeneracional de la desigualdad política? Para responder esta pregunta global se analizará el rol que cumplen tanto las características socioeconómicas como las prácticas de socialización política de la familia para el desarrollo de diferentes tipos de participación ciudadana que manifiestan los jóvenes, tales como participación formal, participación activista y/o participación comunitaria. Adicionalmente, se evaluará la estabilidad o cambio de estas fuentes de socialización en diferentes momentos del desarrollo juvenil.
+
+Esta propuesta de investigación busca integrar dos perspectivas sociológicas a través de un modelo, para comprender la participación ciudadana juvenil en sus distintas formas. Por un lado, una perspectiva normativista vinculada a la formación para la ciudadanía desde los agentes de socialización política. Por otro lado, una perspectiva fundada en el rol de los factores socioeconómicos y la transmisión del estatus. En síntesis, se estudiará la asociación entre las condiciones socioeconómicas de origen familiar con los diferentes tipos de participación de la siguiente generación, el rol mediador que tienen las prácticas de socialización política de la familia y el estatus adquirido por los jóvenes a través de la socialización familiar; y también, la estabilidad que tienen dichos procesos." class="ember-view">
+</meta>
+  <meta id="ember242" name="citation_public_url" content="https://osf.io/5n6j4" class="ember-view">
+</meta>
+  <meta id="ember243" name="citation_publication_date" content="2021-12-30" class="ember-view">
+</meta>
+  <meta id="ember244" name="dc.title" content="Participación ciudadana juvenil: entre la Reproducción social y la socialización política." class="ember-view">
+</meta>
+  <meta id="ember245" name="dc.type" content="article" class="ember-view">
+</meta>
+  <meta id="ember246" name="dc.identifier" content="https://osf.io/5n6j4" class="ember-view">
+</meta>
+  <meta id="ember247" name="dc.identifier" content="10.17605/OSF.IO/5N6J4" class="ember-view">
+</meta>
+  <meta id="ember248" name="dc.identifier" content="5n6j4" class="ember-view">
+</meta>
+  <meta id="ember249" name="dc.abstract" content="La persistencia de desigualdades en la participación política y su correspondiente transmisión intergeneracional, mantienen abiertas una serie de interrogantes acerca de como los procesos de socialización reproducen y/o socializan estas desigualdades de una generación a otra. A este respecto, aunque es innegable la importancia de varios agentes de socialización política, existe un amplio consenso que plantea que el principal agente socializador de esta dimensión de la vida es la familia. Sin embargo, existen aún varios elementos necesarios de profundizar para comprender mejor el rol de la familia para el desarrollo de las formas de involucramiento ciudadano de los jóvenes. Primero, no es claro aún si esta transmisión se produce de igual manera con los diferentes tipos de participación. Segundo, si bien la transmisión de ventajas comparativas ha sido abordada ampliamente desde la sociología, expresado por ejemplo en el estudio de la transmisión del logro educacional o el estudio de la reproducción social, existe limitada evidencia acerca de cuáles son los mecanismos a través de los cuales opera esta transmisión en el ámbito político. Finalmente, no es claro si los efectos que tienen las condiciones socioeconómicas y/o las prácticas de socialización en edades tempranas se sostienen a lo largo del tiempo.
+
+Este estudio trata acerca de la siguiente pregunta de investigación general: ¿Cuáles son los factores y mecanismos que explican la transmisión intergeneracional de la desigualdad política? Para responder esta pregunta global se analizará el rol que cumplen tanto las características socioeconómicas como las prácticas de socialización política de la familia para el desarrollo de diferentes tipos de participación ciudadana que manifiestan los jóvenes, tales como participación formal, participación activista y/o participación comunitaria. Adicionalmente, se evaluará la estabilidad o cambio de estas fuentes de socialización en diferentes momentos del desarrollo juvenil.
+
+Esta propuesta de investigación busca integrar dos perspectivas sociológicas a través de un modelo, para comprender la participación ciudadana juvenil en sus distintas formas. Por un lado, una perspectiva normativista vinculada a la formación para la ciudadanía desde los agentes de socialización política. Por otro lado, una perspectiva fundada en el rol de los factores socioeconómicos y la transmisión del estatus. En síntesis, se estudiará la asociación entre las condiciones socioeconómicas de origen familiar con los diferentes tipos de participación de la siguiente generación, el rol mediador que tienen las prácticas de socialización política de la familia y el estatus adquirido por los jóvenes a través de la socialización familiar; y también, la estabilidad que tienen dichos procesos." class="ember-view">
+</meta>
+  <meta id="ember250" name="dc.license" content="CC0 1.0 Universal" class="ember-view">
+</meta>
+  <meta id="ember251" name="dc.datemodified" content="2022-01-06" class="ember-view">
+</meta>
+  <meta id="ember252" name="dc.datesubmitted" content="2021-12-30" class="ember-view">
+</meta>
+  <meta id="ember253" name="dc.publisher" content="OSF" class="ember-view">
+</meta>
+  <meta id="ember254" name="dc.language" content="en-us" class="ember-view">
+</meta>
+  <meta id="ember255" name="dc.creator" content="Daniel Miranda" class="ember-view">
+</meta>
+  <meta id="ember256" name="dc.creator" content="Julio Iturra" class="ember-view">
+</meta>
+  <meta id="ember257" name="dc.creator" content="Anais Herrera Leighton" class="ember-view">
+</meta>
+  <meta id="ember258" name="dc.keywords" content="sociology" class="ember-view">
+</meta>
+  <meta id="ember259" property="fb:app_id" content="1022273774556662" class="ember-view">
+</meta>
+  <meta id="ember260" property="og:ttl" content="345600" class="ember-view">
+</meta>
+  <meta id="ember261" property="og:title" content="Participación ciudadana juvenil: entre la Reproducción social y la socialización política." class="ember-view">
+</meta>
+  <meta id="ember262" property="og:type" content="article" class="ember-view">
+</meta>
+  <meta id="ember263" property="og:site_name" content="OSF" class="ember-view">
+</meta>
+  <meta id="ember264" property="og:url" content="https://osf.io/5n6j4" class="ember-view">
+</meta>
+  <meta id="ember265" property="og:secure_url" content="https://osf.io/5n6j4" class="ember-view">
+</meta>
+  <meta id="ember266" property="og:description" content="La persistencia de desigualdades en la participación política y su correspondiente transmisión intergeneracional, mantienen abiertas una serie de interrogantes acerca de como los procesos de socialización reproducen y/o socializan estas desigualdades de una generación a otra. A este respecto, aunque es innegable la importancia de varios agentes de socialización política, existe un amplio consenso que plantea que el principal agente socializador de esta dimensión de la vida es la familia. Sin embargo, existen aún varios elementos necesarios de profundizar para comprender mejor el rol de la familia para el desarrollo de las formas de involucramiento ciudadano de los jóvenes. Primero, no es claro aún si esta transmisión se produce de igual manera con los diferentes tipos de participación. Segundo, si bien la transmisión de ventajas comparativas ha sido abordada ampliamente desde la sociología, expresado por ejemplo en el estudio de la transmisión del logro educacional o el estudio de la reproducción social, existe limitada evidencia acerca de cuáles son los mecanismos a través de los cuales opera esta transmisión en el ámbito político. Finalmente, no es claro si los efectos que tienen las condiciones socioeconómicas y/o las prácticas de socialización en edades tempranas se sostienen a lo largo del tiempo.
+
+Este estudio trata acerca de la siguiente pregunta de investigación general: ¿Cuáles son los factores y mecanismos que explican la transmisión intergeneracional de la desigualdad política? Para responder esta pregunta global se analizará el rol que cumplen tanto las características socioeconómicas como las prácticas de socialización política de la familia para el desarrollo de diferentes tipos de participación ciudadana que manifiestan los jóvenes, tales como participación formal, participación activista y/o participación comunitaria. Adicionalmente, se evaluará la estabilidad o cambio de estas fuentes de socialización en diferentes momentos del desarrollo juvenil.
+
+Esta propuesta de investigación busca integrar dos perspectivas sociológicas a través de un modelo, para comprender la participación ciudadana juvenil en sus distintas formas. Por un lado, una perspectiva normativista vinculada a la formación para la ciudadanía desde los agentes de socialización política. Por otro lado, una perspectiva fundada en el rol de los factores socioeconómicos y la transmisión del estatus. En síntesis, se estudiará la asociación entre las condiciones socioeconómicas de origen familiar con los diferentes tipos de participación de la siguiente generación, el rol mediador que tienen las prácticas de socialización política de la familia y el estatus adquirido por los jóvenes a través de la socialización familiar; y también, la estabilidad que tienen dichos procesos." class="ember-view">
+</meta>
+  <meta id="ember267" property="og:image" content="/ember_osf_web/engines-dist/registries/assets/img/osf-sharing-a2718fe80f1ec0591fe7a3886dc671e6.png" class="ember-view">
+</meta>
+  <meta id="ember268" property="og:image:type" content="image/png" class="ember-view">
+</meta>
+  <meta id="ember269" property="og:image:width" content="1200" class="ember-view">
+</meta>
+  <meta id="ember270" property="og:image:height" content="630" class="ember-view">
+</meta>
+  <meta id="ember271" property="og:image:alt" content="Open Science Framework" class="ember-view">
+</meta>
+  <meta id="ember272" name="twitter:card" content="summary" class="ember-view">
+</meta>
+  <meta id="ember273" name="twitter:site" content="OSFramework" class="ember-view">
+</meta>
+  <meta id="ember274" name="twitter:creator" content="OSFramework" class="ember-view">
+</meta>
+  <meta id="ember275" name="twitter:title" content="Participación ciudadana juvenil: entre la Reproducción social y la socialización política." class="ember-view">
+</meta>
+  <meta id="ember276" name="twitter:description" content="La persistencia de desigualdades en la participación política y su correspondiente transmisión intergeneracional, mantienen abiertas una serie de interrogantes acerca de como los procesos de socialización reproducen y/o socializan estas desigualdades de una generación a otra. A este respecto, aunque es innegable la importancia de varios agentes de socialización política, existe un amplio consenso que plantea que el principal agente socializador de esta dimensión de la vida es la familia. Sin embargo, existen aún varios elementos necesarios de profundizar para comprender mejor el rol de la familia para el desarrollo de las formas de involucramiento ciudadano de los jóvenes. Primero, no es claro aún si esta transmisión se produce de igual manera con los diferentes tipos de participación. Segundo, si bien la transmisión de ventajas comparativas ha sido abordada ampliamente desde la sociología, expresado por ejemplo en el estudio de la transmisión del logro educacional o el estudio de la reproducción social, existe limitada evidencia acerca de cuáles son los mecanismos a través de los cuales opera esta transmisión en el ámbito político. Finalmente, no es claro si los efectos que tienen las condiciones socioeconómicas y/o las prácticas de socialización en edades tempranas se sostienen a lo largo del tiempo.
+
+Este estudio trata acerca de la siguiente pregunta de investigación general: ¿Cuáles son los factores y mecanismos que explican la transmisión intergeneracional de la desigualdad política? Para responder esta pregunta global se analizará el rol que cumplen tanto las características socioeconómicas como las prácticas de socialización política de la familia para el desarrollo de diferentes tipos de participación ciudadana que manifiestan los jóvenes, tales como participación formal, participación activista y/o participación comunitaria. Adicionalmente, se evaluará la estabilidad o cambio de estas fuentes de socialización en diferentes momentos del desarrollo juvenil.
+
+Esta propuesta de investigación busca integrar dos perspectivas sociológicas a través de un modelo, para comprender la participación ciudadana juvenil en sus distintas formas. Por un lado, una perspectiva normativista vinculada a la formación para la ciudadanía desde los agentes de socialización política. Por otro lado, una perspectiva fundada en el rol de los factores socioeconómicos y la transmisión del estatus. En síntesis, se estudiará la asociación entre las condiciones socioeconómicas de origen familiar con los diferentes tipos de participación de la siguiente generación, el rol mediador que tienen las prácticas de socialización política de la familia y el estatus adquirido por los jóvenes a través de la socialización familiar; y también, la estabilidad que tienen dichos procesos." class="ember-view">
+</meta>
+  <meta id="ember277" name="twitter:image" content="/ember_osf_web/engines-dist/registries/assets/img/osf-sharing-a2718fe80f1ec0591fe7a3886dc671e6.png" class="ember-view">
+</meta>
+  <meta id="ember278" name="twitter:image:alt" content="Open Science Framework" class="ember-view">
+</meta>
+<meta name="ember-cli-head-end" content="">
+</head>
+  <body class="ember-application"><div id="MathJax_Message" style="display: none;"></div>
+    
+    <noscript>
+      <p>
+        For full functionality of this site it is necessary to enable JavaScript.
+        Here are
+        <a href='https://www.enable-javascript.com/' target='_blank'> instructions for enabling JavaScript in your web browser</a>.
+      </p>
+    </noscript>
+    <script> window.prerenderReady = false; </script>
+    
+
+    <script src="./osf1_files/vendor-c96151f9311f4e4df27e8ff889fdd64a.js.descarga"></script>
+    <script src="./osf1_files/ember-osf-web-5d22ec82b5335e3e727616e5a03f5309.js.descarga"></script>
+
+    <script src="./osf1_files/raven.min.js.descarga"></script>
+<script>
+    var encodedConfig = document.head.querySelector("meta[name$='/config/environment']").content;
+    var config = JSON.parse(unescape(encodedConfig));
+    if (config.sentryDSN) {
+        Raven.config(config.sentryDSN, config.sentryOptions || {}).install();
+    }
+</script>
+    <script src="./osf1_files/zxcvbn.js.descarga" integrity="sha256-Znf8FdJF85f1LV0JmPOob5qudSrns8pLPZ6qkd/+F0o=
+               sha384-jhGcGHNZytnBnH1wbEM3KxJYyRDy9Q0QLKjE65xk+aMqXFCdvFuYIjzMWAAWBBtR
+               sha512-TZlMGFY9xKj38t/5m2FzJ+RM/aD5alMHDe26p0mYUMoCF5G7ibfHUQILq0qQPV3wlsnCwL+TPRNK4vIWGLOkUQ==" crossorigin="anonymous">
+</script>
+    <div id="ember-bootstrap-wormhole"></div>
+<div id="ember-basic-dropdown-wormhole"></div>
+  
+
+<div class="ember-view" id="ember7"><!---->
+
+<div class="_Application_avrgnx" data-test-application="">
+<!---->        <div id="ember11" class="ember-view"><!----></div>
+    <div class="Application__page _Application__page_avrgnx">
+        
+<div class="RegistriesStyle _RegistriesLayout_fhrvy5" data-analytics-scope="Registries">
+    <nav class="_Nav_zcfks8 _Dark_zcfks8 RegistriesStyle" data-test-nav="" data-analytics-scope="Navbar">
+    
+    <div id="ember14" class="_NavbarContainer_zcfks8 media-desktop _Container_uhlelr ember-view">
+        <div id="ember15" class="_Section_zcfks8 ember-view" data-test-left="">
+            <a class="  _OsfLink_1diw4c _Brand_nar5mu" href="https://osf.io/registries/osf/discover" target="_self" rel="noopener" data-test-brand="" data-analytics-name="Brand" aria-label="Go home">
+                <span class="_Logo_nar5mu"></span>
+<!---->            </a>
+              <div id="ember18" class="ember-view dropdown  " data-test-service-list="" data-analytics-scope="Services dropdown">
+    
+                <a href="https://osf.io/5n6j4#" class="dropdown-toggle  _Service_nar5mu _Dropdown_nar5mu" aria-expanded="false" role="button" data-test-service="" data-analytics-name="Toggle">
+  
+                    <span class="_HideOnMobile_nar5mu _HideOnTablet_nar5mu">OSF</span>
+                    <strong class="_HideOnMobile_nar5mu _HideOnTablet_nar5mu">Registries</strong>
+                    <svg class="svg-inline--fa fa-caret-down fa-fw" data-prefix="fas" data-icon="caret-down" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+    </svg>
+                
+</a>
+
+                <!---->
+            
+<!---->
+  </div>
+
+        
+</div>
+
+        <div id="ember21" class="_Section_zcfks8 ember-view" data-test-right="">
+<!---->                <a class="_Secondary_zcfks8 _Item_zcfks8  _OsfLink_1diw4c _SecondaryNavLinkButton_nar5mu _HideOnMobile_nar5mu" href="https://osf.io/registries/osf/new" target="_self" rel="noopener" data-test-add-new-button="" data-analytics-name="Create new registration">
+                    Add New
+                </a>
+                <a class="_Secondary_zcfks8 _Item_zcfks8  _OsfLink_1diw4c _SecondaryNavLinkButton_nar5mu _OnlyOnMobile_nar5mu" href="https://osf.io/registries/osf/new" target="_self" rel="noopener" data-test-add-new-button="" data-analytics-name="Create new registration" aria-label="Add New">
+                    <svg class="svg-inline--fa fa-plus fa-2x" data-prefix="fas" data-icon="plus" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+    </svg>
+                </a>
+            <a class="_Secondary_zcfks8 _Item_zcfks8  _OsfLink_1diw4c _SecondaryNavLinkButton_nar5mu _HideOnMobile_nar5mu" href="https://osf.io/registries/my-registrations" target="_self" rel="noopener" data-test-add-new-button="" data-analytics-name="Go to my registrations">
+                My Registrations
+            </a>
+            <a class="_Secondary_zcfks8 _Item_zcfks8  _OsfLink_1diw4c _SecondaryNavLinkButton_nar5mu _OnlyOnMobile_nar5mu" href="https://osf.io/registries/my-registrations" target="_self" rel="noopener" data-test-add-new-button="" data-analytics-name="Go to my registrations" aria-label="My Registrations">
+                <svg class="svg-inline--fa fa-file-alt fa-2x" data-prefix="fas" data-icon="file-alt" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="currentColor" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path>
+    </svg>
+            </a>
+
+            <a class="_Secondary_zcfks8 _Item_zcfks8  _OsfLink_1diw4c _HideOnMobile_nar5mu" href="https://help.osf.io/" target="_self" rel="noopener" data-test-help="1" data-analytics-name="Help">
+                Help
+            </a>
+
+            <a class="_Primary_zcfks8 _Item_zcfks8  _OsfLink_1diw4c _HideOnMobile_nar5mu" href="https://cos.io/donate" target="_self" rel="noopener" data-test-donate="1" data-analytics-name="Donate">
+                Donate
+            </a>
+
+<!---->
+              <div id="ember29" class="ember-view dropdown   _AuthDropdown_nar5mu" data-test-auth-dropdown="" data-analytics-scope="User dropdown">
+    
+                <a href="https://osf.io/5n6j4#" class="dropdown-toggle  _Dropdown_nar5mu" aria-expanded="false" role="button" data-analytics-name="Toggle" aria-label="Toggle auth dropdown">
+  
+                        <img class="_Gravatar_nar5mu" data-test-gravatar="" src="./osf1_files/024da2b9cb1ac1ab60dff57c7a7b755c" alt="User gravatar">
+                        <svg class="svg-inline--fa fa-caret-down fa-fw" data-prefix="fas" data-icon="caret-down" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+    </svg>
+                
+</a>
+
+                <!---->
+            
+<!---->
+  </div>
+
+        
+</div>
+    
+</div>
+
+</nav>
+
+
+    <div id="ember32" class="_MaintenanceBanner_ojdyq4 ember-view"><!----></div>
+    <div id="ember33" class="_StatusBanner_1vnszi ember-view"><!----></div>
+    <div class="container _TosConsentBanner_14cv5w" data-test-tos-consent-alert="" data-analytics-scope="ToS consent banner">
+    <div class="  alert-dismissible alert-default ">
+<!----></div>
+</div>
+
+    <div id="ember34" class="ember-view"><div class="  alert-dismissible alert-info  _Alert_1acc8u" data-analytics-scope="View-only link banner">
+<!----></div>
+</div>
+    <main class="_RegistriesLayout_fhrvy5" aria-label="Registries main content">
+        
+        
+        
+        
+            
+                <div id="ember72" class="ember-view">
+                    <div id="ember73" class="ember-view"><section class="_HeroOverlay_13kr9u _AlignCenter_13kr9u">
+    
+    <div class="_HeaderContainer_v6vl9c">
+        <div class="_Header_v6vl9c">
+            <h1 data-test-registration-title="">Participación ciudadana juvenil: entre la Reproducción social y la socialización política.</h1>
+        </div>
+            <div class="_ActionBar_v6vl9c">
+                <div class="_LeftWrapper_zb91ph">
+        <div data-test-topbar-states="">
+            <div id="ember75" class="ember-view"><div id="ember76" class="ember-view">    
+    
+      <div class="ember-basic-dropdown-trigger
+    
+    
+    
+
+     _StateText_1iudhh" role="button" tabindex="0" data-ebd-id="ember77-trigger" aria-owns="ember-basic-dropdown-content-ember77" aria-expanded="false" data-analytics-name="Expand state dropdown" data-test-state-button="">
+    
+  
+        Public registration
+        <svg class="svg-inline--fa fa-caret-down fa-fw" data-prefix="fas" data-icon="caret-down" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+    </svg>
+    
+
+  </div>
+
+    <div id="ember-basic-dropdown-content-ember77" class="ember-basic-dropdown-content-placeholder" style="display: none;"></div>
+
+
+
+
+</div>
+</div>
+        </div>
+
+    <div id="ember78" class="ember-view _ResponsiveDropdown_1u9k9o">    
+    
+      <div class="ember-basic-dropdown-trigger
+    
+    
+    
+
+     _UpdateText_1u9k9o" role="button" tabindex="0" data-ebd-id="ember79-trigger" aria-owns="ember-basic-dropdown-content-ember79" aria-expanded="false" data-analytics-name="Expand update dropdown" data-test-update-button="">
+    
+  
+            Updates
+        <svg class="svg-inline--fa fa-caret-down" data-prefix="fas" data-icon="caret-down" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+    </svg>
+    
+
+  </div>
+
+    <div id="ember-basic-dropdown-content-ember79" class="ember-basic-dropdown-content-placeholder" style="display: none;"></div>
+
+
+
+
+</div>
+
+
+    <!---->
+    <!---->
+    <!---->
+
+<!---->
+
+
+</div>
+    <div class="_RightActionsContainer_zb91ph" data-test-topbar-share-bookmark-fork="">
+        <div id="ember81" class="ember-view">    
+    
+              <div class="ember-basic-dropdown-trigger
+    
+    
+    
+
+     _Action_zb91ph" role="button" tabindex="0" data-ebd-id="ember82-trigger" aria-owns="ember-basic-dropdown-content-ember82" aria-expanded="false" data-test-forks-dropdown-button="" aria-label="Fork this registration" data-analytics-name="Expand fork dropdown">
+    
+  
+                <svg class="svg-inline--fa fa-code-branch _Icon_zb91ph" data-prefix="fas" data-icon="code-branch" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="currentColor" d="M384 144c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 36.4 24.3 67.1 57.5 76.8-.6 16.1-4.2 28.5-11 36.9-15.4 19.2-49.3 22.4-85.2 25.7-28.2 2.6-57.4 5.4-81.3 16.9v-144c32.5-10.2 56-40.5 56-76.3 0-44.2-35.8-80-80-80S0 35.8 0 80c0 35.8 23.5 66.1 56 76.3v199.3C23.5 365.9 0 396.2 0 432c0 44.2 35.8 80 80 80s80-35.8 80-80c0-34-21.2-63.1-51.2-74.6 3.1-5.2 7.8-9.8 14.9-13.4 16.2-8.2 40.4-10.4 66.1-12.8 42.2-3.9 90-8.4 118.2-43.4 14-17.4 21.1-39.8 21.6-67.9 31.6-10.8 54.4-40.7 54.4-75.9zM80 64c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm0 384c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm224-320c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"></path>
+    </svg>
+                
+<!---->
+            
+
+  </div>
+
+            <div id="ember-basic-dropdown-content-ember82" class="ember-basic-dropdown-content-placeholder" style="display: none;"></div>
+
+        
+
+
+</div>
+
+        <button class="btn    btn-link _ActionButton_zb91ph" data-test-bookmarks-button="" data-analytics-name="Bookmark" data-analytics-extra="Registration ID: 5n6j4" aria-label="Bookmark this registration" type="button">
+  <!---->
+            <svg class="svg-inline--fa fa-bookmark _Icon_zb91ph" data-prefix="far" data-icon="bookmark" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="currentColor" d="M336 0H48C21.49 0 0 21.49 0 48v464l192-112 192 112V48c0-26.51-21.49-48-48-48zm0 428.43l-144-84-144 84V54a6 6 0 0 1 6-6h276c3.314 0 6 2.683 6 5.996V428.43z"></path>
+    </svg>
+            
+<!---->
+        
+</button>
+
+        <div id="ember86" class="ember-view">    <div class="ember-basic-dropdown">
+    
+    
+              <div class="ember-basic-dropdown-trigger
+     ember-basic-dropdown-trigger--in-place
+    
+    
+
+     _Action_zb91ph" role="button" tabindex="0" data-ebd-id="ember87-trigger" aria-owns="ember-basic-dropdown-content-ember87" aria-expanded="false" data-test-social-sharing-button="" data-analytics-name="Expand sharing menu" aria-label="Share this registration">
+    
+  
+                <svg class="svg-inline--fa fa-share-alt _Icon_zb91ph" data-prefix="fas" data-icon="share-alt" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path fill="currentColor" d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"></path>
+    </svg>
+                
+<!---->
+            
+
+  </div>
+
+        
+    <div id="ember-basic-dropdown-content-ember87" class="ember-basic-dropdown-content-placeholder" style="display: none;"></div>
+
+
+</div>
+
+</div>
+
+    </div>
+
+            </div>
+<!---->    </div>
+
+</section></div>
+                </div>
+
+                <!---->
+
+                <!---->
+
+                    <!---->
+            
+
+                <!---->
+
+                <!---->
+
+                <!---->
+
+                    <!---->
+            
+<div class="_ContentBackground_6nc9nk">
+    <div id="ember90" class="media-desktop _Container_uhlelr ember-view _GutterContainer_cj6za6">
+    
+        
+                <!---->
+
+                <div data-gutter-closed="true" data-gutter-mode="column" id="ember91" class="_LeftGutter_cj6za6 ember-view">
+    <nav class="_SideNav_dsexk7" data-test-side-nav="1" data-test-collapsed="false">
+    <div class="_Links_dsexk7">
+        
+        
+                        <a class=" active _OsfLink_1diw4c _Link_vziva5" href="https://osf.io/5n6j4" target="_self" rel="noopener" data-test-collapsed="false" data-analytics-name="Overview">
+        <span class="_Label_vziva5">
+            <svg class="svg-inline--fa fa-home fa-fw" data-prefix="fas" data-icon="home" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path>
+    </svg>
+            <div class="_LabelWrapper_vziva5">
+                <h4>Overview</h4>
+            </div>
+        </span>
+
+        <span class="_Count_vziva5">
+<!---->        </span>
+    </a>
+
+                        <a class="  _OsfLink_1diw4c _Link_vziva5" href="https://osf.io/5n6j4/files" target="_self" rel="noopener" data-test-collapsed="false" data-analytics-name="Files">
+        <span class="_Label_vziva5">
+            <svg class="svg-inline--fa fa-file-alt fa-fw" data-prefix="fas" data-icon="file-alt" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="currentColor" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path>
+    </svg>
+            <div class="_LabelWrapper_vziva5">
+                <h4>Files</h4>
+            </div>
+        </span>
+
+        <span class="_Count_vziva5">
+<!---->        </span>
+    </a>
+
+<!---->                                <a class="  _OsfLink_1diw4c _Link_vziva5" href="https://osf.io/5n6j4/resources" target="_self" rel="noopener" data-test-collapsed="false" data-test-resource-link="" data-analytics-name="Resources" id="resource-link-06212980957017906">
+        <span class="_Label_vziva5">
+            <svg class="svg-inline--fa fa-archive fa-fw" data-prefix="fas" data-icon="archive" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"></path>
+    </svg>
+            <div class="_LabelWrapper_vziva5">
+                <h4>Resources</h4>
+            </div>
+        </span>
+
+        <span class="_Count_vziva5">
+<!---->        </span>
+    </a>
+
+                                
+<!---->
+
+                            <a class="  _OsfLink_1diw4c _Link_vziva5" href="https://osf.io/5n6j4/wiki/" target="_self" rel="noopener" data-test-collapsed="false" data-test-wiki-link="" data-analytics-name="Wiki">
+        <span class="_Label_vziva5">
+            <svg class="svg-inline--fa fa-window-maximize fa-fw" data-prefix="fas" data-icon="window-maximize" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-16 160H64v-84c0-6.6 5.4-12 12-12h360c6.6 0 12 5.4 12 12v84z"></path>
+    </svg>
+            <div class="_LabelWrapper_vziva5">
+                <h4>Wiki</h4>
+            </div>
+        </span>
+
+        <span class="_Count_vziva5">
+<!---->        </span>
+    </a>
+
+                        <a class="  _OsfLink_1diw4c _Link_vziva5" href="https://osf.io/5n6j4/components" target="_self" rel="noopener" data-test-collapsed="false" data-analytics-name="Components">
+        <span class="_Label_vziva5">
+            <svg class="svg-inline--fa fa-puzzle-piece fa-fw" data-prefix="fas" data-icon="puzzle-piece" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path fill="currentColor" d="M519.442 288.651c-41.519 0-59.5 31.593-82.058 31.593C377.409 320.244 432 144 432 144s-196.288 80-196.288-3.297c0-35.827 36.288-46.25 36.288-85.985C272 19.216 243.885 0 210.539 0c-34.654 0-66.366 18.891-66.366 56.346 0 41.364 31.711 59.277 31.711 81.75C175.885 207.719 0 166.758 0 166.758v333.237s178.635 41.047 178.635-28.662c0-22.473-40-40.107-40-81.471 0-37.456 29.25-56.346 63.577-56.346 33.673 0 61.788 19.216 61.788 54.717 0 39.735-36.288 50.158-36.288 85.985 0 60.803 129.675 25.73 181.23 25.73 0 0-34.725-120.101 25.827-120.101 35.962 0 46.423 36.152 86.308 36.152C556.712 416 576 387.99 576 354.443c0-34.199-18.962-65.792-56.558-65.792z"></path>
+    </svg>
+            <div class="_LabelWrapper_vziva5">
+                <h4>Components</h4>
+            </div>
+        </span>
+
+        <span class="_Count_vziva5">
+                0
+        </span>
+    </a>
+
+                        <a class="  _OsfLink_1diw4c _Link_vziva5" href="https://osf.io/5n6j4/links" target="_self" rel="noopener" data-test-collapsed="false" data-analytics-name="Links">
+        <span class="_Label_vziva5">
+            <svg class="svg-inline--fa fa-link fa-fw" data-prefix="fas" data-icon="link" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path>
+    </svg>
+            <div class="_LabelWrapper_vziva5">
+                <h4>Links</h4>
+            </div>
+        </span>
+
+        <span class="_Count_vziva5">
+                0
+        </span>
+    </a>
+
+                        <a class="  _OsfLink_1diw4c _Link_vziva5" href="https://osf.io/5n6j4/analytics" target="_self" rel="noopener" data-test-collapsed="false" data-analytics-name="Analytics">
+        <span class="_Label_vziva5">
+            <svg class="svg-inline--fa fa-chart-bar fa-fw" data-prefix="fas" data-icon="chart-bar" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M332.8 320h38.4c6.4 0 12.8-6.4 12.8-12.8V172.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v134.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h38.4c6.4 0 12.8-6.4 12.8-12.8V76.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v230.4c0 6.4 6.4 12.8 12.8 12.8zm-288 0h38.4c6.4 0 12.8-6.4 12.8-12.8v-70.4c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v70.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h38.4c6.4 0 12.8-6.4 12.8-12.8V108.8c0-6.4-6.4-12.8-12.8-12.8h-38.4c-6.4 0-12.8 6.4-12.8 12.8v198.4c0 6.4 6.4 12.8 12.8 12.8zM496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"></path>
+    </svg>
+            <div class="_LabelWrapper_vziva5">
+                <h4>Analytics</h4>
+            </div>
+        </span>
+
+        <span class="_Count_vziva5">
+<!---->        </span>
+    </a>
+
+                        <a class="  _OsfLink_1diw4c _Link_vziva5" href="https://osf.io/5n6j4/comments" target="_self" rel="noopener" data-test-collapsed="false" data-analytics-name="Comments">
+        <span class="_Label_vziva5">
+            <svg class="svg-inline--fa fa-comments fa-fw" data-prefix="fas" data-icon="comments" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+        <path fill="currentColor" d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z"></path>
+    </svg>
+            <div class="_LabelWrapper_vziva5">
+                <h4>Comments</h4>
+            </div>
+        </span>
+
+        <span class="_Count_vziva5">
+                0
+        </span>
+    </a>
+
+
+                        <div class="_ResourcesWrapper_6nc9nk" data-test-resources-wrapper="">
+                            <div class="_ResourcesWrapper_title_6nc9nk">
+                                <h3>Open practice resources</h3>
+                                <a class="  _OsfLink_1diw4c" href="https://help.osf.io/article/452-open-practice-badges" target="_blank" rel="noopener noreferrer" data-test-resource-leftnav-help-link="" aria-label="Learn more about linking resources to your registration">
+                                    <svg class="svg-inline--fa fa-question-circle _HelpIcon_6nc9nk" data-prefix="fas" data-icon="question-circle" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"></path>
+    </svg>
+                                </a>
+                            </div>
+                            <p class="">
+    <a class="  _OsfLink_1diw4c" href="https://osf.io/5n6j4/resources" target="_self" rel="noopener" data-test-resource-link="">
+        <figure class="_OutputResource_figure_dy2gvv">
+            <img class="" data-analytics-name="data" data-test-badge-icon="" src="./osf1_files/data_small_gray-6d56a32ebedad11cbe0c0fbb1cbd4a0d.png" alt="Data badge">
+            <figcaption>
+                Data
+            </figcaption>
+        </figure>
+    </a>
+</p>
+
+                            <p class="">
+    <a class="  _OsfLink_1diw4c" href="https://osf.io/5n6j4/resources" target="_self" rel="noopener" data-test-resource-link="">
+        <figure class="_OutputResource_figure_dy2gvv">
+            <img class="" data-analytics-name="analytic_code" data-test-badge-icon="" src="./osf1_files/analytic_code_small_gray-074664d775f43bd138b6d39e4cfe3e0e.png" alt="Analytic code badge">
+            <figcaption>
+                Analytic code
+            </figcaption>
+        </figure>
+    </a>
+</p>
+
+                            <p class="">
+    <a class="  _OsfLink_1diw4c" href="https://osf.io/5n6j4/resources" target="_self" rel="noopener" data-test-resource-link="">
+        <figure class="_OutputResource_figure_dy2gvv">
+            <img class="" data-analytics-name="materials" data-test-badge-icon="" src="./osf1_files/materials_small_gray-3b0a39014693c2d449a971c6e9100314.png" alt="Materials badge">
+            <figcaption>
+                Materials
+            </figcaption>
+        </figure>
+    </a>
+</p>
+
+                            <p class="">
+    <a class="  _OsfLink_1diw4c" href="https://osf.io/5n6j4/resources" target="_self" rel="noopener" data-test-resource-link="">
+        <figure class="_OutputResource_figure_dy2gvv">
+            <img class="" data-analytics-name="papers" data-test-badge-icon="" src="./osf1_files/papers_small_gray-fd2eccd869b6c644f55ef79e7db15740.png" alt="Papers badge">
+            <figcaption>
+                Papers
+            </figcaption>
+        </figure>
+    </a>
+</p>
+
+                            <p class="">
+    <a class="  _OsfLink_1diw4c" href="https://osf.io/5n6j4/resources" target="_self" rel="noopener" data-test-resource-link="">
+        <figure class="_OutputResource_figure_dy2gvv">
+            <img class="" data-analytics-name="supplements" data-test-badge-icon="" src="./osf1_files/supplements_small_gray-11fae91ff45841bbdbeebdf6f0b0ff5e.png" alt="Supplements badge">
+            <figcaption>
+                Supplements
+            </figcaption>
+        </figure>
+    </a>
+</p>
+
+                        </div>
+                
+    
+    </div>
+
+<!----></nav>
+
+
+</div>
+
+
+                <div id="ember116" class="_GutterBody_cj6za6 ember-view _Main_1830zi _OverviewBody_6nc9nk">
+    
+                    <!---->
+    
+
+
+            <!---->    
+<div id="ember315" class="ember-view _Dropdown_w1buen">    <div class="ember-basic-dropdown">
+    
+      <div class="ember-basic-dropdown-trigger
+     ember-basic-dropdown-trigger--in-place
+    
+    
+
+     _MenuTrigger_w1buen" role="button" tabindex="0" data-ebd-id="ember316-trigger" aria-owns="ember-basic-dropdown-content-ember316" aria-expanded="false" data-test-toggle-anchor-nav-button="" data-analytics-name="Expand" aria-label="Toggle navigation dropdown">
+    
+  
+        <div class="_ToggleNav__button_w1buen">
+            <svg class="svg-inline--fa fa-bars" data-prefix="fas" data-icon="bars" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+    </svg>
+        </div>
+    
+
+  </div>
+
+    <div id="ember-basic-dropdown-content-ember316" class="ember-basic-dropdown-content-placeholder" style="display: none;"></div>
+
+
+</div>
+
+</div>
+                    
+            <h2 class="_PageHeading_st3etk _Heading_t890a9" data-test-page-heading="" id="61950fb40e2f500009c35dfb">
+    Preregistration Template from AsPredicted.org
+    <span>
+<!---->    </span>
+</h2>
+    
+
+
+            <fieldset class="_Fieldset_1i5czt _Heading_t890a9">
+                
+                    <legend class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" id="61950fb40e2f500009c35dfd">
+            
+<p class="_DisplayText_1ytoza">Data collection<!----><!----></p>
+<!---->
+        </legend>
+
+    
+
+                
+            <p data-test-paragraph-section="">
+    Have any data been collected for this study already? Note: 'Yes' is a discouraged answer for this preregistration form.
+    <span>
+<!---->    </span>
+</p>
+    
+
+                
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_data">Yes, we already collected the data.</p>
+<!---->
+    
+
+    </fieldset>
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-05224659148494144" id="61950fb40e2f500009c35e04">
+            
+<p class="_DisplayText_1ytoza">Hypothesis<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_hypothesis">Hipótesis de recursos (directas)
+
+H_1: Jóvenes que provienen de familias con mayores recursos socioeconómicos presentan mayores niveles de participación ciudadana.
+
+H_1a: Jóvenes que obtienen mejores posiciones en el mercado laboral y/o mayores credenciales educacionales presentarán mayores niveles de participación ciudadana tradicional.
+
+Hipótesis de reproducción de estatus (mediación)
+
+H_2: jóvenes que provienen de familias con mayores recursos socioeconómicos presentarán también mayores estatus y/o recursos socioeconómicos, y que dado el mayor estatus logrado presenten mayores niveles de participación ciudadana.
+
+H_2a: La reproducción del estatus presentará efectos mayores sobre participación formal o activista que sobre la participación de tipo comunitaria
+
+Hipótesis de socialización política familiar (directas)
+
+H_3: Jóvenes que crecen/crecieron en familias con mayores prácticas vinculadas a la socialización política presentarán mayores niveles de participación política.
+
+H_3a:Prácticas familiares de socialización política se vinculan en mayor medida con la participación de tipo comunitaria que con otras formas de participación política.
+
+Hipótesis de estratificación de la socialización política (directa)
+
+H_4: Los recursos socioeconómicos de los padres se asocian con mayores prácticas de socialización política al interior de la familia.
+
+Hipótesis de persistencia de la socialización (longitudinal)
+
+H_5: El efecto de los recursos socioeconómicos sobre la participación ciudadana sea similar en jóvenes menores de edad que en jóvenes mayores de edad.
+
+H_6: El rol mediador que juega el estatus socioeconómico logrado por los jóvenes sobre la participación ciudadana observado en cohortes más jóvenes se mantiene en edades posteriores.
+
+H_7: El rol mediador que juegan las prácticas de socialización familiar sobre la participación ciudadana observado en cohortes más jóvenes se mantiene en edades posteriores</p>
+<!---->
+    
+
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-07126094533495932" id="61950fb40e2f500009c35e07">
+            
+<p class="_DisplayText_1ytoza">Dependent variable<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_dependent">Por un lado, el diseño del estudio hace necesario describir la medición de las variables dependientes según el tipo de participación y tiempo en que se desarrollan. Se dispone de preguntas de carácter retrospectivo, las cuales refieren a la participación política durante los últimos dos años de la educación secundaria. Por otro lado, se incluyen preguntas de participación política en períodos recientes, las cuales buscan determinar la participación política en dos momentos. La primera responde al periodo de protestas que ha sido denominado como “Estallido Social” que abarca entre octubre de 2019 y enero de 2020. En segunda instancia, se realizarán preguntas que buscan conocer la participación política de los jóvenes en el periodo entre marzo y diciembre de 2020. Finalmente, se indaga sobre procesos de socialización y participación política durante el primer y segundo semestre de 2021. Además, se considera la participación en los diferentes procesos de votación durante los últimos años,  elecciones presidenciales,  el plebiscito constitucional y elecciones posteriores.
+
+Mayor detalle en: https://osf.io/g45uq/</p>
+<!---->
+    
+
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-010993387528555298" id="61950fb40e2f500009c35e0a">
+            
+<p class="_DisplayText_1ytoza">Conditions<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p data-test-paragraph-section="">
+    How many and which conditions will participants be assigned to?
+    <span>
+<!---->    </span>
+</p>
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_conditions">No hay condiciones </p>
+<!---->
+    
+
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-006017346921521871" id="61950fb40e2f500009c35e0e">
+            
+<p class="_DisplayText_1ytoza">Analyses<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_analyses">Como ha sido descrito en la sección anterior, contamos con tres grupos de hipótesis referidas a los efectos directos, indirectos y longitudinales. Para desarrollar estos análisis se empleará un marco de Modelos de Ecuaciones Estructurales, dado que se incluirán variables observadas directamente y variables latentes, para participación y socialización política.Si bien el presente estudio no plantea hipótesis de medición, tanto las formas de participación política como la socialización política familiar pueden ser tratadas como factores o variables latentes (Brown, 2015). Por esta razón, emplearemos un Análisis Factorial Exploratorio (CFA) para determinar las propiedades métricas de cada factor. Para evaluar la bondad de ajuste usaremos Comparative Fit Index (CFI), el Tucker-Lewis Index (TLI) y el Root Mean Square Error of Approximation (RMSEA), donde valores por sobre el 0,95 son aceptables para los primeros dos y valores por debajo de 0,05 para el último (Brown, 2015,Cap. 3 y 4). Alternativamente, en el caso de que el ajuste del análisis factorial confirmatorio no sea adecuado, se empleará un índice sumatorio simple de los indicadores de la escala o en su defecto indicadores simples. Primero, para abordar las hipótesis que sostienen un efecto directo (H1a y H1b) e indirecto (H2a y H2b) de los recursos familiares sobre la participación política de los jóvenes se estimará un modelo de mediación cross-sectional empleando la información reconstruida a través de las preguntas retrospectivas (Brown, 2015). En segunda instancia, las hipótesis de socialización política familiar (H3a y H3b) y de reproducción de estatus (H4) serán modeladas a través de un modelo de ecuaciones estructurales donde las prácticas de socialización política son especificadas como variables latentes. En último lugar, las hipótesis longitudinales de persistencia de socialización (H5, H6 y H7) se estimará un modelo de mediación longitudinal.
+
+Software:
+
+El análisis estadístico se realizará empleando el paquete estadístico R en su versión 4.0 (R Core Team, 2019) y la librería
+lavaan (Rosseel, 2012). De manera complementaria, se empleará el software MPlus (Muthén &amp; Muthén, 2017)</p>
+<!---->
+    
+
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-08353526324981801" id="61950fb40e2f500009c35e11">
+            
+<p class="_DisplayText_1ytoza">Outliers and Exclusions<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_outliers">Siguiendo las recomendaciones de la American Association for Public Opinion Research (AAPOR, 2016), seguiremos criterios estándar de exclusión de casos. En particular se excluirán de los análisis aquellos casos que cumplan con las siguientes condiciones:
+  - Individuos que no aceptan participar
+  - Casos incompletos o con información insuficiente.
+  - Casos que son expulsados del cuestionario por cuota completa.
+  - Casos con IP duplicadas (se conserva el caso que ingresa primero).</p>
+<!---->
+    
+
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-07857395501787006" id="61950fb40e2f500009c35e14">
+            
+<p class="_DisplayText_1ytoza">Sample Size<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_sample">Tamaño muestra  en ola 1 es 2775 casos 
+
+La estrategia de muestreo es no probabilística por cuotas según género, edad y nivel educacional. La proporción para cada cuota se determinó en base a los resultados ajustados empleando el diseño muestral complejo de la Encuesta de Caracterización Socioeconómica Nacional (CASEN) del año 2017, la cual es realizada por el Ministerio de Desarrollo Social de Chile. 
+
+</p>
+<!---->
+    
+
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-08950252504432687" id="61950fb40e2f500009c35e17">
+            
+<p class="_DisplayText_1ytoza">Other<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_other">Las estimaciones de los modelos de ecuaciones estructurales serán ponderadas. El ajuste de las estimaciones se basa en las macrozonas, género, grupos de edad y nivel educacional, siguiendo los datos agregados del Censo Abreviado de Población y Vivienda del año 2017 implementado por el Instituto Nacional de Estadísticas de Chile (INE).
+</p>
+<!---->
+    
+
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-020522261809500608" id="61950fb40e2f500009c35e1a">
+            
+<p class="_DisplayText_1ytoza">Name<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_name">Título: Participación Ciudadana Juvenil: Entre la reproducción social y la socialización política
+
+La persistencia de desigualdades en la participación política y su correspondiente transmisión intergeneracional, mantienen abiertas una serie de interrogantes acerca de como los procesos de socialización reproducen y/o socializan estas desigualdades de una generación a otra. A este respecto, aunque es innegable la importancia de varios agentes de socialización política, existe un amplio consenso que plantea que el principal agente socializador de esta dimensión de la vida es la familia. Sin embargo, existen aún varios elementos necesarios de profundizar para comprender mejor el rol de la familia para el desarrollo de las formas de involucramiento ciudadano de los jóvenes. Primero, no es claro aún si esta transmisión se produce de igual manera con los diferentes tipos de participación. Segundo, si bien la transmisión de ventajas comparativas ha sido abordada ampliamente desde la sociología, expresado por ejemplo en el estudio de la transmisión del logro educacional o el estudio de la reproducción social, existe limitada evidencia acerca de cuáles son los mecanismos a través de los cuales opera esta transmisión en el ámbito político. Finalmente, no es claro si los efectos que tienen las condiciones socioeconómicas y/o las prácticas de socialización en edades tempranas se sostienen a lo largo del tiempo.
+
+Este estudio trata acerca de la siguiente pregunta de investigación general: ¿Cuáles son los factores y mecanismos que explican la transmisión intergeneracional de la desigualdad política? Para responder esta pregunta global se analizará el rol que cumplen tanto las características socioeconómicas como las prácticas de socialización política de la familia para el desarrollo de diferentes tipos de participación ciudadana que manifiestan los jóvenes, tales como participación formal, participación activista y/o participación comunitaria. Adicionalmente, se evaluará la estabilidad o cambio de estas fuentes de socialización en diferentes momentos del desarrollo juvenil.
+
+Esta propuesta de investigación busca integrar dos perspectivas sociológicas a través de un modelo, para comprender la participación ciudadana juvenil en sus distintas formas. Por un lado, una perspectiva normativista vinculada a la formación para la ciudadanía desde los agentes de socialización política. Por otro lado, una perspectiva fundada en el rol de los factores socioeconómicos y la transmisión del estatus. En síntesis, se estudiará la asociación entre las condiciones socioeconómicas de origen familiar con los diferentes tipos de participación de la siguiente generación, el rol mediador que tienen las prácticas de socialización política de la familia y el estatus adquirido por los jóvenes a través de la socialización familiar; y también, la estabilidad que tienen dichos procesos.</p>
+<!---->
+    
+
+
+            <fieldset class="_Fieldset_1i5czt _Heading_t890a9">
+                
+                    <legend class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" id="61950fb40e2f500009c35e1d">
+            
+<p class="_DisplayText_1ytoza">Finally<!----><!----></p>
+<!---->
+        </legend>
+
+    
+
+                
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_study_type">Survey</p>
+<!---->
+    
+
+    </fieldset>
+
+                    
+                    <label class="_Label_1dyq0n _Heading_t890a9" data-test-question-label="" for="long-text-input-0006741693005001048" id="61950fb40e2f500009c35e25">
+            
+<p class="_DisplayText_1ytoza">Other<!----><!----></p>
+<!---->
+        </label>
+
+    
+
+            
+            <p class="_ResponseValue_17j1v8 _Element_t890a9" data-test-read-only-response="__responseKey_study_type_other">Preregistro extendido (Español: https://osf.io/g45uq/
+Extended preregister (English): https://osf.io/xt5uh/
+</p>
+<!---->
+    
+
+
+
+    
+
+
+                
+
+</div>
+
+
+                    <div data-gutter-closed="true" data-gutter-mode="column" id="ember117" class="_RightGutter_cj6za6 ember-view _RightColumn_2y6tbl _SideMetadata_6nc9nk">
+    
+<!---->                        <div>
+    <div class="_Field_jkohb7">
+        <h4>
+                    Contributors
+        </h4>
+        <span id="ember119" class="ember-view"><!---->    
+        <a data-test-contributor-name="9ewf8" data-analytics-name="Contributor name" href="https://osf.io/9ewf8">Daniel Miranda</a>, <!---->    <a data-test-contributor-name="76wsq" data-analytics-name="Contributor name" href="https://osf.io/76wsq">Julio Iturra</a>, and     <a data-test-contributor-name="s2b76" data-analytics-name="Contributor name" href="https://osf.io/s2b76">Anais Herrera Leighton</a>
+
+</span>
+    </div>
+
+    <div class="_Field_jkohb7">
+        
+            <div id="ember122" class="ember-view" data-analytics-scope="Description">    <div data-test-editable-field="description">
+        <div class="_Editable__header_svy88h">
+            <h4>Description</h4>
+<!---->        </div>
+    </div>
+        
+                <!---->
+                
+                    <div class="_DescriptionWrapper_1a66rm _Description__field_1a66rm _hide_1a66rm" data-test-node-description-wrapper="">
+
+        <div class="_DescriptionOverlay_1a66rm _collapsed_1a66rm" data-test-node-description-overlay="">
+        </div>
+
+    La persistencia de desigualdades en la participación política y su correspondiente transmisión intergeneracional, mantienen abiertas una serie de interrogantes acerca de como los procesos de socialización reproducen y/o socializan estas desigualdades de una generación a otra. A este respecto, aunque es innegable la importancia de varios agentes de socialización política, existe un amplio consenso que plantea que el principal agente socializador de esta dimensión de la vida es la familia. Sin embargo, existen aún varios elementos necesarios de profundizar para comprender mejor el rol de la familia para el desarrollo de las formas de involucramiento ciudadano de los jóvenes. Primero, no es claro aún si esta transmisión se produce de igual manera con los diferentes tipos de participación. Segundo, si bien la transmisión de ventajas comparativas ha sido abordada ampliamente desde la sociología, expresado por ejemplo en el estudio de la transmisión del logro educacional o el estudio de la reproducción social, existe limitada evidencia acerca de cuáles son los mecanismos a través de los cuales opera esta transmisión en el ámbito político. Finalmente, no es claro si los efectos que tienen las condiciones socioeconómicas y/o las prácticas de socialización en edades tempranas se sostienen a lo largo del tiempo.
+
+Este estudio trata acerca de la siguiente pregunta de investigación general: ¿Cuáles son los factores y mecanismos que explican la transmisión intergeneracional de la desigualdad política? Para responder esta pregunta global se analizará el rol que cumplen tanto las características socioeconómicas como las prácticas de socialización política de la familia para el desarrollo de diferentes tipos de participación ciudadana que manifiestan los jóvenes, tales como participación formal, participación activista y/o participación comunitaria. Adicionalmente, se evaluará la estabilidad o cambio de estas fuentes de socialización en diferentes momentos del desarrollo juvenil.
+
+Esta propuesta de investigación busca integrar dos perspectivas sociológicas a través de un modelo, para comprender la participación ciudadana juvenil en sus distintas formas. Por un lado, una perspectiva normativista vinculada a la formación para la ciudadanía desde los agentes de socialización política. Por otro lado, una perspectiva fundada en el rol de los factores socioeconómicos y la transmisión del estatus. En síntesis, se estudiará la asociación entre las condiciones socioeconómicas de origen familiar con los diferentes tipos de participación de la siguiente generación, el rol mediador que tienen las prácticas de socialización política de la familia y el estatus adquirido por los jóvenes a través de la socialización familiar; y también, la estabilidad que tienen dichos procesos.
+</div>
+
+    <button class="btn    btn-link" data-test-node-description-button="" data-analytics-name="Show full description" aria-label="Show more" type="button">
+  <!---->
+        Show more
+        <svg class="svg-inline--fa fa-caret-down" data-prefix="fas" data-icon="caret-down" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+    </svg>
+    
+</button>
+
+                
+
+            
+
+
+    <!---->
+
+    <!---->
+
+        <!---->
+
+<!----></div>
+        
+
+    </div>
+
+    <div class="_Field_jkohb7">
+        <h4>Registration type</h4>
+        <div data-test-registries-metadata="registration type">
+            Preregistration Template from AsPredicted.org
+        </div>
+    </div>
+
+    <div class="_Field_jkohb7">
+        <h4>Date registered</h4>
+        <div data-test-registries-metadata="date registered">
+            December 30, 2021
+        </div>
+    </div>
+
+    <div class="_Field_jkohb7">
+        <h4>Date created</h4>
+        <div data-test-registries-metadata="date created">
+            December 30, 2021
+        </div>
+    </div>
+
+    <div class="_Field_jkohb7">
+        <h4>Associated project</h4>
+        <div>
+            <a class="  _OsfLink_1diw4c" href="https://osf.io/ah23w" target="_self" rel="noopener" data-analytics-name="Registered from">
+                osf.io/ah23w
+            </a>
+        </div>
+    </div>
+<!---->        <div class="_Field_jkohb7">
+            <h4>Internet Archive link</h4>
+            <div>
+                <a class="  _OsfLink_1diw4c" href="https://archive.org/details/osf-registrations-5n6j4-v1" target="_blank" rel="noopener" data-analytics-name="internet_archive_link">
+                    https://archive.org/details/osf-registrations-5n6j4-v1
+                </a>
+            </div>
+        </div>
+
+    <div class="_Field_jkohb7">
+        
+            <div id="ember129" class="ember-view" data-analytics-scope="Category">    <div data-test-editable-field="category">
+        <div class="_Editable__header_svy88h">
+            <h4>Category</h4>
+<!---->        </div>
+    </div>
+        
+                <!---->
+                
+                    <span>
+    <svg class="svg-inline--fa fa-lightbulb fa-fw" data-prefix="fas" data-icon="lightbulb" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+        <path fill="currentColor" d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path>
+    </svg>
+    Hypothesis
+</span>
+
+                
+
+            
+
+
+    <!---->
+
+    <!---->
+
+        <!---->
+
+<!----></div>
+        
+
+    </div>
+
+        <div class="_Field_jkohb7">
+            
+                <div id="ember134" class="ember-view" data-analytics-scope="DOI">    <div data-test-editable-field="doi">
+        <div class="_Editable__header_svy88h">
+            <h4>Registration DOI</h4>
+<!---->        </div>
+    </div>
+        
+                    <!---->
+                    
+                        <div id="ember179" class="ember-view"><a class="  _OsfLink_1diw4c" href="https://doi.org/10.17605/OSF.IO/5N6J4" target="_self" rel="noopener" data-analytics-name="Registration DOI" data-test-registration-doi="">
+    https://doi.org/10.17605/OSF.IO/5N6J4
+</a>
+</div>
+                    
+
+                
+
+
+    <!---->
+
+    <!---->
+
+<!---->
+<!----></div>
+            
+
+        </div>
+
+        <div class="_Field_jkohb7">
+            
+                <div id="ember137" class="ember-view" data-analytics-scope="Publication DOI"><!---->
+
+    <!---->
+
+    <!---->
+
+<!---->
+<!----></div>
+            
+
+        </div>
+
+        <div class="_Field_jkohb7">
+                
+                    
+                        <div id="ember183" class="ember-view" data-analytics-scope="Subjects">    <div data-test-editable-field="subjects">
+        <div class="_Editable__header_svy88h">
+            <h4>Subjects</h4>
+<!---->        </div>
+    </div>
+        
+                            <!---->
+                            
+                                <div id="ember280" class="ember-view">    <ul class="_Subjects_1276t4" data-analytics-scope="Display">
+            <li class="_Subject_1276t4" data-test-selected-subject="Social and Behavioral Sciences">
+                Social and Behavioral Sciences
+
+<!---->            </li>
+            <li class="_Subject_1276t4" data-test-selected-subject="Education">
+                Education
+
+<!---->            </li>
+    </ul>
+</div>
+                            
+
+                        
+
+
+    <!---->
+
+    <!---->
+
+        <!---->
+
+<!----></div>
+                    
+
+                
+
+        </div>
+
+        <div class="_Field_jkohb7">
+            
+                <div id="ember140" class="ember-view" data-analytics-scope="Affiliated institutions"><!---->
+
+    <!---->
+
+    <!---->
+
+        <!---->
+
+<!----></div>
+            
+
+        </div>
+
+        <div class="_Field_jkohb7">
+            <div class="_Field_jkohb7">
+                
+                    <div id="ember163" class="ember-view" data-analytics-scope="License">    <div data-test-editable-field="license">
+        <div class="_Editable__header_svy88h">
+            <h4>License</h4>
+<!---->        </div>
+    </div>
+        
+                        <!---->
+                        
+                            <div id="ember188" class="ember-view">
+    
+        <button class="btn    btn-link _LinkButton_1voun6" data-analytics-name="View license" type="button">
+  <!---->
+            <div class="_LicenseName_1voun6">
+                CC0 1.0 Universal
+            </div>
+        
+</button>
+    
+
+    <!---->
+
+    <!---->
+
+<!---->
+</div>
+                        
+
+                    
+
+
+    <!---->
+
+    <!---->
+
+<!---->
+<!----></div>
+                
+
+            </div>
+        </div>
+
+        <div class="_Field_jkohb7">
+            
+                <div id="ember166" class="ember-view" data-analytics-scope="Tags">    <div data-test-editable-field="tags">
+        <div class="_Editable__header_svy88h">
+            <h4>Tags</h4>
+<!---->        </div>
+    </div>
+        
+                    <!---->
+                    
+                        <div data-analytics-scope="Tags" id="ember168" class="ember-view" data-test-tags-read-only=""><ul id="ember169" class="emberTagInput emberTagInput--readOnly ember-view _TagsWidget_1nkx1e" data-test-tags-widget-tag-input="readonly" aria-label="Tags"><li class="emberTagInput-tag">
+    
+    <span data-test-tags-widget-tag="sociology" data-analytics-name="Click tag" role="link" data-ember-action="" data-ember-action-170="170">
+        sociology
+    </span>
+<!---->
+<!---->  </li><li class="emberTagInput-new">
+  <input disabled="" class="emberTagInput-input js-ember-tag-input-new is-disabled" maxlength="1024" placeholder="Add a tag to enhance discoverability" aria-label="Add a tag to enhance discoverability">
+</li>
+</ul>
+</div>
+                    
+
+                
+
+
+    <!---->
+
+    <!---->
+
+        <!---->
+
+<!----></div>
+            
+
+        </div>
+            <div class="_Field_jkohb7">
+                <h4>Citation</h4>
+                <button class="btn    btn-link _LinkButton_jkohb7" data-analytics-name="Expand citations" type="button">
+  <!---->
+                    osf.io/5n6j4
+                    <svg class="svg-inline--fa fa-caret-down" data-prefix="fas" data-icon="caret-down" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
+    </svg>
+                
+</button>
+<!---->            </div>
+</div>
+
+                    
+
+</div>
+
+            
+    
+
+</div>
+
+</div>
+
+
+    </main>
+</div>
+
+
+    </div>
+    <div id="ember36" class="ember-view"><footer class="_Footer_6dyfei" data-analytics-scope="Footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
+                <p>
+                    <span class="copyright">
+                        Copyright © 2011-2022
+                    </span>
+                    <a class="  _OsfLink_1diw4c" href="https://cos.io/" target="_self" rel="noopener" data-analytics-name="cos_io">
+                        Center for Open Science
+                    </a>
+                    <span>
+                         | 
+                    </span>
+                    <a class="  _OsfLink_1diw4c" href="https://github.com/CenterForOpenScience/centerforopenscience.org/blob/master/TERMS_OF_USE.md" target="_self" rel="noopener" data-analytics-name="terms">
+                        Terms&nbsp;of&nbsp;Use
+                    </a>
+                    <span>
+                         | 
+                    </span>
+                    <a class="  _OsfLink_1diw4c" href="https://github.com/CenterForOpenScience/centerforopenscience.org/blob/master/PRIVACY_POLICY.md" target="_self" rel="noopener" data-analytics-name="privacy">
+                        Privacy&nbsp;Policy
+                    </a>
+                    <span>
+                         | 
+                    </span>
+                    <a class="  _OsfLink_1diw4c" href="https://status.cos.io/" target="_self" rel="noopener" data-analytics-name="status">
+                        Status
+                    </a>
+                    <span>
+                         | 
+                    </span>
+                    <a class="  _OsfLink_1diw4c" href="https://developer.osf.io/" target="_self" rel="noopener" data-analytics-name="api_docs">
+                        API
+                    </a>
+                    <br>
+                    <a class="  _OsfLink_1diw4c" href="http://cos.io/top/" target="_self" rel="noopener" data-analytics-name="top">
+                        TOP Guidelines
+                    </a>
+                    <span>
+                         | 
+                    </span>
+                    <a class="  _OsfLink_1diw4c" href="https://osf.io/ezcuj/wiki/home/" target="_self" rel="noopener" data-analytics-name="rpp">
+                        Reproducibility&nbsp;Project: Psychology
+                    </a>
+                    <span>
+                         | 
+                    </span>
+                    <a class="  _OsfLink_1diw4c" href="https://osf.io/collections/rpcb/discover" target="_self" rel="noopener" data-analytics-name="rpcb">
+                        Reproducibility&nbsp;Project: Cancer Biology
+                    </a>
+                </p>
+                <p>
+                    <a class="  _OsfLink_1diw4c" href="http://twitter.com/OSFramework" target="_self" rel="noopener" data-analytics-name="social_twitter" aria-label="Twitter">
+                        <svg class="svg-inline--fa fa-twitter fa-2x" data-prefix="fab" data-icon="twitter" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+    </svg>
+                    </a>
+                    <a class="  _OsfLink_1diw4c" href="https://www.facebook.com/CenterForOpenScience/" target="_self" rel="noopener" data-analytics-name="social_facebook" aria-label="Facebook">
+                        <svg class="svg-inline--fa fa-facebook fa-2x" data-prefix="fab" data-icon="facebook" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+    </svg>
+                    </a>
+                    <a class="  _OsfLink_1diw4c" href="https://groups.google.com/forum/#!forum/openscienceframework" target="_self" rel="noopener" data-analytics-name="social_google_group" aria-label="Google Group">
+                        <svg class="svg-inline--fa fa-users fa-2x" data-prefix="fas" data-icon="users" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path fill="currentColor" d="M96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm448 0c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm32 32h-64c-17.6 0-33.5 7.1-45.1 18.6 40.3 22.1 68.9 62 75.1 109.4h66c17.7 0 32-14.3 32-32v-32c0-35.3-28.7-64-64-64zm-256 0c61.9 0 112-50.1 112-112S381.9 32 320 32 208 82.1 208 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zm-223.7-13.4C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"></path>
+    </svg>
+                    </a>
+                    <a class="  _OsfLink_1diw4c" href="https://www.github.com/centerforopenscience" target="_self" rel="noopener" data-analytics-name="social_github" aria-label="GitHub">
+                        <svg class="svg-inline--fa fa-github fa-2x" data-prefix="fab" data-icon="github" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+    </svg>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+    <div id="ember49" class="ember-view"><!----></div>
+</div>
+<div></div>
+<div id="ember50" class="ember-view"><!----></div>
+</div></body></html>

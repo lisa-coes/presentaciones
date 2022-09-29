@@ -462,6 +462,19 @@ Fuente: [lisa-coes.com/01componentes/](https://lisa-coes.com/01componentes/)
 <!-- </iframe> -->
 
 ---
+
+## Ejemplo plantilla AsPredicted
+
+<iframe src= osf1.html height='550' width=100% allowfullscreen='true'> 
+</iframe>
+
+---
+
+## Ejemplo plantilla datos secundarios
+
+<iframe src= osf2.html height='550' width=100% allowfullscreen='true'> 
+</iframe>
+---
 class: middle
 
 .pull-left-narrow[
