@@ -281,13 +281,6 @@ class: roja, right
 # .center[🤔?]
 ---
 
-.center[
-![:scale 75%](triangle-publish.PNG)
-
-.small[Triángulo del fraude de D. A. Cressey aplicado a las .bold[malas prácticas de investigación]]
-]
-
----
 class: middle
 
 las .red[prácticas cuestionables de investigación] refieren a las:
