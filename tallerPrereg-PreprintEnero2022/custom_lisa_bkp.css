@@ -150,7 +150,7 @@ a, a > code {
 
 .front h2 {
   color: #FFFFFF;
-  font-size: 1.8em;
+  font-size: 1.3em;
 }
 
 
@@ -416,7 +416,3 @@ iframe {
 .output {
     background: #eee;
 }
-
-.espaciosimplelineas{
-  line-height: 0.3  em
-} 
