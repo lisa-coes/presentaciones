@@ -14,3 +14,5 @@ Presentaciones del Laboratorio de Investigación Social Abierta (LISA)
 - [Presentación Congreso de Bibliotecas Universitarias Especializadas - Universidad de Chile, Enero 2023](https://lisa-coes.github.io/presentaciones/tallerPrereg-PreprintEnero2022/bibliotecas-Enero2023.html)
 
 
+- [Presentación Escuela de Verano Conocimiento y Ciencia Abierta - Universidad Central, Enero 2023](https://lisa-coes.github.io/presentaciones/flujo-UCEN-Ene2023/UCEN-Ene2023.html)
+
