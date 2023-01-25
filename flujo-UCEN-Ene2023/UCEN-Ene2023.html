@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Taller Flujo UCEN Enero 2023</title>
+    <meta charset="utf-8" />
+    <meta name="author" content=".small[Juan Carlos Castillo    Departamento de Sociología - UCH / COES   ]" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-progressBar/progress-bar.js"></script>
+    <link rel="stylesheet" href="custom_lisa.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: front middle center
+
+
+
+
+
+
+
+<style>.xe__progress-bar__container {
+  top:0;
+  opacity: 1;
+  position:absolute;
+  right:0;
+  left: 0;
+}
+.xe__progress-bar {
+  height: 0.25em;
+  background-color: red;
+  width: calc(var(--slide-current) / var(--slide-total) * 100%);
+}
+.remark-visible .xe__progress-bar {
+  animation: xe__progress-bar__wipe 200ms forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+@keyframes xe__progress-bar__wipe {
+  0% { width: calc(var(--slide-previous) / var(--slide-total) * 100%); }
+  100% { width: calc(var(--slide-current) / var(--slide-total) * 100%); }
+}</style>
+
+&lt;!---
+About macros.js: permite escalar las imágenes como [scale 50%](path to image), hay si que grabar ese archivo js en el directorio.
+---&gt;
+
+.pull-left-narrow[
+
+.left[
+![:scale 30%](qr.png)
+ 
+![:scale 80%](logo-congreso.png)
+
+![:scale 80%](logo-lisa.png)
+![:scale 30%](logo-coes-cuadrado.png) .white[..]
+![:scale 40%](logo_facso.png)
+
+]
+]
+
+.pull-right-wide[
+
+.right[
+.content-box-gray[
+ ## **.red[Diseño y gestión de proyectos de investigación abiertos]**
+----
+
+
+**.red[Juan Carlos Castillo]** 
+.small[
+Departamento de Sociología - COES, Universidad de Chile]
+.small[[.black[jc-castillo.com]](https://jc-castillo.com/)
+
+]
+]
+]
+]
+
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+class: middle
+
+.pull-left[
+![:scale 80%](logo-lisa.png)]
+
+.pull-right[
+
+#### El .red[Laboratorio de Investigación Social Abierta (LISA)] tiene por objetivo ofrecer herramientas y orientaciones para la apertura científica de las distintas etapas de los proyectos de investigación en ciencias sociales.
+]
+---
+
+class: middle
+
+![](flujo-herramientas.png) 
+
+---
+class: center 
+![:scale 80%](https://cienciasocialabierta.netlify.app/slides/02-bases_ciencia_abierta/reproducible-replicable-robust-generalisable.jpg)
+---
+class: inverse center
+
+## ¿Cómo organizamos el trabajo de investigación (en el momento del análisis y escritura)?
+
+--
+&lt;br&gt;
+
+----
+
+## ¿Qué precauciones tomamos en términos de .yellow[reproducibilidad]?
+
+???
+
+mano alzada, flinga
+relacionar:
+Diseño: estructura
+Gestión: Flujo
+
+Lámina final final final.docx
+
+Vamos a partir por estructura: protocolo
+Luego con herramientasque ayudan a una gestion abierta del proyecto
+Texto plano / Markdown - Bibtex
+Github
+lamina de herramientas flujo ciencia abierta, enfatizar el concepto de reproducibilidad, Bowers
+
+
+---
+class: middle center 
+
+![:scale 70%](https://mfr.de-1.osf.io/export?url=https://osf.io/ftkq8/?direct%26mode=render%26action=download%26public_file=True&amp;initialWidth=848&amp;childId=mfrIframe&amp;parentTitle=OSF+%7C+reproducibiity_relocates_time.png&amp;parentUrl=https://osf.io/ftkq8/&amp;format=2400x2400.jpeg)
+
+
+
+---
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+.pull-left-wide[
+![:scale 95%](reproducibility_science.png)
+]
+.pull-right-narrow[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+... alrededor de un **40%!** (... varía por disciplina)
+]
+
+---
+class: center
+
+![](nature-reproducibility-crisis.jpeg)
+
+.small[
+Fuente: [Baker (2016) 1,500 scientists lift the lid on reproducibility - Nature](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)]
+
+---
+class: center middle
+
+![](nature-rep-crises2.png)
+
+.small[
+Fuente: [Baker (2016) 1,500 scientists lift the lid on reproducibility - Nature](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)]
+
+
+---
+class: middle 
+
+.pull-left-wide[
+![:scale 90%](reproducibility-request.png)
+]
+
+.tiny[
+.pull-right-narrow[
+[Knudtson, K. L., et al (2019). Survey on Scientific Shared Resource Rigor and Reproducibility. Journal of Biomolecular Techniques : JBT, 30(3), 36–44. https://doi.org/10.7171/jbt.19-3003-001
+](https://pubmed.ncbi.nlm.nih.gov/31452645/)
+]
+
+]
+
+---
+class: center 
+.pull-left[
+![:scale 80%](https://www.nature.com/news/polopoly_fs/7.36719.1464174488!/image/reproducibility-graphic-online4.jpg_gen/derivatives/landscape_630/reproducibility-graphic-online4.jpg)]
+
+--
+
+![:scale 45%](https://www.nature.com/news/polopoly_fs/7.36727.1464174506!/image/reproducibility-graphic-online5.jpg_gen/derivatives/landscape_630/reproducibility-graphic-online5.jpg)
+
+
+---
+class: middle, center
+
+
+![](https://juancarloscastillo.github.io/in-socabi/images/peng_spectrum.png)
+
+
+---
+class: inverse middle center
+
+.content-box-gray[
+## .red[1.Diseño -&gt; Estructura]
+]
+
+&lt;br&gt;
+.content-box-gray[
+## .red[2.Gestión -&gt; Flujo]
+]
+
+---
+class: inverse middle center
+
+.content-box-yellow[
+## .red[1.Diseño -&gt; Estructura]
+]
+
+&lt;br&gt;
+.content-box-gray[
+## .red[2.Gestión -&gt; Flujo]
+]
+
+
+---
+## Estructura 
+.pull-left[
+.content-box-red[
+### .red[A. ad-hoc ]
+  - cada investigador define numero de archivos, nombres, carpetas y organización
+  
+  - explicar al resto cómo se organiza
+  - documentar en un archivo cómo se organiza
+  
+--&gt; reproducibilidad y transparencia **LIMITADA**  
+]]
+
+--
+.pull-right[
+.content-box-green[
+### .red[B. *Protocolo* reproducible]
+
+  - **estructura** de carpetas y archivos interconectados que refieren a reglas conocidas (estándares)
+  
+  - **autocontenido**: toda la información necesaria para la reproducibilidad se encuentra en la carpeta raíz o directorio de trabajo.]
+]
+---
+# .right[... estándares]
+
+.center[
+![:scale 70%](https://lisa-coes.github.io/ipo/standards.png)
+]
+
+---
+
+.pull-left-narrow[
+## Ejemplo protocolo reproducible: [TIER](https://www.projecttier.org/)]
+.pull-right-wide[
+&lt;br&gt;
+.center[
+![:scale 85%](tier.png)
+]
+]
+---
+.pull-left-narrow[
+## Ejemplo protocolo reproducible: [TIER](https://www.projecttier.org/)]
+.pull-right-wide[
+&lt;br&gt;
+.center[
+![:scale 85%](tierfolders.png)
+]
+]
+
+
+---
+.center[
+![:scale 50%](https://lisa-coes.com/input/ipo-hex.png)
+]
+
+---
+## Estructura IPO
+![](ipofolder.png)
+
+---
+class: middle center
+
+## Mayores detalles y plantilla de carpetas:
+
+&lt;br&gt;
+.center[
+
+## [https://lisa-coes.com/ipo-repro/](https://lisa-coes.com/ipo-repro/)
+
+## [https://github.com/lisa-coes/ipo](https://lisa-coes.com/ipo-repro/)
+
+]
+
+
+
+---
+class: inverse middle center
+
+.content-box-gray[
+## .red[1.Diseño -&gt; Estructura]
+]
+
+&lt;br&gt;
+.content-box-yellow[
+## .red[2.Gestión -&gt; Flujo]
+]
+
+
+---
+class: roja right
+
+# Elementos del flujo de trabajo reproducible
+
+## A. Escritura en texto plano
+
+## B. Carpeta autocontenida
+
+## C. Control de versiones
+
+---
+class: roja right
+
+# Elementos del flujo de trabajo reproducible
+
+## .yellow[A. Escritura en texto plano]
+
+## B. Carpeta autocontenida
+
+## C. Control de versiones
+
+---
+## Flujo de trabajo con procesador de texto tradicional
+
+.center[
+![:scale 70%](W_workflow.png)
+]
+
+---
+## Abriendo el archivo de escritura tradicional
+
+![](realWord.png)
+
+---
+## Desventajas del procesador tradicional
+
+.pull-left-wide[
+.medium[
+
+- Barrera de **pago/licencia** para acceder a contenidos (propiedad)
+
+- Difícil **versionamiento** y llevar registro de quién hizo qué cambio, barrera a la reproducibilidad y colaboración 
+
+- No permite un documento enteramente **reproducible** que combine texto y código de análisis (en caso de utilizarlo) ]
+]
+
+.pull-right-narrow[
+&lt;br&gt;
+&lt;br&gt;
+![](word.jpg)
+
+]
+
+
+---
+.pull-left-narrow[
+## Escritura libre y abierta
+]
+
+&lt;br&gt;
+.pull-right-wide[
+.content-box-red[
+- independiente de programa comercial
+
+- independiente de plataformas específicas
+
+- permite combinar texto y análisis en un mismo documento
+
+- foco en los contenidos en lugar del formato
+
+- permite distintas opciones de formato final]]
+
+---
+# Inspiración
+
+.center[
+![](bowers&amp;healey.png)]
+
+---
+
+.pull-left-narrow[
+## Escritura simple / plana
+]
+
+.pull-right-wide[
+&lt;br&gt;
+.content-box-red[
+- entorno: editor de texto
+
+- separación entre texto de entrada (input) y texto de salida (output)
+
+- foco en el input/contenido vs output/formato
+
+- marcas de edición: vínculo entre formato de input y output
+
+- sin cortar / pegar
+ ]
+]
+---
+## Marcas de edición
+
+- Vínculo entre escritura en texto simple (input) y output
+
+![](marcas-edi.png)
+---
+## Principales Alternativas
+
+.left-column[
+## **Latex**
+
+## .grey[Markdown]
+]
+
+.right-column[
+
+- sistema de escritura simple de amplio uso en la academia
+
+- alta calidad en salida a pdf
+
+- creado a comienzos de los 80 (Donald Knuth, Leslie Lamport)
+
+
+]
+
+---
+## Principales Alternativas
+
+.left-column[
+## **Latex**
+
+## .grey[Markdown]
+]
+
+.right-column[
+
+![](latex.jpg)
+]
+
+---
+## Principales Alternativas
+
+.left-column[
+## .grey[Latex]
+
+## **Markdown**
+]
+
+.right-column[
+
+.medium[
+- creado por John Gruber y Aaron Swartz en 2004
+
+- forma de escritura simple con pocas marcas de formato
+
+- conversión a distintos formatos de salida (html, pdf)
+
+- Soporta encabezados, tablas, imágenes, tablas de contenidos, ecuaciones, links ...
+
+- filosofía: foco en contenido primero, el formato después.
+]
+
+]
+
+
+---
+## Principales Alternativas
+
+.left-column[
+## .grey[Latex]
+
+## **Markdown**
+]
+
+.right-column[
+.right[
+![:scale 70%](https://jc-castillo.com/documents/talleres-cursos/markdown-mexico/slides/Markdown-mark.png)]
+]
+
+---
+## Principales Alternativas
+
+.left-column[
+## .grey[Latex]
+
+## **Markdown**
+]
+.right-column[
+.right[
+![:scale 80%](markdownpreview.png) 
+]]
+
+
+
+---
+## Principales Alternativas
+
+&lt;br&gt;
+
+
+|          	| **Control de formato** 	| **Marcas de edición** 	| **Formatos de salida** 	|
+|----------	|:--------------------:|:----------------:|:--------------------:|
+| LaTeX    	|          +         	|        +       	|          -         	|
+| Markdown 	|          -         	|        -       	|          +         	|
+
+---
+
+## Markdown, pandoc y renderización
+
+![:scale 90%](pandoc.png)
+
+
+---
+## Ejemplos de marcas de edición en Markdown
+
+.content-box-red[
+- Texto en **negrita** entre dos astericos: `**negrita**`
+
+- Texto en *cursiva* con un asterico por lado: ` *cursiva*`
+
+- Títulos se marcan con `#` al principio, subtítulos `##` , y así sucesivamente
+
+- Imágenes: `![](ruta-a-imagen)`
+
+- Links: `[](link-web)`]
+
+
+---
+
+# Recursos
+
+## - [Tutorial de markdown online](https://www.markdowntutorial.com/es/)
+
+## - [Markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+
+
+
+---
+class: roja right
+
+# Elementos del flujo de trabajo reproducible
+
+## A. Escritura en texto plano
+
+## .yellow[B. Carpeta autocontenida]
+
+## C. Control de versiones
+
+---
+# Carpeta autocontenida
+
+- proyecto **autocontenido**: reproducible sin necesidad de archivos externos
+
+- requisito: establecer **directorio de trabajo**
+
+  - posición de referencia de todas las operaciones al interior del proyecto
+  
+  - también llamado **directorio raíz**
+  
+---
+## Directorio de trabajo
+
+- ej. forma tradicional en hoja de código R: 
+
+  - `setwd(ruta-a-carpeta-de-proyecto)`
+
+  - problemas: hace referencia a ruta local en el computador donde se está trabajando, por lo tanto no es reproducible y **se debe evitar**
+  
+- alternativa sugerida en R: **RStudio Projects**  
+
+
+---
+## Rutas relativas en código
+
+- forma de "señalar el camino" para abrir y guardar archivos al interior de una carpeta de proyecto autocontenido (= sin referencias locales)
+
+- este camino tiene básicamente 3 direcciones:
+
+  - bajar -&gt; hacia subcarpetas
+  
+  - subir -&gt; hacia carpetas superiores
+  
+  - subir y bajar -&gt; hacia otras subcarpetas 
+
+---
+## Rutas relativas: bajando
+
+- para **"bajar"** hacia a una subcarpeta, simplemente damos la ruta de la carpeta/archivo
+
+  - ej: si estoy en el archivo paper.Rmd (directorio raíz), y quiero incluir una imagen (directorio input/images/imagen.jpg), entonces la ruta es `input/images/imagen.jpg`
+  
+  - o para señalar la ruta al bib desde paper.Rmd (en raíz): `input/bib/referencias.bib`
+
+---
+## Rutas relativas: subiendo
+
+- para **subir** se utilizan los caracteres `../` por cada nivel.
+
+- Ej: si quiero guardar una tabla en el directorio raíz generada desde un archivo de código en la subcarpeta proc, entonces la ruta es `../tabla.html`
+
+---
+## Rutas relativas: subiendo y bajando 
+
+- combinación de las anteriores
+
+- Ej: para abrir la base de datos original en la subcarpeta input/data desde el código de procesamiento en la subcarpeta proc, entonces:
+
+`../input/data/original.dat`
+
+
+---
+class: roja right
+
+# Elementos del flujo de trabajo reproducible
+
+## A. Escritura en texto plano
+
+## B. Carpeta autocontenida
+
+## .yellow[C. Control de versiones]
+
+
+---
+class: inverse
+
+.pull-left[
+.center[
+![:scale 85%](finaldoc.gif)
+]
+]
+
+--
+
+.pull-right[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+### ¿Cómo registrar de manera eficiente quién hizo qué y cuando en un archivo/documento?
+]
+
+---
+class: roja middle center
+
+## .yellow[La escritura en texto simple (como Markdown) permite implementar un sistema de control de versiones, además de herramientas de respaldo, colaboración y comunicación]
+
+---
+## El origen: Abriendo un sistema operativo
+
+.pull-left[
+&lt;br&gt;
+![:scale 100%](torvalds.png)
+]
+
+
+.pull-right[
+- Linus Torvalds, 1991 (21 años)
+
+- Crea sistema operativo libre (**Linux**) y lo abre a la colaboración. Postea:
+
+  - "I'm doing a (free) operating system (just a hobby, won't be big and professional..."
+
+]
+---
+## Desarrollo del Linux Kernel
+
+
+.pull-left[
+&lt;br&gt;
+&lt;br&gt;
+![](kernelversions.png)
+]
+
+.pull-right[
+&lt;br&gt;
+
+- version 1: 1994
+
+- version 5: 2019
+
+- Más de 11 mil colaboradores
+
+- mas de 30 millones de líneas de código
+
+- **¿versionamiento?**
+
+]
+
+---
+##... más sobre Linux, Torvalds y código abierto 
+
+
+Linus Torvalds TED Talk 
+
+[https://www.youtube.com/watch?v=o8NPllzkFhE&amp;t=156s](https://www.youtube.com/watch?v=o8NPllzkFhE&amp;t=156s)
+
+---
+# Git
+
+.pull-left-narrow[
+![:scale 120%](git.png)
+]
+
+.pull-right-wide[
+- Torvalds crea **Git** en 2005 para poder llevar registro y administrar las distintas versiones de Linux
+
+- Git quiere decir *incompetente* / *desagradable*.
+
+- "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'." (Torvalds, 2012)
+
+]
+
+
+???
+
+Torvalds sarcastically quipped about the name git (which means unpleasant person in British English slang): "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[24][25] The man page describes Git as "the stupid content tracker".[26] The read-me file of the source code elaborates further:[27]
+
+The name "git" was given by Linus Torvalds when he wrote the very first version. He described the tool as "the stupid content tracker" and the name as (depending on your way):
+
+random three-letter combination that is pronounceable, and not actually used by any common UNIX command. The fact that it is a mispronunciation of "get" may or may not be relevant.
+stupid. contemptible and despicable. simple. Take your pick from the dictionary of slang.
+"global information tracker": you're in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.
+"goddamn idiotic truckload of sh*t": when it breaks
+
+---
+.pull-left-narrow[
+## Git: un software de control de versiones
+]
+
+.pull-right-wide[
+&lt;br&gt;
+.content-box-red[
+- es una especie de memoria o registro local que guarda información sobre:
+
+  - quién hizo un cambio
+  - cuándo lo hizo
+  - qué hizo
+
+- mantiene la información de todos los cambios en la historia de la carpeta / repositorio local
+
+- se puede sincronizar con repositorio remoto (ej. Github)]
+]
+---
+.pull-left-narrow[
+# Git / Github]
+
+.pull-right-wide[
+&lt;br&gt;
+.content-box-purple[
+- actualmente, Git / Github posee más de 100 millones de repositorios
+
+- mayor fuente de código en el mundo
+
+- ha transitado desde el mundo de desarrollo de software hacia distintos ámbitos de trabajo colaborativo y abierto
+
+- entorno de trabajo que favorece la ciencia abierta]
+]
+
+---
+class: white
+
+.pull-left-narrow[
+###.green[ Dos lógicas de versionamiento]
+
+.black[1.Deltas]
+
+&lt;br&gt;
+&lt;br&gt;
+
+
+.black[2.Imágenes (snapshots)]
+
+**-&gt; Git**
+]
+
+.pull-right-wide[
+![](deltas.png)
+
+![](snapshots.png)
+]
+
+---
+class: inverse middle right center
+
+## .red[Git no es un registro de versiones de archivos específicos, sino de una .yellow[carpeta completa]]
+
+&lt;br&gt;
+
+### Guarda .yellow["fotos"] de momentos específicos de la carpeta, y esta foto se *saca* mediante un .yellow[commit]
+
+---
+class: white
+
+.center[
+![:scale 75%](gitflow.jpeg)
+]
+
+---
+# Commits
+
+- El **commit** es el procedimiento fundamental del control de versiones
+
+- Git no registra cualquier cambio que se "guarda", sino los que se "comprometen" (commit).
+
+--
+
+- En un **commit**
+  - se seleccionan los archivos cuyo cambio se desea registrar (*stage*)
+  - se registra lo que se está comprometiendo en el cambio (mensaje de commit)
+
+---
+## ¿Cuándo hacer un commit?
+
+- según conveniencia
+
+- sugerencias:
+
+  - que sea un momento que requiera registro (momento de foto)
+  
+  - no para cambios menores
+  
+  - no esperar muchos cambios distintos que puedan hacer perder el sentido del commit
+
+---
+## Pasos básicos versionamiento Git local
+
+- inicializar la carpeta como repositorio git (solo la primera vez)
+
+- agregar (add) los cambios que se quieran comprometer al escenario de compromiso (stage)
+
+- mensaje de commit
+
+- commit
+
+---
+.pull-left-narrow[
+&lt;br&gt;
+# Uso
+]
+
+.pull-right-wide[
+
+&lt;br&gt;
+.content-box-green[
+- tradicionalmente, git se usa directamente con comandos desde el **terminal** (git bash)
+
+- actualmente, existen una serie de programas locales que facilitan el uso de Git, tanto específicos como también editores genéricos
+
+- algunos programas de análisis de datos (R/Rstudio) tienen incorporados módulos para versionar con Git/Github
+
+- recomendación actual: VSC (Visual Studio Code) - por Github copilot (IA)
+]]
+
+
+---
+class: inverse
+
+## **.red[Resumen]**
+
+### Estructura: protocolo reproducible
+
+### Flujo de trabajo:
+###  - texto plano
+###  - carpeta autocontenida
+###  - control de versiones
+
+---
+class: middle center
+
+
+# ¡gracias por su atención!
+---
+
+.pull-left-narrow[
+
+.left[
+![:scale 30%](qr.png)
+ 
+![:scale 80%](logo-congreso.png)
+
+![:scale 80%](logo-lisa.png)
+![:scale 30%](logo-coes-cuadrado.png) .white[..]
+![:scale 40%](logo_facso.png)
+
+]
+]
+
+.pull-right-wide[
+
+.right[
+.content-box-gray[
+## **.red[Diseño y gestión de proyectos de investigación abiertos]**
+----
+
+.small[**.red[Juan Carlos Castillo]** 
+
+Departamento de Sociología - COES, Universidad de Chile]
+.small[[.black[jc-castillo.com]](https://jc-castillo.com/)
+
+]
+]
+]
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://multinivel.netlify.com/docpres/xaringan_custom/macros.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url("../lisa_icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 17.5em;
+  right: -1.2em;
+  width: 110px;
+  height: 70px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
