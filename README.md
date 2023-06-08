@@ -16,3 +16,5 @@ Presentaciones del Laboratorio de Investigación Social Abierta (LISA)
 
 - [Presentación Escuela de Verano Conocimiento y Ciencia Abierta - Universidad Central, Enero 2023](https://lisa-coes.github.io/presentaciones/flujo-UCEN-Ene2023/UCEN-Ene2023.html)
 
+- [Taller Reproducibilidad y Repositorios Abiertos Junio 2023 - Aprendiendo metodología por Valentina 2](https://lisa-coes.github.io/presentaciones/reprod-repos-Vale-Junio20203/reprod-repos-Vale-Junio2023.html)
+
