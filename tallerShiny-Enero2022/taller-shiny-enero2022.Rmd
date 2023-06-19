@@ -520,7 +520,7 @@ shinyApp(ui = ui, server = server)
 * existen elementos de origen (_source_), conductores (_conductor_)  y de llegada (_endpoints_)
 
 .center[
-![:scale 60%](https://shiny.rstudio.com/images/reactivity_diagrams/roles.png)
+![:scale 60%](roles.png)
 ]
 
 --
@@ -530,7 +530,7 @@ shinyApp(ui = ui, server = server)
 
 # sources y endpoints
 
-.center[![:scale 40%](https://shiny.rstudio.com/images/reactivity_diagrams/01_hello.png)]
+.center[![:scale 40%](source'endpoints.png)]
 
 
 * `Reactive source`: el input que proviene de la interfaz de usuario o `ui`
@@ -549,7 +549,7 @@ shinyApp(ui = ui, server = server)
   - `Endpoint` solamente pueden ser child (pueden **ser** dependientes)
 
 
-.center[![:scale 40%](https://shiny.rstudio.com/images/reactivity_diagrams/conductor.png)]
+.center[![:scale 40%](https://shiny.posit.co/r/articles/build/reactivity-overview/conductor.png)]
 
 ---
 # Usemos reactives

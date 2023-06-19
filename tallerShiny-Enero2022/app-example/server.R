@@ -9,7 +9,8 @@ server <- function(input, output) {
     output$scatterplot <- renderPlot({
         ggplot(data = movies_subset(), # usamos el data reactivo!
                aes_string(x = input$x, y = input$y)) +  
-            geom_point()
+            geom_point() +
+            geom_smooth(method = "lm")
     })
     # crea una tabla resumen
     movies_subset <- reactive({
