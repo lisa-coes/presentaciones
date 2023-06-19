@@ -70,9 +70,9 @@ About macros.js: permite escalar las imágenes como [scale 50%](path to image), 
  
  .espaciosimple[
 .medium[Julio Iturra] <br>
-.small[Centro de Estudios de Conflicto y Cohesión Social]
+.small[Bremen International Graduate School of Social Sciences]
 <br>
-.small[[coes.cl/julio-iturra](https://coes.cl/integrantes/julio-iturra/)]
+.small[[bigsss-bremen.de/julio-iturra](https://www.bigsss-bremen.de/people/phd-fellows/julio-iturra)]
 ]
 ]
 ]
