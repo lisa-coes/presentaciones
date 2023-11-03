@@ -18,3 +18,4 @@ Presentaciones del Laboratorio de Investigación Social Abierta (LISA)
 
 - [Taller Reproducibilidad y Repositorios Abiertos Junio 2023 - Aprendiendo metodología por Valentina 2](https://lisa-coes.github.io/presentaciones/reprod-repos-Vale-Junio20203/reprod-repos-Vale-Junio2023.html)
 
+- [Taller Herramientas de Ciencia Abierta Noviembre 2023 - NUDOS](https://lisa-coes.github.io/presentaciones/Nudos-herramientas-Nov2023/Nudos-herramientas-Nov2023.html)
