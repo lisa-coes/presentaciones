@@ -3,6 +3,9 @@
 
 Presentaciones del Laboratorio de Investigación Social Abierta (LISA)
 
+- [Barreras para la Ciencia Abierta en la investigación en Ciencias Sociales en Chile - Congreso Chileno de Sociología 2024](https://lisa-coes.github.io/presentaciones/congreso-sociologia-stgo-Mayo2024/congreso-sociologia-stgo-Mayo2024.html)
+
+
 - [Taller Flujo de investigación abierto - Enero 2024 - Universidad de Valparaíso](https://lisa-coes.github.io/presentaciones/UValpo-herramientas-Enero2024/UValpo-herramientas-Ene2024.html)
 
 - [Taller Herramientas de Ciencia Abierta Noviembre 2023 - NUDOS](https://lisa-coes.github.io/presentaciones/Nudos-herramientas-Nov2023/Nudos-herramientas-Nov2023.html)

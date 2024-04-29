@@ -1,0 +1,184 @@
+---
+title: "Avance resultados encuesta LISA"
+author: ".small[Juan Carlos Castillo <br><br> Departamento de Sociología - UCH / COES <br><br>]"
+date: "2do Sem 2023"
+output:
+  xaringan::moon_reader:
+    css: ["custom_lisa.css"] # "../ninjutsu.css", paraflipbook
+    includes:
+      after_body: "../insert-logo.html"
+    lib_dir: libs
+    nature:   
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "https://multinivel.netlify.com/docpres/xaringan_custom/macros.js"
+    seal: false # esto omite title slide automática
+---
+class: front middle center
+
+```{r eval=FALSE, include=FALSE}
+# Correr esto para que funcione el infinite moonreader, el root folder debe ser static para si dirigir solo "bajndo" en directorios hacia el bib y otros
+
+xaringan::inf_mr('/static/docpres/02_bases/2mlmbases.Rmd')
+
+o en RStudio:
+  - abrir desde carpeta root del proyecto
+  - Addins-> infinite moon reader
+```
+
+
+```{r setup, include=FALSE, cache = FALSE}
+require("knitr") 
+options(htmltools.dir.version = FALSE)
+pacman::p_load(RefManageR)
+# bib <- ReadBib("../../bib/electivomultinivel.bib", check = FALSE)
+opts_chunk$set(warning=FALSE,
+             message=FALSE,
+             echo=FALSE,
+             cache = FALSE, fig.width=7, fig.height=5.2)
+pacman::p_load(flipbookr, tidyverse)
+```
+
+
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css"))
+xaringanExtra::use_progress_bar(color = "red", location = "top")
+
+# xaringanExtra::use_share_again()
+# xaringanExtra::use_scribble()
+```
+
+<!---
+About macros.js: permite escalar las imágenes como [scale 50%](path to image), hay si que grabar ese archivo js en el directorio.
+--->
+
+.pull-left-narrow[
+
+.left[
+![:scale 50%](Herramientas UValpo2024.png)
+ 
+
+![:scale 50%](logo_facso.png) 
+
+![:scale 55%](logo-lisa.png)
+
+.small[Congreso Chileno de Sociología
+2-4 Mayo 2024]
+
+]
+]
+
+.pull-right-wide[
+
+.right[
+.content-box-gray[
+
+
+
+## **.red[Barreras para la Ciencia Abierta en la investigación en Ciencias Sociales en Chile]**
+
+]
+
+**.red[Juan Carlos Castillo, Cristóbal Ortiz, Kevin Carrasco, Moira Martínez & Valentina Frometa]** 
+.small[
+Departamento de Sociología - COES, Universidad de Chile]
+.small[[.red[jc-castillo.com]](https://jc-castillo.com/)
+
+]
+]
+]
+
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+class: middle
+
+.pull-left[
+![:scale 80%](logo-lisa.png)]
+
+.pull-right[
+
+#### El .red[Laboratorio de Investigación Social Abierta (LISA)] tiene por objetivo ofrecer herramientas y orientaciones para la apertura científica de las distintas etapas de los proyectos de investigación en ciencias sociales.
+]
+
+<br>
+.center[
+.content-box-red[
+# [.red[lisa-coes.com]](https://lisa-coes.com/)]
+]
+
+---
+class: middle
+.content-box-red[
+### Ciencia abierta y flujo de investigación]
+![](flujo-herramientas.png) 
+
+---
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+.pull-left-wide[
+![:scale 95%](reproducibility_science.png)
+]
+.pull-right-narrow[
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+... alrededor de un **40%!** (... varía por disciplina)
+]
+
+---
+class: center
+
+![](nature-reproducibility-crisis.jpeg)
+
+.small[
+Fuente: [Baker (2016) 1,500 scientists lift the lid on reproducibility - Nature](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)]
+
+---
+class: roja bottom
+
+# Este estudio
+<br>
+
+---
+(descripción del diseño y campo de la encuesta)
+
+---
+# Datos
+
+
+---
+class: roja bottom
+
+
+.pull-right[
+# Resultados
+<br>
+]
+
+
+---
+class: inverse
+
+## Conclusiones
+
+---
+class: middle center
+
+
+# ¡gracias por su atención!
+
+Más info:
+
+[lisa-coes.com](https://lisa-coes.com/)
+
+[![:scale 20%](octocat.png)](https://github.com/lisa-coes/)
