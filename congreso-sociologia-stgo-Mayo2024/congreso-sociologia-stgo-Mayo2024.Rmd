@@ -54,17 +54,22 @@ xaringanExtra::use_progress_bar(color = "red", location = "top")
 About macros.js: permite escalar las imágenes como [scale 50%](path to image), hay si que grabar ese archivo js en el directorio.
 --->
 
+
+
 .pull-left-narrow[
 
 .left[
-![:scale 50%](Herramientas UValpo2024.png)
- 
+![:scale 45%](Herramientas UValpo2024.png) ![:scale 45%](logo-lisa.png)
 
-![:scale 50%](logo_facso.png) 
+----
+![:scale 40%](logo_facso.png) ![:scale 50%](logo-nudos.png)
 
-![:scale 55%](logo-lisa.png)
+![:scale 45%](logo-coes-cuadrado.png)
 
-.small[Congreso Chileno de Sociología
+----
+
+.small[**Congreso Chileno de Sociología**
+
 2-4 Mayo 2024]
 
 ]
@@ -83,12 +88,14 @@ About macros.js: permite escalar las imágenes como [scale 50%](path to image), 
 
 **.red[Juan Carlos Castillo, Cristóbal Ortiz, Kevin Carrasco, Moira Martínez & Valentina Frometa]** 
 .small[
-Departamento de Sociología - COES, Universidad de Chile]
+Departamento de Sociología, Universidad de Chile]
 .small[[.red[jc-castillo.com]](https://jc-castillo.com/)
 
 ]
 ]
 ]
+
+
 
 
 ---
@@ -99,8 +106,9 @@ class: animated, fadeIn
 ---
 class: middle
 
+----
 .pull-left[
-![:scale 80%](logo-lisa.png)]
+![:scale 100%](logo-lisa.png)]
 
 .pull-right[
 
@@ -152,7 +160,7 @@ class: roja bottom
 ---
 ## Este estudio
 
-* Muestreo
+* Muestreo:
 
 * Módulos:
   - Ciencia abierta
@@ -163,7 +171,7 @@ class: roja bottom
   
 * FormR
   
-
+* Link a encuesta: 
 ---
 # Datos
 
@@ -178,8 +186,29 @@ class: roja bottom
 
 
 .pull-right[
+.right[
 # Resultados
-<br>
+
+### Conocimientos
+### Prácticas
+### Medidas
+
+<br>]
+]
+
+---
+class: roja bottom
+
+
+.pull-right[
+.right[
+# Resultados
+
+### **.yellow[Conocimientos**]
+### Prácticas
+### Medidas
+
+<br>]
 ]
 
 ---
