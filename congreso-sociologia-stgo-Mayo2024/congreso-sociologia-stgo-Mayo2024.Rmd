@@ -150,11 +150,28 @@ class: roja bottom
 <br>
 
 ---
-(descripción del diseño y campo de la encuesta)
+## Este estudio
+
+* Muestreo
+
+* Módulos:
+  - Ciencia abierta
+  - Acceso abierto a publicaciones
+  - Diseño transparente
+  - Datos abiertos
+  - Investigación reproducible
+  
+* FormR
+  
 
 ---
 # Datos
 
+* Encuesta aplicada desde a la fecha
+
+* 70 respuestas completas
+
+* ...
 
 ---
 class: roja bottom
@@ -165,7 +182,66 @@ class: roja bottom
 <br>
 ]
 
+---
 
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/1-cca-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/1-cca-edad-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/1-cca-enfoque-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/1-cca-etapa-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/1-cca-grado-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/1-cca-sexo-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/2-vca-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/2-vca-edad-1.png)
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/2-vca-enfoque-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/2-vca-etapa-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/2-vca-grado-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/2-vca-sexo-1.png)
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/3-prac-1.png)
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/3-prac-sexo-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/4-bca-comp-1.png)
+
+---
+
+![:scale 90%](https://raw.githubusercontent.com/lisa-coes/cais-survey/master/2_processing/descriptive-analysis_files/figure-html/4-bca-sexo-1.png)
 ---
 class: inverse
 
