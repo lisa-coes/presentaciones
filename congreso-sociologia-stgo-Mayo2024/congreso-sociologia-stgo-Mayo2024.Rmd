@@ -174,7 +174,7 @@ class: roja bottom
 ---
 # Datos
 
-* Encuesta aplicada desde a la fecha
+* Encuesta aplicada desde diciembre de 2023 a la fecha
 
 * 70 respuestas completas
 
@@ -314,6 +314,8 @@ class: inverse
 #### - Bajo nivel de prácticas, particularmente las identificadas en la comunidad (vs las própias)
 
 ####- Alta valoración, principalmente generaciones más jóvenes, carrera inicial y mujeres
+
+####- Principal barrer para la ciencia abierta: falta de políticas e incetivos en la universidad o centro de investigación
 
 ---
 class: middle center
