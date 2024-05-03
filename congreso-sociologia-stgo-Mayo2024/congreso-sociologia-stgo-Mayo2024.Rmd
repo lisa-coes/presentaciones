@@ -59,7 +59,7 @@ About macros.js: permite escalar las imágenes como [scale 50%](path to image), 
 .pull-left-narrow[
 
 .left[
-![:scale 45%](Herramientas UValpo2024.png) ![:scale 45%](logo-lisa.png)
+![:scale 45%](CongresoSociologia2024.png) ![:scale 45%](logo-lisa.png)
 
 ----
 ![:scale 40%](logo_facso.png) ![:scale 50%](logo-nudos.png)
@@ -160,7 +160,6 @@ class: roja bottom
 ---
 ## Este estudio
 
-* Muestreo:
 
 * Módulos:
   - Ciencia abierta
@@ -171,15 +170,13 @@ class: roja bottom
   
 * FormR
   
-* Link a encuesta: 
+* Link a encuesta: [.red[lisa-survey.formr.org]](https://lisa-survey.formr.org/)
 ---
 # Datos
 
 * Encuesta aplicada desde a la fecha
 
 * 70 respuestas completas
-
-* ...
 
 * [Tabla descriptiva de variables]
 
@@ -331,12 +328,12 @@ Más info:
 [![:scale 20%](octocat.png)](https://github.com/lisa-coes/)
 
 ---
-
+class: front middle center
 
 .pull-left-narrow[
 
 .left[
-![:scale 45%](Herramientas UValpo2024.png) ![:scale 45%](logo-lisa.png)
+![:scale 45%](CongresoSociologia2024.png) ![:scale 45%](logo-lisa.png)
 
 ----
 ![:scale 40%](logo_facso.png) ![:scale 50%](logo-nudos.png)
@@ -344,7 +341,6 @@ Más info:
 ![:scale 45%](logo-coes-cuadrado.png)
 
 ----
-class: front middle center 
 
 .small[**Congreso Chileno de Sociología**
 
@@ -372,4 +368,3 @@ Departamento de Sociología, Universidad de Chile]
 ]
 ]
 ]
-
