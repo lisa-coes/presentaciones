@@ -178,19 +178,24 @@ class: roja bottom
 
 * 70 respuestas completas
 
-* Tabla descriptiva de variables
+---
 
-```{r}
-load("cais_v2.RData")
+# Datos
+
+```{r echo=FALSE}
+load("congreso-sociologia-stgo-Mayo2024/cais_v2.RData")
 
 cais_alas <- cais_v2 %>%
   select("Sexo/Género" = sexo, "Grupo etario" = edad, "Grado académico" = grado, "Etapa carrera" = etapa, "Enfoque principal" = enfoq)
-
-vtable::sumtable(cais_alas,
-                 digits = 2, out = "return", labels = TRUE,
-                 summ = c('notNA(x)','mean(x)','sd(x)','min(x)','max(x)'),
-                 summ.names = c('N Válidos','Porcentaje'))
 ```
+
+.small[
+```{r echo=FALSE}
+print(summarytools::dfSummary(cais_alas, headings = FALSE,
+                              graph.col = FALSE,
+                              na.col = FALSE), method = "render", footnote = "")
+```
+]
 
 
 ---
