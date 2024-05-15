@@ -7,13 +7,13 @@ output:
     css: ["custom_lisa.css"] # "../ninjutsu.css", paraflipbook
     includes:
       after_body: "../insert-logo.html"
-    lib_dir: libs
+#    lib_dir: libs
     nature:   
       ratio: '16:9'
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-      beforeInit: "https://multinivel.netlify.com/docpres/xaringan_custom/macros.js"
+      beforeInit: "https://multinivel.netlify.app/docpres/xaringan_custom/macros.js"
     seal: false # esto omite title slide automática
 ---
 class: front middle center
@@ -31,7 +31,7 @@ o en RStudio:
 
 ```{r setup, include=FALSE, cache = FALSE}
 require("knitr") 
-options(htmltools.dir.version = FALSE)
+# options(htmltools.dir.version = FALSE)
 pacman::p_load(RefManageR)
 # bib <- ReadBib("../../bib/electivomultinivel.bib", check = FALSE)
 opts_chunk$set(warning=FALSE,
@@ -183,7 +183,7 @@ class: roja bottom
 # Datos
 
 ```{r echo=FALSE}
-load("congreso-sociologia-stgo-Mayo2024/cais_v2.RData")
+load("cais_v2.RData")
 
 cais_alas <- cais_v2 %>%
   select("Sexo/Género" = sexo, "Grupo etario" = edad, "Grado académico" = grado, "Etapa carrera" = etapa, "Enfoque principal" = enfoq)
