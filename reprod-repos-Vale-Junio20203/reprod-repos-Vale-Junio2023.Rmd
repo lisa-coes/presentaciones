@@ -13,7 +13,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-      beforeInit: "https://multinivel.netlify.com/docpres/xaringan_custom/macros.js"
+      beforeInit: "https://multinivel.netlify.app/docpres/xaringan_custom/macros.js"
     seal: false # esto omite title slide automática
 ---
 class: front middle center
