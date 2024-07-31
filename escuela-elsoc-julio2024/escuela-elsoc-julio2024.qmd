@@ -1,0 +1,378 @@
+---
+pagetitle: Introducción al flujo de investigación reproducible
+author: Kevin Carrasco
+#bibliography: ../../input/bib/merit-edjust.bib 
+#csl: ../../input/bib/apa7-singlespace.csl
+
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+      
+format: 
+  revealjs:
+    logo: images/lisa-logo1.png
+    slide-number: true
+    theme: [pp.scss]
+    title-slide-attributes:
+      visibility: false
+#      data-background-image: images/portada.jpg
+#      data-background-size: cover
+    auto-play-media: true
+
+editor:
+  render-on-save: true
+---
+
+##  {data-background-color="black"}
+
+::: {.columns .v-center-container}
+::: {.column width="20%"}
+![](qr.png){width="80%" fig-align="right"} <br> ![](images/lisa-logo1.png){width="80%" fig-align="left"}
+:::
+
+::: {.column width="80%"}
+::: rojo
+Introducción al flujo de investigación reproducible
+:::
+
+### Escuela de invierno Elsoc-coes
+
+------------------------------------------------------------------------
+
+[Laboratorio de Investigación social Abierta - [lisa-coes.com](lisa-coes.com)]{.red}
+
+Kevin Carrasco
+:::
+:::
+
+##
+
+::: {.columns .v-center-container}
+::: {.column width="40%"}
+
+![](images/logo-lisa.png)
+
+:::
+::: {.column width="60%"}
+
+El [Laboratorio de Investigación Social Abierta (LISA)]{.red} tiene por objetivo ofrecer herramientas y orientaciones para la apertura científica de las distintas etapas de los proyectos de investigación en ciencias sociales.
+
+:::
+:::
+
+### [[lisa-coes.com](lisa-coes.com)]{.content-box-red .center-container}
+
+## Ciencia abierta
+
+![](images/flujo-herramientas.png)
+
+## Sitio web
+
+```{=html}
+<iframe src="https://www.lisa-coes.com" width="1000" height="800"></iframe>
+
+```
+
+# Investigación reproducible {data-background-color="black"}
+
+¿Cómo organizamos el trabajo de investigación (en el momento del análisis y escritura)?
+
+## Reproducibilidad
+
+- Es la posibilidad de **regenerar** de manera independiente los resultados usando los materiales originales de una investigación ya publicada.
+
+- En términos simples: obtener los mismos resultados de una investigación utilizando los mismos datos.
+
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+::: {.columns}
+::: {.column width="80%"}
+
+![](images/reproducibility_science.png)
+
+:::
+::: {.column width="20%"}
+
+Alrededor de un **40%!** dependiendo de la disciplina
+:::
+:::
+
+## ¿Hay crisis de reproducibilidad?
+
+::: {.columns}
+::: {.column width="80%"}
+
+![](images/nature-reproducibility-crisis.jpeg){width="70%"}
+
+
+
+:::
+::: {.column width="20%"}
+
+Fuente: [Baker (2016) 1,500 scientists lift the lid on reproducibility - Nature](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)
+:::
+:::
+
+## ¿y en la práctica cómo afecta la reproducibilidad?
+
+::: {.columns}
+::: {.column width="70%"}
+![](images/breznau.png){width="70%"}
+
+:::
+::: {.column width="30%"}
+
+Breznau, et. al, (2023) coordinó una investigación con 161 investigadores de 73 equipos de investigación.
+
+Los equipos informaron tanto hallazgos numéricos como conclusiones sustanciales muy diversas
+:::
+:::
+
+## 
+
+::: {.columns}
+::: {.column width="50%"}
+
+![](https://www.nature.com/news/polopoly_fs/7.36719.1464174488!/image/reproducibility-graphic-online4.jpg_gen/derivatives/landscape_630/reproducibility-graphic-online4.jpg){width="80%"}
+
+:::
+::: {.column width="50%"}
+
+![](https://www.nature.com/news/polopoly_fs/7.36727.1464174506!/image/reproducibility-graphic-online5.jpg_gen/derivatives/landscape_630/reproducibility-graphic-online5.jpg)
+::: 
+:::
+
+##
+
+![](https://juancarloscastillo.github.io/in-socabi/images/peng_spectrum.png)
+
+# Flujos de investigación reproducible {data-background-color="black"}
+
+- Texto plano
+- Carpetas y archivos
+- Autocontenido
+- Abierto
+
+## Ejemplo con procesador de texto tradicional
+
+![](images/W_workflow.png)
+
+## Ejemplo con procesador de texto tradicional
+
+![](images/realWord.png)
+
+## Algunas limitaciones
+
+::: {.columns}
+::: {.column width="80%"}
+
+- Barrera de **pago/licencia** para acceder a contenidos (propiedad)
+
+- Difícil **versionamiento** y llevar registro de quién hizo qué cambio, barrera a la reproducibilidad y colaboración 
+
+- No permite un documento enteramente **reproducible** que combine texto y código de análisis (en caso de utilizarlo)
+
+:::
+::: {.column width="20%"}
+
+![](images/word.jpg)
+
+::: 
+:::
+
+## Propuesta: escritura libre y abierta
+
+::: {.columns}
+::: {.column width="60%"}
+
+
+- Independiente de programa comercial
+
+- Independiente de plataformas específicas
+
+- Permite combinar texto y análisis en un mismo documento
+
+- Foco en los contenidos en lugar del formato
+
+- Permite distintas opciones de formato final
+
+:::
+::: {.column width="40%"}
+
+![](images/quarto.png)
+
+::: 
+:::
+
+## Así se ve Quarto
+
+![](images/quarto3.png))
+
+## Así se ve Quarto
+
+![](images/quarto2.png)
+
+# Protocolo de flujo de investigación reproducible {data-background-color="black"}
+
+## Alternativas
+
+::: {.columns}
+::: {.column width="45%"}
+::: {.content-box-red}
+
+ A. ad-hoc
+ 
+  - cada investigador define numero de archivos, nombres, carpetas y organización
+  
+  - explicar al resto cómo se organiza
+  - documentar en un archivo cómo se organiza
+  
+--> reproducibilidad y transparencia **LIMITADA**
+
+:::
+:::
+::: {.column width="45%"}
+::: {.content-box-blue}
+
+B. *Protocolo* reproducible
+
+  - **estructura** de carpetas y archivos interconectados que refieren a reglas conocidas (estándares)
+  
+  - **autocontenido**: toda la información necesaria para la reproducibilidad se encuentra en la carpeta raíz o directorio de trabajo.
+  
+:::
+:::
+:::
+
+
+## Propuesta: **Protocolo IPO**
+
+![](https://lisa-coes.com/input/ipo-hex.png)
+
+## Estructura IPO
+
+![](images/ipofolder.png)
+
+## Mayores detalles y plantilla de carpetas:
+
+
+- [https://lisa-coes.com/ipo-repro/](https://lisa-coes.com/ipo-repro/)
+
+- [https://github.com/lisa-coes/ipo](https://github.com/lisa-coes/ipo)
+
+
+# Repositorios y apertura {data-background-color="black"}
+
+## {data-background-color="black"}
+
+### La escritura en texto simple (como Markdown o Quarto) permite implementar un sistema de control de versiones, además de herramientas de respaldo, colaboración y comunicación
+
+## El origen: Abriendo un sistema operativo
+
+::: {.columns}
+::: {.column width="50%"}
+![](images/torvalds.png)
+:::
+
+::: {.column width="50%"}
+- Linus Torvalds, 1991 (21 años)
+
+- Crea sistema operativo libre (**Linux**) y lo abre a la colaboración. Postea:
+
+  - "I'm doing a (free) operating system (just a hobby, won't be big and professional..."
+
+- [TED talk](https://www.youtube.com/watch?v=o8NPllzkFhE&ab_channel=TED)
+:::
+:::
+
+## Git
+
+::: {.columns}
+::: {.column width="40%"}
+![](images/git.png)
+:::
+
+::: {.column width="60%"}
+- es una especie de memoria o registro local que guarda información sobre:
+
+  - quién hizo un cambio
+  - cuándo lo hizo
+  - qué hizo
+
+- mantiene la información de todos los cambios en la historia de la carpeta / repositorio local
+
+- se puede sincronizar con un repositorio remoto (ej. Github)
+:::
+:::
+
+## Git/github
+
+- actualmente, Git / Github posee más de 100 millones de repositorios
+
+- mayor fuente de código en el mundo
+
+- ha transitado desde el mundo de desarrollo de software hacia distintos ámbitos de trabajo colaborativo y abierto
+
+- entorno de trabajo que favorece la ciencia abierta
+
+
+## {data-background-color="black"}
+
+### [Git no es un registro de versiones de archivos específicos, sino de una carpeta completa]{.red}
+
+### [Guarda *"fotos"* de momentos específicos de la carpeta, y esta foto se *saca* mediante un]{.red} **commit**
+
+##
+
+![](images/gitflow.jpeg)
+
+## Commits
+
+- El **commit** es el procedimiento fundamental del control de versiones
+
+- Git no registra cualquier cambio que se "guarda", sino los que se "comprometen" (commit).
+
+- En un **commit**
+  - se seleccionan los archivos cuyo cambio se desea registrar (*stage*)
+  - se registra lo que se está comprometiendo en el cambio (mensaje de commit)
+
+## ¿Cuándo hacer un commit?
+
+- según conveniencia
+
+- sugerencias:
+
+  - que sea un momento que requiera registro (momento de foto)
+  
+  - no para cambios menores
+  
+  - no esperar muchos cambios distintos que puedan hacer perder el sentido del commit
+  
+# Taller práctico {data-background-color="black"}
+[https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html](https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html)
+
+
+## {data-background-color="black"}
+
+::: {.columns .v-center-container}
+::: {.column width="20%"}
+![](qr.png){width="80%" fig-align="right"} <br> ![](images/lisa-logo1.png){width="80%" fig-align="left"}
+:::
+
+::: {.column width="80%"}
+::: rojo
+Introducción al flujo de investigación reproducible
+:::
+
+### Escuela de invierno Elsoc-coes
+
+------------------------------------------------------------------------
+
+[Laboratorio de Investigación social Abierta - [lisa-coes.com](lisa-coes.com)]{.red}
+
+Kevin Carrasco
+:::
+:::
