@@ -2,7 +2,9 @@
 title: "Introducción al flujo de investigación reproducible"
 format:
   html:
-    output-file: "taller-elsoc.html"
+    toc: true
+    number-sections: true
+    output-file: "taller-elsoc-julio2024.html"
   pdf:
     output-file: "taller-elsoc.pdf"
 editor: source
@@ -13,7 +15,7 @@ editor: source
 
 * La presentación estará disponible en [https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/escuela-elsoc-julio2024.html#1](https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/escuela-elsoc-julio2024.html#1)
 
-* Este taller estará disponible en [https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html#1](https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html#1)
+* Este taller estará disponible en [https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html](https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html)
 
 ## Taller práctico
 
@@ -22,8 +24,6 @@ editor: source
 - Crear cuenta en [www.github.com](www.github.com)
 
 - Descargar Github Desktop
-
-- **Pronto actualización de este documento**
 
 # Github
 
@@ -69,3 +69,410 @@ La personalización de la cuenta se puede saltar haciendo click en **skip** abaj
 2. Descargar e instalar Github Desktop
 
 ![](images/github2.png)
+
+## Crear repositorio
+
+En la página principal de [github](https://github.com/) hacer click en el ícono de usuario de la esquina superior derecha y luego ir a Tus repositorios
+
+![](images/repos.png)
+
+Una vez accedemos a Tus repositorios hacemos click en New/Nuevo
+
+![](images/repos2.png)
+
+Luego le ponemos un nombre a nuestro repositorio, evitando siempre espacios, ñ y tíldes, y apretamos Crear repositorio
+
+![](images/repos3.png)
+
+## Github desktop
+
+Una vez creado un repositorio, lo que nos interesa es descargarlo. Al abrir la aplicación de Github desktop por primera vez (descargada anteriormente), nos debería aparecer la opción de clonar nuestro repositorio R-data-analisis en la pantalla de inicio. Lo clonamos y seleccionamos una carpeta de nuestro computador para almacenarlo.
+
+Para todas las siguientes veces, las instrucciones son estas:
+
+1- Apretamos Repositorio actual en la esquina superior izquierda
+
+2- Apretamos añadir
+
+3- Apretamos clonar repositorio...
+
+![](images/clonar.png)
+
+
+4- Seleccionamos nuestro repositorio
+
+5- seleccionamos la carpeta donde se almacenará. Siempre evitando tener tíldes, ñ y espacios en la dirección de almacenamiento y apretamos 'clone'.
+
+![](images/clonar2.png)
+
+6- Vamos al repositorio de LISA y descargamos el template de ipo. Link directo acá: [https://github.com/lisa-coes/ipo/tree/master/IPO_template](https://github.com/lisa-coes/ipo/tree/master/IPO_template)
+
+7- Lo guardamos en la carpeta que creamos recién desde github desktop
+
+## RStudio Projects
+- File -> New Project
+
+![](images/project.png)
+
+![](images/project2.png)
+
+## Abriendo la sesión de RStudio como proyecto
+
+- identificar en la carpeta respectiva el archivo .Rproj
+
+- ejecutar y se abre R / RStudio desde ese directorio como raíz
+
+## Rutas relativas en código
+
+- forma de "señalar el camino" para abrir y guardar archivos al interior de una carpeta de proyecto autocontenido (= sin referencias locales)
+
+- este camino tiene básicamente 3 direcciones:
+
+  - bajar -> hacia subcarpetas
+  
+  - subir -> hacia carpetas superiores
+  
+  - subir y bajar -> hacia otras subcarpetas 
+
+
+###  bajando
+
+- para **"bajar"** hacia a una subcarpeta, simplemente damos la ruta de la carpeta/archivo
+
+  - ej: si estoy en el archivo paper.Rmd (directorio raíz), y quiero incluir una imagen (directorio input/images/imagen.jpg), entonces la ruta es `input/images/imagen.jpg`
+  
+  - o para señalar la ruta al bib desde paper.Rmd (en raíz): `input/bib/referencias.bib`
+
+### subiendo
+
+- para **subir** se utilizan los caracteres `../` por cada nivel.
+
+- Ej: si quiero guardar una tabla en el directorio raíz generada desde un archivo de código en la subcarpeta proc, entonces la ruta es `../tabla.html`
+
+
+### subiendo y bajando 
+
+- combinación de las anteriores
+
+- Ej: para abrir la base de datos original en la subcarpeta input/data desde el código de procesamiento en la subcarpeta proc, entonces:
+
+`../input/data/original.dat`
+
+# Quarto
+
+La escritura en Quarto tiene algunos códigos o funciones, aquí un resumen de su mayoría:
+
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+|Código                                                                         | Así se ve                                                                     |
++===============================================================================+===============================================================================+
+|     Algo de texto en el párrafo.                                              | Algo de texto.                                                                |
+|                                                                               |                                                                               |
+|     Más texto                                                                 | Algo de texto en el párrafo. Siempre utilizando espacios para dividir párrafos|
+|     espacio entre lineas.                                                     |                                                                               |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `` *Cursivas* ``                                                              | *Cursivas*                                                                    |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `` **Negrita** ``                                                             | **Negrita**                                                                   |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `# Título 1`                                                                  | # Título 1                                                                    |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `## Título 2`                                                                 | ## Título 2                                                                   |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `### Título 3`                                                                | ### Título 3                                                                  |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| (puedes llegar hasta un título N° 6 con `######`)                             |                                                                               |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `` [Texto enlace](https://quarto.org/) ``                                     | [Texto enlace](https://quarto.org/)                                           |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `` ![Texto imagen](/path/to/image.png) ``                                     | ![Texto imagen](images/lisa_icon.png){alt="Class logo"}                       |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| `> Citas`                                                                     | > Citas                                                                       |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+|     1. Una                                                                    | 1.   Una                                                                      |
+|     2. lista                                                                  |                                                                               |
+|     3 ordenada                                                                | 2.   lista                                                                    |
+|                                                                               |                                                                               |
+|                                                                               | 3. ordenada                                                                   |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+|     - Otro                                                                    | -  Otro                                                                       |
+|     - tipo                                                                    |                                                                               |
+|     - de lista                                                                | -  tipo                                                                       |
+|                                                                               |                                                                               |
+|                                                                               |  -  de lista                                                                  |
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+1. Abrimos nuestro Rproject y creamos un nuevo documento de Quarto file --> new file --> Quarto document
+
+![](images/quarto-2.png)
+
+![](images/quarto2-2.png)
+
+::: callout-note
+
+YAML: Lenguaje de programación. Es un formato de serialización de datos que proporcionan un mecanismo de intercambio de datos legible por humanos. Dan formato a los datos de manera estandarizada para su intercambio entre aplicaciones de software.
+
+
+![](images/yaml.png)
+
+:::
+
+```
+---
+title: "Mi Documento"
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+```
+Luego, podemos escribir en el documento, separando por títulos (#) cada sección. La jerarquía de los títulos se establece según la cantidad de '#'. 
+
+A continuación, en esta guía combinaremos el paso-a-paso de crear un documento dinámico con quarto, a la vez que vamos viendo distintas funciones de este proceso.
+
+Por ejemplo, como hacer una nota al pie[^1]. Para hacerlo, solo debemos escribir [ ^2] pero sin el espacio entre los corchetes. Luego, en otra línea escribimos [^2]: Esta es la nota al pie
+
+[^1]: Esta es la nota al pie
+
+# Código de análisis de ejemplo
+
+Para poder escribir código de análisis en un documento Quarto debemos generar trozo de código llamado 'Chunk', que se puede crear con ctrl+alt+i o directamente en el menú de arriba en 'Code -> Insert Chunk'.
+
+![](images/quarto3.png)
+
+## Cargar paquetes
+
+```{r}
+pacman::p_load(sjlabelled,
+               dplyr, #Manipulacion de datos
+              stargazer, #Tablas
+              sjmisc, # Tablas
+              summarytools, # Tablas
+              kableExtra, #Tablas
+              sjPlot, #Tablas y gráficos
+              corrplot, # Correlaciones
+              sessioninfo, # Información de la sesión de trabajo
+              ggplot2) # Para la mayoría de los gráficos
+```
+
+## Cargar bases de datos
+
+Cargamos ambas bases de datos desde internet
+
+```{r}
+load(url("https://github.com/Kevin-carrasco/R-data-analisis/raw/main/files/data/latinobarometro_total.RData")) #Cargar base de datos
+load(url("https://github.com/Kevin-carrasco/R-data-analisis/raw/main/files/data/data_wvs.RData")) #Cargar base de datos
+```
+
+Para trabajar con ambas bases, agruparemos las variables de interés por país, por lo que ya no trabajaremos directamente con individuos.
+
+```{r}
+context_data <- wvs %>% group_by(B_COUNTRY) %>% # Agrupar por país
+  summarise(gdp = mean(GDPpercap1, na.rm = TRUE), # Promedio de GDP per capita
+         life_exp = mean(lifeexpect, na.rm = TRUE), # Promedio esperanza de vida
+         gini = mean(giniWB, na.rm = TRUE)) %>%  # Promedio gini
+  rename(idenpa=B_COUNTRY) # Para poder vincular ambas bases, es necesario que la variable de identificación se llamen igual
+context_data$idenpa <- as.numeric(context_data$idenpa) # Como era categórica, la dejamos numérica
+
+proc_data <- proc_data %>% group_by(idenpa) %>%  # agrupamos por país
+  summarise(promedio = mean(conf_inst, na.rm = TRUE)) # promedio de confianza en instituciones por país
+```
+
+## Unir bases de datos
+
+Para vincular nuestras bases de datos existen múltiples opciones, la primera es 'merge' de R base y las siguientes tres vienen desde dplyr: 'right_join', 'full_join' y 'left_join'. Cada una tiene sus propias potencialidades y limitaciones y dependerá de cada caso cuál usemos
+
+### Probemos merge
+
+```{r}
+data <- merge(proc_data, context_data, by="idenpa")
+```
+
+```{r}
+data <- data %>%
+  mutate(idenpa = as.character(idenpa)) %>%
+  mutate(idenpa = case_when(
+    idenpa == "32" ~ "Argentina",
+    idenpa == "68" ~ "Bolivia",
+    idenpa == "76" ~ "Brasil",
+    idenpa == "152" ~ "Chile",
+    idenpa == "170" ~ "Colombia",
+    idenpa == "188" ~ "Costa Rica",
+    idenpa == "214" ~ "Cuba",
+    idenpa == "218" ~ "República Dominicana",
+    idenpa == "222" ~ "Ecuador",
+    idenpa == "320" ~ "El Salvador",
+    idenpa == "340" ~ "Guatemala",
+    idenpa == "484" ~ "Honduras",
+    idenpa == "558" ~ "México",
+    idenpa == "591" ~ "Nicaragua",
+    idenpa == "600" ~ "Panamá",
+    idenpa == "604" ~ "Paraguay",
+    idenpa == "858" ~ "Uruguay",
+    idenpa == "862" ~ "Venezuela"))
+
+data$gdp <- as.numeric(data$gdp)
+data$gdp[data$gdp==0] <- NA
+data <- na.omit(data)
+```
+
+### Guardamos esta nueva base en nuestra carpeta input
+
+```{r eval=FALSE}
+save(data, file="input/data/proc/data.RData")
+```
+
+
+## Visualizaciones
+
+Podemos establecer referencias cruzadas para las tablas y gráficos dentro del texto, para poder automatizarlo, como ejemplo así, pero dentro del chunk:
+
+#| label: tbl-sjmisc
+
+#| tbl-cap: "Descriptivos con sjmisc"
+
+### Descriptivos
+
+El Chunk se debería ver así:
+
+#| label: tbl-sjmisc
+
+#| tbl-cap: "Descriptivos con sjmisc"
+
+sjmisc::descr(data,
+
+      show = c("label","range", "mean", "sd", "NA.prc", "n"))%>% # Selecciona estadísticos
+
+      kable(.,"markdown") # Esto es para que se vea bien en quarto
+
+```{r}
+#| label: tbl-sjmisc
+#| tbl-cap: "Descriptivos con sjmisc"
+
+sjmisc::descr(data,
+      show = c("label","range", "mean", "sd", "NA.prc", "n"))%>% # Selecciona estadísticos
+      kable(.,"markdown") # Esto es para que se vea bien en quarto
+```
+
+Luego de establecer el link y el nombre de la tabla, podemos referenciar acá con un @, así: @ tbl-sjmisc (pero junto), y que se vería así @tbl-sjmisc
+
+### Gráficos
+
+Y para los gráficos se hace de la misma forma:
+
+#| label: fig-gdp
+
+#| fig-cap: "Plots" 
+
+```{r}
+#| label: fig-gdp
+#| fig-cap: "Producto interno bruto por país" 
+
+graph1<-ggplot(data, aes(x = idenpa, y = gdp)) +
+  geom_point() +
+  labs(x = "País", y = "Gdp") +
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+graph1
+```
+
+Sin embargo la @fig-gdp entrega información desordenada. Mejor ordenar por tamaño de PIB que por orden alfabético de los países. Para eso
+
+```{r}
+#| label: fig-gdp-order
+#| fig-cap: "Producto interno bruto por país ordenado" 
+data_sorted <- data %>% arrange(desc(gdp))
+graph2<-ggplot(data_sorted, aes(x = factor(idenpa, levels = idenpa), y = gdp)) +
+  geom_point() +
+  labs(x = "País", y = "GDP") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+graph2
+```
+
+Ahora sí la @fig-gdp-order muestra un gráfico más ordenado.
+
+### Guardamos este nuevo gráfico en la carpeta output
+
+```{r eval=FALSE}
+ggsave(graph2, file="output/graphs/graph2.png")
+```
+
+
+Y comparar el promedio de confianza en instituciones según producto interno bruto por país?
+
+```{r}
+#| label: fig-ctr
+#| fig-cap: "Confianza en instituciones según el producto interno bruto por país" 
+data %>%
+  ggplot(aes(x = gdp, y = promedio, label = idenpa)) +
+  geom_point() +
+  geom_text(vjust = -0.5) +
+  labs(x = "GDP", y = "Promedio") +
+  theme_bw()
+
+```
+
+La @fig-ctr muestra la relación que existe entre el producto interno bruto y la confianza en instituciones para los 18 países analizados. Es interesante comparar los casos de Chile y urugay, que al tener similar GDP, tienen un nivel de confianza en instituciones muy diferente.
+
+
+5. Luego renderizamos 
+
+![](images/quarto4.png)
+
+
+
+y se debería ver así:
+
+
+```{=html}
+<iframe src="https://kevin-carrasco.github.io/ipo/trabajo.html" width="1000" height="800"></iframe>
+
+```
+
+
+
+6. Ahora que tenemos nuestra investigación podemos subirla a Github Pages a través de Github Desktop.
+
+## Github desktop
+
+![](images/push-github.png)
+
+## Github pages
+
+Ahora podemos ver los documentos modificados en nuestro repositorio online de github.
+
+7. Vamos a settings
+
+![](images/pages.png)
+
+8. Dentro de Settings vamos a Pages, luego 'none' y seleccionamos 'main'. Luego apretamos Save
+
+
+![](images/pages2.png)
+
+Luego de aproximadamente un minuto se actualiza la página y aparecerá un link en la parte superior, algo así como [kevin-carrasco.github.io/ipo](kevin-carrasco.github.io/ipo) que es nuestra página principal de nuestro sitio web de github.
+
+El link para llegar a nuestro documento renderizado de quarto sigue la estructura del repositorio:
+
+kevin-carrasco.github.io/ipo/trabajo.html
+
+![](images/url-pages.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

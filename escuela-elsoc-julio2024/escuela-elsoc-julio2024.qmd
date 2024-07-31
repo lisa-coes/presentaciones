@@ -263,6 +263,35 @@ B. *Protocolo* reproducible
 
 - [https://github.com/lisa-coes/ipo](https://github.com/lisa-coes/ipo)
 
+## Carpeta autocontenida
+
+- proyecto **autocontenido**: reproducible sin necesidad de archivos externos
+
+- requisito: establecer **directorio de trabajo**
+
+  - posición de referencia de todas las operaciones al interior del proyecto
+  
+  - también llamado **directorio raíz**
+  
+## Directorio de trabajo
+
+- ej. forma tradicional en hoja de código R: 
+
+  - `setwd(ruta-a-carpeta-de-proyecto)`
+
+  - problemas: hace referencia a ruta local en el computador donde se está trabajando, por lo tanto no es reproducible y **se debe evitar**
+  
+- alternativa sugerida en R: **RStudio Projects**  
+
+## RStudio Projects
+
+- La funcionalidad **Projects** de RStudio permite establecer claramente un directorio de trabajo de manera eficiente
+
+- Para ello, genera un archivo de extensión **.Rproj** en el directorio raiz de la carpeta del proyecto
+
+- Luego se facilita acceder a la carpeta del proyecto en RStudio ejecutando desde el administrador de archivos del computador (file manager) el archivo **.Rproj** 
+
+- para comprobar, ejecutar `getwd()` y debería dar la ruta hacia la carpeta del proyecto
 
 # Repositorios y apertura {data-background-color="black"}
 

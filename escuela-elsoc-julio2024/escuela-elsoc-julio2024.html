@@ -518,6 +518,37 @@
 <li><p><a href="https://lisa-coes.com/ipo-repro/">https://lisa-coes.com/ipo-repro/</a></p></li>
 <li><p><a href="https://github.com/lisa-coes/ipo">https://github.com/lisa-coes/ipo</a></p></li>
 </ul>
+</section>
+<section id="carpeta-autocontenida" class="slide level2">
+<h2>Carpeta autocontenida</h2>
+<ul>
+<li><p>proyecto <strong>autocontenido</strong>: reproducible sin necesidad de archivos externos</p></li>
+<li><p>requisito: establecer <strong>directorio de trabajo</strong></p>
+<ul>
+<li><p>posición de referencia de todas las operaciones al interior del proyecto</p></li>
+<li><p>también llamado <strong>directorio raíz</strong></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="directorio-de-trabajo" class="slide level2">
+<h2>Directorio de trabajo</h2>
+<ul>
+<li><p>ej. forma tradicional en hoja de código R:</p>
+<ul>
+<li><p><code>setwd(ruta-a-carpeta-de-proyecto)</code></p></li>
+<li><p>problemas: hace referencia a ruta local en el computador donde se está trabajando, por lo tanto no es reproducible y <strong>se debe evitar</strong></p></li>
+</ul></li>
+<li><p>alternativa sugerida en R: <strong>RStudio Projects</strong></p></li>
+</ul>
+</section>
+<section id="rstudio-projects" class="slide level2">
+<h2>RStudio Projects</h2>
+<ul>
+<li><p>La funcionalidad <strong>Projects</strong> de RStudio permite establecer claramente un directorio de trabajo de manera eficiente</p></li>
+<li><p>Para ello, genera un archivo de extensión <strong>.Rproj</strong> en el directorio raiz de la carpeta del proyecto</p></li>
+<li><p>Luego se facilita acceder a la carpeta del proyecto en RStudio ejecutando desde el administrador de archivos del computador (file manager) el archivo <strong>.Rproj</strong></p></li>
+<li><p>para comprobar, ejecutar <code>getwd()</code> y debería dar la ruta hacia la carpeta del proyecto</p></li>
+</ul>
 </section></section>
 <section>
 <section id="repositorios-y-apertura" class="title-slide slide level1 center" data-background-color="black">

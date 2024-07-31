@@ -94,6 +94,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#crear-cuenta-e-instalación" id="toc-crear-cuenta-e-instalación" class="nav-link" data-scroll-target="#crear-cuenta-e-instalación"><span class="header-section-number">2.4</span> Crear cuenta e instalación</a></li>
   <li><a href="#crear-repositorio" id="toc-crear-repositorio" class="nav-link" data-scroll-target="#crear-repositorio"><span class="header-section-number">2.5</span> Crear repositorio</a></li>
   <li><a href="#github-desktop" id="toc-github-desktop" class="nav-link" data-scroll-target="#github-desktop"><span class="header-section-number">2.6</span> Github desktop</a></li>
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects"><span class="header-section-number">2.7</span> RStudio Projects</a></li>
+  <li><a href="#abriendo-la-sesión-de-rstudio-como-proyecto" id="toc-abriendo-la-sesión-de-rstudio-como-proyecto" class="nav-link" data-scroll-target="#abriendo-la-sesión-de-rstudio-como-proyecto"><span class="header-section-number">2.8</span> Abriendo la sesión de RStudio como proyecto</a></li>
+  <li><a href="#rutas-relativas-en-código" id="toc-rutas-relativas-en-código" class="nav-link" data-scroll-target="#rutas-relativas-en-código"><span class="header-section-number">2.9</span> Rutas relativas en código</a>
+  <ul class="collapse">
+  <li><a href="#bajando" id="toc-bajando" class="nav-link" data-scroll-target="#bajando"><span class="header-section-number">2.9.1</span> bajando</a></li>
+  <li><a href="#subiendo" id="toc-subiendo" class="nav-link" data-scroll-target="#subiendo"><span class="header-section-number">2.9.2</span> subiendo</a></li>
+  <li><a href="#subiendo-y-bajando" id="toc-subiendo-y-bajando" class="nav-link" data-scroll-target="#subiendo-y-bajando"><span class="header-section-number">2.9.3</span> subiendo y bajando</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">3</span> Quarto</a></li>
   <li><a href="#código-de-análisis-de-ejemplo" id="toc-código-de-análisis-de-ejemplo" class="nav-link" data-scroll-target="#código-de-análisis-de-ejemplo"><span class="header-section-number">5</span> Código de análisis de ejemplo</a>
@@ -103,11 +111,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#unir-bases-de-datos" id="toc-unir-bases-de-datos" class="nav-link" data-scroll-target="#unir-bases-de-datos"><span class="header-section-number">5.3</span> Unir bases de datos</a>
   <ul class="collapse">
   <li><a href="#probemos-merge" id="toc-probemos-merge" class="nav-link" data-scroll-target="#probemos-merge"><span class="header-section-number">5.3.1</span> Probemos merge</a></li>
+  <li><a href="#guardamos-esta-nueva-base-en-nuestra-carpeta-input" id="toc-guardamos-esta-nueva-base-en-nuestra-carpeta-input" class="nav-link" data-scroll-target="#guardamos-esta-nueva-base-en-nuestra-carpeta-input"><span class="header-section-number">5.3.2</span> Guardamos esta nueva base en nuestra carpeta input</a></li>
   </ul></li>
   <li><a href="#visualizaciones" id="toc-visualizaciones" class="nav-link" data-scroll-target="#visualizaciones"><span class="header-section-number">5.4</span> Visualizaciones</a>
   <ul class="collapse">
   <li><a href="#descriptivos" id="toc-descriptivos" class="nav-link" data-scroll-target="#descriptivos"><span class="header-section-number">5.4.1</span> Descriptivos</a></li>
   <li><a href="#gráficos" id="toc-gráficos" class="nav-link" data-scroll-target="#gráficos"><span class="header-section-number">5.4.2</span> Gráficos</a></li>
+  <li><a href="#guardamos-este-nuevo-gráfico-en-la-carpeta-output" id="toc-guardamos-este-nuevo-gráfico-en-la-carpeta-output" class="nav-link" data-scroll-target="#guardamos-este-nuevo-gráfico-en-la-carpeta-output"><span class="header-section-number">5.4.3</span> Guardamos este nuevo gráfico en la carpeta output</a></li>
   </ul></li>
   <li><a href="#github-desktop-1" id="toc-github-desktop-1" class="nav-link" data-scroll-target="#github-desktop-1"><span class="header-section-number">5.5</span> Github desktop</a></li>
   <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages"><span class="header-section-number">5.6</span> Github pages</a></li>
@@ -140,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="1"><span class="header-section-number">1</span> Introducción al flujo de investigación reproducible</h1>
 <ul>
 <li><p>La presentación estará disponible en <a href="https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/escuela-elsoc-julio2024.html#1">https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/escuela-elsoc-julio2024.html#1</a></p></li>
-<li><p>Este taller estará disponible en <a href="https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html#1">https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html#1</a></p></li>
+<li><p>Este taller estará disponible en <a href="https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html">https://lisa-coes.github.io/presentaciones/escuela-elsoc-julio2024/taller-elsoc-julio2024.html</a></p></li>
 </ul>
 <section id="taller-práctico" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="taller-práctico"><span class="header-section-number">1.1</span> Taller práctico</h2>
@@ -149,7 +159,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p>Crear cuenta en <a href="www.github.com">www.github.com</a></p></li>
 <li><p>Descargar Github Desktop</p></li>
-<li><p><strong>Pronto actualización de este documento</strong></p></li>
 </ul>
 </section>
 </section>
@@ -256,6 +265,60 @@ Note
 <p>4- Seleccionamos nuestro repositorio</p>
 <p>5- seleccionamos la carpeta donde se almacenará. Siempre evitando tener tíldes, ñ y espacios en la dirección de almacenamiento y apretamos ‘clone’.</p>
 <p><img src="images/clonar2.png" class="img-fluid"></p>
+<p>6- Vamos al repositorio de LISA y descargamos el template de ipo. Link directo acá: <a href="https://github.com/lisa-coes/ipo/tree/master/IPO_template">https://github.com/lisa-coes/ipo/tree/master/IPO_template</a></p>
+<p>7- Lo guardamos en la carpeta que creamos recién desde github desktop</p>
+</section>
+<section id="rstudio-projects" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="rstudio-projects"><span class="header-section-number">2.7</span> RStudio Projects</h2>
+<ul>
+<li>File -&gt; New Project</li>
+</ul>
+<p><img src="images/project.png" class="img-fluid"></p>
+<p><img src="images/project2.png" class="img-fluid"></p>
+</section>
+<section id="abriendo-la-sesión-de-rstudio-como-proyecto" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="abriendo-la-sesión-de-rstudio-como-proyecto"><span class="header-section-number">2.8</span> Abriendo la sesión de RStudio como proyecto</h2>
+<ul>
+<li><p>identificar en la carpeta respectiva el archivo .Rproj</p></li>
+<li><p>ejecutar y se abre R / RStudio desde ese directorio como raíz</p></li>
+</ul>
+</section>
+<section id="rutas-relativas-en-código" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="rutas-relativas-en-código"><span class="header-section-number">2.9</span> Rutas relativas en código</h2>
+<ul>
+<li><p>forma de “señalar el camino” para abrir y guardar archivos al interior de una carpeta de proyecto autocontenido (= sin referencias locales)</p></li>
+<li><p>este camino tiene básicamente 3 direcciones:</p>
+<ul>
+<li><p>bajar -&gt; hacia subcarpetas</p></li>
+<li><p>subir -&gt; hacia carpetas superiores</p></li>
+<li><p>subir y bajar -&gt; hacia otras subcarpetas</p></li>
+</ul></li>
+</ul>
+<section id="bajando" class="level3" data-number="2.9.1">
+<h3 data-number="2.9.1" class="anchored" data-anchor-id="bajando"><span class="header-section-number">2.9.1</span> bajando</h3>
+<ul>
+<li><p>para <strong>“bajar”</strong> hacia a una subcarpeta, simplemente damos la ruta de la carpeta/archivo</p>
+<ul>
+<li><p>ej: si estoy en el archivo paper.Rmd (directorio raíz), y quiero incluir una imagen (directorio input/images/imagen.jpg), entonces la ruta es <code>input/images/imagen.jpg</code></p></li>
+<li><p>o para señalar la ruta al bib desde paper.Rmd (en raíz): <code>input/bib/referencias.bib</code></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="subiendo" class="level3" data-number="2.9.2">
+<h3 data-number="2.9.2" class="anchored" data-anchor-id="subiendo"><span class="header-section-number">2.9.2</span> subiendo</h3>
+<ul>
+<li><p>para <strong>subir</strong> se utilizan los caracteres <code>../</code> por cada nivel.</p></li>
+<li><p>Ej: si quiero guardar una tabla en el directorio raíz generada desde un archivo de código en la subcarpeta proc, entonces la ruta es <code>../tabla.html</code></p></li>
+</ul>
+</section>
+<section id="subiendo-y-bajando" class="level3" data-number="2.9.3">
+<h3 data-number="2.9.3" class="anchored" data-anchor-id="subiendo-y-bajando"><span class="header-section-number">2.9.3</span> subiendo y bajando</h3>
+<ul>
+<li><p>combinación de las anteriores</p></li>
+<li><p>Ej: para abrir la base de datos original en la subcarpeta input/data desde el código de procesamiento en la subcarpeta proc, entonces:</p></li>
+</ul>
+<p><code>../input/data/original.dat</code></p>
+</section>
 </section>
 </section>
 <section id="quarto" class="level1" data-number="3">
@@ -278,11 +341,11 @@ espacio entre lineas.</code></pre></td>
 <p>Algo de texto en el párrafo. Siempre utilizando espacios para dividir párrafos</p></td>
 </tr>
 <tr class="even">
-<td><code>`*Cursivas*`</code></td>
+<td><code>*Cursivas*</code></td>
 <td><em>Cursivas</em></td>
 </tr>
 <tr class="odd">
-<td><code>`**Negrita**`</code></td>
+<td><code>**Negrita**</code></td>
 <td><strong>Negrita</strong></td>
 </tr>
 <tr class="even">
@@ -302,14 +365,14 @@ espacio entre lineas.</code></pre></td>
 <td></td>
 </tr>
 <tr class="even">
-<td><code>`[Texto enlace](https://quarto.org/)`</code></td>
+<td><code>[Texto enlace](https://quarto.org/)</code></td>
 <td><a href="https://quarto.org/">Texto enlace</a></td>
 </tr>
 <tr class="odd">
-<td><code>`![Texto imagen](/path/to/image.png)`</code></td>
+<td><code>![Texto imagen](/path/to/image.png)</code></td>
 <td><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../files/img/eval-hires.png" class="img-fluid figure-img"></p>
+<p><img src="images/lisa_icon.png" class="img-fluid figure-img"></p>
 <figcaption>Texto imagen</figcaption>
 </figure>
 </div></td>
@@ -343,9 +406,10 @@ espacio entre lineas.</code></pre></td>
 </tbody>
 </table>
 <ol type="1">
-<li><p>Abrimos nuestro Rproject y creamos un nuevo documento de Quarto file –&gt; new file –&gt; Quarto document</p></li>
-<li><p>Editamos el yaml, agregando bibliography: percepcion-desigualdad.bib y link-citations: yes</p></li>
+<li>Abrimos nuestro Rproject y creamos un nuevo documento de Quarto file –&gt; new file –&gt; Quarto document</li>
 </ol>
+<p><img src="images/quarto-2.png" class="img-fluid"></p>
+<p><img src="images/quarto2-2.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -374,6 +438,7 @@ format:
 <section id="código-de-análisis-de-ejemplo" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Código de análisis de ejemplo</h1>
 <p>Para poder escribir código de análisis en un documento Quarto debemos generar trozo de código llamado ‘Chunk’, que se puede crear con ctrl+alt+i o directamente en el menú de arriba en ‘Code -&gt; Insert Chunk’.</p>
+<p><img src="images/quarto3.png" class="img-fluid"></p>
 <section id="cargar-paquetes" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="cargar-paquetes"><span class="header-section-number">5.1</span> Cargar paquetes</h2>
 <div class="cell">
@@ -445,6 +510,12 @@ format:
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="guardamos-esta-nueva-base-en-nuestra-carpeta-input" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="guardamos-esta-nueva-base-en-nuestra-carpeta-input"><span class="header-section-number">5.3.2</span> Guardamos esta nueva base en nuestra carpeta input</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(data, <span class="at">file=</span><span class="st">"input/data/proc/data.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 <section id="visualizaciones" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="visualizaciones"><span class="header-section-number">5.4</span> Visualizaciones</h2>
@@ -461,9 +532,9 @@ format:
 
   kable(.,"markdown") # Esto es para que se vea bien en quarto</code></pre>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sjmisc<span class="sc">::</span><span class="fu">descr</span>(data,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">show =</span> <span class="fu">c</span>(<span class="st">"label"</span>,<span class="st">"range"</span>, <span class="st">"mean"</span>, <span class="st">"sd"</span>, <span class="st">"NA.prc"</span>, <span class="st">"n"</span>))<span class="sc">%&gt;%</span> <span class="co"># Selecciona estadísticos</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">kable</span>(.,<span class="st">"markdown"</span>) <span class="co"># Esto es para que se vea bien en quarto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sjmisc<span class="sc">::</span><span class="fu">descr</span>(data,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">show =</span> <span class="fu">c</span>(<span class="st">"label"</span>,<span class="st">"range"</span>, <span class="st">"mean"</span>, <span class="st">"sd"</span>, <span class="st">"NA.prc"</span>, <span class="st">"n"</span>))<span class="sc">%&gt;%</span> <span class="co"># Selecciona estadísticos</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">kable</span>(.,<span class="st">"markdown"</span>) <span class="co"># Esto es para que se vea bien en quarto</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-sjmisc" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sjmisc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -550,11 +621,13 @@ Table&nbsp;1: Descriptivos con sjmisc
 <p>#| label: fig-gdp</p>
 <p>#| fig-cap: “Plots”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> idenpa, <span class="at">y =</span> gdp)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"País"</span>, <span class="at">y =</span> <span class="st">"Gdp"</span>) <span class="sc">+</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>graph1<span class="ot">&lt;-</span><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> idenpa, <span class="at">y =</span> gdp)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"País"</span>, <span class="at">y =</span> <span class="st">"Gdp"</span>) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>graph1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-gdp" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -570,12 +643,14 @@ Figure&nbsp;1: Producto interno bruto por país
 </div>
 <p>Sin embargo la <a href="#fig-gdp" class="quarto-xref">Figure&nbsp;1</a> entrega información desordenada. Mejor ordenar por tamaño de PIB que por orden alfabético de los países. Para eso</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data_sorted <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(gdp))</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_sorted, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(idenpa, <span class="at">levels =</span> idenpa), <span class="at">y =</span> gdp)) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"País"</span>, <span class="at">y =</span> <span class="st">"GDP"</span>) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data_sorted <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(gdp))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>graph2<span class="ot">&lt;-</span><span class="fu">ggplot</span>(data_sorted, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(idenpa, <span class="at">levels =</span> idenpa), <span class="at">y =</span> gdp)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"País"</span>, <span class="at">y =</span> <span class="st">"GDP"</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>graph2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-gdp-order" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -590,14 +665,20 @@ Figure&nbsp;2: Producto interno bruto por país ordenado
 </div>
 </div>
 <p>Ahora sí la <a href="#fig-gdp-order" class="quarto-xref">Figure&nbsp;2</a> muestra un gráfico más ordenado.</p>
+</section>
+<section id="guardamos-este-nuevo-gráfico-en-la-carpeta-output" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="guardamos-este-nuevo-gráfico-en-la-carpeta-output"><span class="header-section-number">5.4.3</span> Guardamos este nuevo gráfico en la carpeta output</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(graph2, <span class="at">file=</span><span class="st">"output/graphs/graph2.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Y comparar el promedio de confianza en instituciones según producto interno bruto por país?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdp, <span class="at">y =</span> promedio, <span class="at">label =</span> idenpa)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP"</span>, <span class="at">y =</span> <span class="st">"Promedio"</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdp, <span class="at">y =</span> promedio, <span class="at">label =</span> idenpa)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP"</span>, <span class="at">y =</span> <span class="st">"Promedio"</span>) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-ctr" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -613,8 +694,10 @@ Figure&nbsp;3: Confianza en instituciones según el producto interno bruto por p
 </div>
 <p>La <a href="#fig-ctr" class="quarto-xref">Figure&nbsp;3</a> muestra la relación que existe entre el producto interno bruto y la confianza en instituciones para los 18 países analizados. Es interesante comparar los casos de Chile y urugay, que al tener similar GDP, tienen un nivel de confianza en instituciones muy diferente.</p>
 <ol start="5" type="1">
-<li>Luego renderizamos y se debería ver así:</li>
+<li>Luego renderizamos</li>
 </ol>
+<p><img src="images/quarto4.png" class="img-fluid"></p>
+<p>y se debería ver así:</p>
 <iframe src="https://kevin-carrasco.github.io/ipo/trabajo.html" width="1000" height="800"></iframe>
 
 <ol start="6" type="1">
