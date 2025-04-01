@@ -3,7 +3,7 @@
 
 Presentaciones del Laboratorio de Investigación Social Abierta (LISA)
 
-- [Introducción a la Ciencia Abierta - Antropología FACSO 2025](https://lisa-coes.github.io/presentaciones/intro-csabierta-antropologia2025/congreso-sociologia-stgo-Mayo2024.html)
+- [Introducción a la Ciencia Abierta - Antropología FACSO 2025](https://lisa-coes.github.io/presentaciones/intro-csabierta-antropologia2025/intro-csabierta-antropologia2025.html)
 
 - [Barreras para la Ciencia Abierta en la investigación en Ciencias Sociales en Chile - Congreso Chileno de Sociología 2024](https://lisa-coes.github.io/presentaciones/congreso-sociologia-stgo-Mayo2024/intro-csabierta-antropologia2025.html)
 
