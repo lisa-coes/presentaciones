@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introducción Ciencia Abierta Abril 2025</title>
+    <meta charset="utf-8" />
+    <meta name="author" content=".small[Kevin Carrasco    Departamento de Sociología - UCH / COES   ]" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-progressBar/progress-bar.js"></script>
+    <link rel="stylesheet" href="custom_lisa.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: front middle center
+
+
+
+
+
+
+
+<style>.xe__progress-bar__container {
+  top:0;
+  opacity: 1;
+  position:absolute;
+  right:0;
+  left: 0;
+}
+.xe__progress-bar {
+  height: 0.25em;
+  background-color: red;
+  width: calc(var(--slide-current) / var(--slide-total) * 100%);
+}
+.remark-visible .xe__progress-bar {
+  animation: xe__progress-bar__wipe 200ms forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+@keyframes xe__progress-bar__wipe {
+  0% { width: calc(var(--slide-previous) / var(--slide-total) * 100%); }
+  100% { width: calc(var(--slide-current) / var(--slide-total) * 100%); }
+}</style>
+
+&lt;!---
+About macros.js: permite escalar las imágenes como [scale 50%](path to image), hay si que grabar ese archivo js en el directorio.
+---&gt;
+
+.pull-left-narrow[
+
+.left[
+![:scale 50%](Herramientas UValpo2024.png)
+ 
+
+![:scale 50%](logo_facso.png) 
+
+![:scale 55%](logo-lisa.png)
+
+.small[Universidad de Chile
+
+Martes 1 de Abril 2025]
+
+]
+]
+
+.pull-right-wide[
+
+.right[
+.content-box-gray[
+
+
+
+# **.red[Introducción a la Ciencia Abierta]**
+
+----
+
+#### Acceso, reproducibilidad y transparencia en la investigación social
+
+
+
+]
+
+### **.red[Kevin Carrasco]** 
+.small[
+Departamento de Sociología - COES, Universidad de Chile]
+.small[[.red[jc-castillo.com]](https://jc-castillo.com/)
+
+]
+]
+]
+
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+class: middle
+
+.pull-left[
+
+![:scale 95%](https://github.com/lisa-coes/lisa-book/blob/main/images/lisa.png?raw=true)
+]
+.pull-right[
+
+#### El .red[Laboratorio de Investigación Social Abierta (LISA)] tiene por objetivo ofrecer herramientas y orientaciones para la apertura científica de las distintas etapas de los proyectos de investigación en ciencias sociales.
+]
+
+&lt;br&gt;
+.center[
+.content-box-red[
+# [.red[lisa-coes.com]](https://lisa-coes.com/)]
+]
+
+---
+
+layout: true
+class: animated, fadeIn
+
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+&lt;br&gt;
+## A. Acceso
+
+## B. Reproducibilidad
+
+## C. Transparencia
+
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+&lt;br&gt;
+## A. **.yellow[Acceso]**
+
+## B. Reproducibilidad
+
+## C. Transparencia
+
+---
+class: roja, middle, right
+
+
+# ¿Existe una crisis de apertura en la ciencia?
+
+---
+&lt;br&gt;
+
+![](flujo.png)
+---
+&lt;br&gt;
+ 
+
+![](flujo-acceso.png)
+---
+class: middle, center
+
+.pull-left[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+# Barreras de pago
+]
+.pull-right[
+.left[
+![:scale 70%](https://localist-images.azureedge.net/photos/723383/huge/3b15ca9bd709e6738e42326fa3f35ff4a3357bb9.jpg)
+]
+]
+
+---
+# Márgenes de ganancia
+
+.center[
+![:scale 70%](profits.png)
+]
+
+---
+.pull-left-narrow[
+&lt;br&gt;
+![](https://i.pinimg.com/originals/d3/93/93/d39393c978cec32e2598c1d1261ace4f.jpg)
+]
+
+.pull-right-wide[
+
+### Modelo actual de publicación científica:
+- las vacas hacen leche (se ordeñan solas)
+
+- otras vacas revisan la leche (gratis)
+
+- las vacas le pagan al granjero para distribuir la leche
+
+- luego el granjero le vende la leche de vuelta a las vacas
+]
+
+---
+
+### Paradojas en el acceso
+
+.center[
+![:scale 85%](paradoja.png)
+]
+
+---
+
+### Actualmente...
+
+- En general, podemos acceder solo al **resultado** de un proyecto, usualmente un artículo
+
+--
+
+- Abriendo resultados: Academia.edu, Researchgate, SSRN, scienceopen ... y otros no legales
+
+--
+
+- Documental "Paywall: The Business of Scholarship" [Youtube](https://www.youtube.com/watch?v=HM_nWsdbNvQ&amp;ab_channel=JasonSchmitt)
+
+--
+
+- ¿Es posible lograr apertura en las **distintas fases** del proceso de investigación?
+
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+&lt;br&gt;
+## A. Acceso
+
+## B. **.yellow[Reproducibilidad]**
+
+## C. Transparencia
+
+
+---
+&lt;br&gt;
+ 
+
+![](flujo-rep.png)
+
+--
+
+- Es la capacidad de **regenerar** de manera independiente los resultados de una investigación usando los materiales originales de una investigación ya publicada.
+
+--
+
+- En términos simples: obtener los mismos resultados de una investigación utilizando los mismos datos.
+
+---
+## ¿Qué porcentaje de los estudios publicados son reproducibles?
+
+.pull-left-wide[
+![:scale 95%](reproducibility_science.png)
+]
+.pull-right-narrow[
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+... alrededor de un **40%!** (... varía por disciplina)
+]
+
+---
+class: center
+
+![](nature-reproducibility-crisis.jpeg)
+
+.small[
+Fuente: [Baker (2016) 1,500 scientists lift the lid on reproducibility - Nature](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)]
+
+---
+class: center middle
+
+![](nature-rep-crises2.png)
+
+.small[
+Fuente: [Baker (2016) 1,500 scientists lift the lid on reproducibility - Nature](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)]
+
+---
+
+### ¿y en la práctica cómo afecta la reproducibilidad?
+
+.pull-left[
+
+![](breznau.png)
+
+]
+
+.pull-right[
+
+- Breznau, et. al, (2023) coordinó una investigación con 161 investigadores de 73 equipos de investigación.
+
+- Los equipos informaron tanto hallazgos numéricos como conclusiones sustanciales muy diversas
+
+]
+
+---
+### ¿Qué factores influyen en la reproducibilidad?
+
+.pull-left[
+
+![](https://www.nature.com/news/polopoly_fs/7.36719.1464174488!/image/reproducibility-graphic-online4.jpg_gen/derivatives/landscape_630/reproducibility-graphic-online4.jpg)
+]
+
+.pull-right[
+![](https://www.nature.com/news/polopoly_fs/7.36727.1464174506!/image/reproducibility-graphic-online5.jpg_gen/derivatives/landscape_630/reproducibility-graphic-online5.jpg)
+
+]
+
+
+---
+
+## Flujo de trabajo con procesador de texto tradicional
+
+.center[
+![:scale 70%](W_workflow.png)
+]
+
+---
+## Abriendo el archivo de escritura tradicional
+
+![](realWord.png)
+
+---
+## Desventajas del procesador tradicional
+
+.pull-left-wide[
+.medium[
+
+- Barrera de **pago/licencia** para acceder a contenidos (propiedad)
+
+- Difícil **versionamiento** y llevar registro de quién hizo qué cambio, barrera a la reproducibilidad y colaboración 
+
+- No permite un documento enteramente **reproducible** que combine texto y código de análisis (en caso de utilizarlo) ]
+]
+
+.pull-right-narrow[
+&lt;br&gt;
+&lt;br&gt;
+![](word.jpg)
+]
+
+---
+.pull-left-narrow[
+## Escritura libre y abierta
+]
+
+&lt;br&gt;
+.pull-right-wide[
+.content-box-red[
+- independiente de programa comercial
+
+- independiente de plataformas específicas
+
+- permite combinar texto y análisis en un mismo documento
+
+- foco en los contenidos en lugar del formato
+
+- permite distintas opciones de formato final]]
+
+---
+# Inspiración
+
+.center[
+![](bowers&amp;healey.png)]
+
+---
+
+.pull-left-narrow[
+## Escritura simple / plana
+]
+
+.pull-right-wide[
+&lt;br&gt;
+.content-box-red[
+- entorno: editor de texto
+
+- separación entre texto de entrada (input) y texto de salida (output)
+
+- foco en el input/contenido vs output/formato
+
+- marcas de edición: vínculo entre formato de input y output
+
+- sin cortar / pegar
+ ]
+]
+
+---
+
+## Principales Alternativas
+
+.left-column[
+## **Latex**
+
+## .grey[Markdown]
+]
+
+.right-column[
+
+- sistema de escritura simple de amplio uso en la academia
+
+- alta calidad en salida a pdf
+
+- creado a comienzos de los 80 (Donald Knuth, Leslie Lamport)
+
+
+]
+
+---
+## Principales Alternativas
+
+.left-column[
+## **Latex**
+
+## .grey[Markdown]
+]
+
+.right-column[
+
+![](latex.jpg)
+]
+
+---
+
+### y con Atlas.ti?
+
+![](atlasti.png)
+
+---
+class: inverse
+.right[
+# **.orange[Programa]**
+]
+&lt;br&gt;
+## A. Acceso
+
+## B. Reproducibilidad
+
+## C. **.yellow[Transparencia]**
+
+---
+&lt;br&gt;
+ 
+![](flujo-trans.png)
+
+
+---
+### Prácticas cuestionables de investigación
+
+##### El caso de Pedro
+
+- Pedro accede una base de datos con información sobre trabajadores sindicalizados en distintas empresas del país. 
+
+--
+
+- .bold[Sin tener una hipótesis previa], correlaciona  las variables: .green[participación en huelga] (1), .red[tiempo de afiliación sindical] (2) y .orange[tipo de contrato] (3)
+
+--
+
+- Observa que hay una correlación positiva entre tiempo sindicalizado y participación en huelgas (_r_ = 0,32)
+
+--
+
+- Posterior a mirar los datos establece una hipótesis: a mayor .red[tiempo de afiliación sindical] (x) existe mayor .green[participación en huelgas] (y)
+
+---
+
+- .red[No encuentra] resultados esperados en base a su hipótesis (tiempo de afiliación sindical impacta positivamente en la participación en huelgas)
+
+--
+
+- Ajusta la variable tiempo, .bold[eliminando casos] que llevan .red[menos de 2 años sindicalizados en la empresa], obteniendo una asociación significativa con probabilidad de error _p_ &lt;0.05
+
+--
+
+- Finalmente .bold[excluye] a trabajadores a .orange[plazo fijo], manteniendo solo aquellos con contrato indefinido, obteniendo un _p_ &lt;0.01
+
+# .center[🤔?]
+---
+
+class: middle
+
+las .red[prácticas cuestionables de investigación] refieren a las:
+
+&gt;  _"acciones que violan los valores tradicionales de la empresa de investigación y que pueden ser perjudiciales para el proceso de investigación"_ (National Academies of Science 1992 en Steneck, 2006, p. 58).
+
+---
+# Algunas consecuencias
+
+- el problema *no es la exploración de datos*, sino su uso en reporte selectivo de resultados de investigación
+
+--
+
+- incrementa la posibilidad de rechazar erróneamente `\(H_0\)`
+
+--
+
+- exageraciones de efectos estimados, perjudicando la replicabilidad
+
+--
+
+- se confirma lo que uno está buscando, no lo que entregan los datos (y pierde sentido el recolectar datos, y hacer investigación empírica)
+
+---
+class: middle
+
+## pre-registro
+
+_Un .bolder[pre-registro] es una marca .red[temporal] que busca dar cuenta del diseño de una investigación: .orange[(1) principales hipótesis], .orange[(2) recolección de datos] y .orange[(3) plan de análisis.]_
+
+
+---
+# Características de un pre-registro
+
+- se crea un registro permanente y disponible del plan del estudio .orange[antes de mirar los datos]
+
+- establece una fecha de publicación
+
+- accesible y con opción de resguardo de anonimato de autores (p.ej. OSF)
+
+- .bold[objetivo principal:] diferenciar aspectos especificados a priori (hipótesis y análisis) de aquellos más exploratorios 
+
+
+---
+# Ventajas de pre-registros
+
+.pull-left[
+- transparencia del diseño
+
+- eficiencia en el análisis
+
+- mantener el foco en la .bold[teoría]
+
+- .red[no impide explorar], solo diferenciar .orange[intuiciones exploratorias] de .green[ hipótesis confirmatorias]]
+
+- .bold[Encontrable]: se genera un .blue[.bold[DOI]] que permite citar
+
+- Puede evitar conflictos por co-autorias
+
+- Evitar situaciones de plagio 
+
+.pull-right[
+.center[
+![:scale 30%](badge.png)
+]
+]
+
+---
+
+#  Importancia de las hipótesis confirmatorias
+
+--
+
+* la evidencia previa e hipótesis guiadas por teoría:
+--
+  
+  * permite delimitar correctamente el .orange[fenómeno a explicar] (_explanandum_) y
+  
+  * establecer cuál(es) conceptos/variables lo explican (_explanans_)
+  
+  * la .red[discusión] de resultados abre el camino para investigaciones posteriores
+
+---
+
+![:scale 25% ](osf-logo-black.original.png)
+- El **Open Science Framework** es una plataforma web orientada a facilitar la apertura de los proyectos de investigación en sus distintas fases
+
+- Permite la conexión con distintas herramientas y aplicaciones
+
+---
+
+.center[![:scale 60%](osf_cycle.png)]
+
+---
+
+.center[![:scale 65%](osf_tools.png)]
+
+---
+
+# Funcionamiento básico OSF
+
+- Proyectos de investigación: es básicamente una carpeta abierta de proyecto, con funciones adicionales 
+
+- Para ello:
+
+  - (abrir cuenta, gratuito)
+
+  - generar un proyecto nuevo
+
+  - agregar archivos (... o sincronizar con servicios como Drive, Dropbox o Github)
+
+---
+class: middle center
+![:scale 80%](osf_webfront.png)
+
+### Clasificación alimentarias
+
+---
+### Open data
+
+- Repositorios
+
+- Iniciativas institucionales
+
+- Cuestiones éticas
+
+---
+&lt;br&gt;
+ 
+![](flujo-herramientas.png)
+
+
+---
+class: middle center
+
+![:scale 40%](christensen.png)
+
+---
+class: middle center
+Más info:
+
+#lisa-coes.com
+
+
+---
+class: front center
+.right[
+![:scale 5%](https://coes.cl/wp-content/uploads/COES_Logo_sello1.png)
+]
+![:scale 95%](https://github.com/lisa-coes/lisa-book/blob/main/images/lisa.png?raw=true)
+
+### .medium[**.black[Laboratorio de Investigación Social] .red[Abierta]]**
+
+
+### [.red[lisa-coes.com]](https://lisa-coes.com/) 
+
+
+
+
+
+
+  
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://multinivel.netlify.app/docpres/xaringan_custom/macros.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url("../lisa_icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 17.5em;
+  right: -1.2em;
+  width: 110px;
+  height: 70px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
