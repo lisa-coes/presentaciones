@@ -1,0 +1,233 @@
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Apex+New+Medium&display=swap'); /* Updated font import */
+
+/*-- scss:defaults --*/
+// Override theme settings (see ../template/settings.scss)
+// Base settings for all themes that can optionally be
+// overridden by the super-theme
+
+
+// Background of the presentation
+$backgroundColor: #ffffff;
+
+// Primary/body text
+$mainFont: 'Palatino Linotype', sans-serif; /* Updated font */
+$mainFontSize: 30px;
+$mainColor: black;
+
+// Vertical spacing between blocks of text
+$blockMargin: 20px;
+
+// Headings
+$headingMargin: 0 0 $blockMargin 0;
+$headingFont: 'Palatino Linotype', Impact, sans-serif; /* Updated font */
+$headingColor: black; // This color will be applied to all headings unless overridden
+$headingLineHeight: 1.2;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingTextShadow: none;
+$headingFontWeight: normal;
+$heading1TextShadow: $headingTextShadow;
+
+$heading1Size: 3.00em;
+$heading2Size: 2.20em;
+$heading3Size: 1.55em;
+$heading4Size: 1.20em;
+
+$codeFont: monospace;
+
+// Specific styles for h1 to make it red
+h1 {
+  color: #ff0000 !important; // Red color for h1
+  font-size: $heading1Size !important;
+  margin: $headingMargin !important;
+  line-height: $headingLineHeight !important;
+  letter-spacing: $headingLetterSpacing !important;
+  text-transform: $headingTextTransform !important;
+  text-shadow: $heading1TextShadow !important;
+  font-weight: $headingFontWeight !important;
+  font-family: $headingFont !important;
+}
+
+h2{
+  color: #ff0000 !important; // Red color for h1
+  font-size: $heading2Size !important;
+  margin: $headingMargin !important;
+  line-height: $headingLineHeight !important;
+  letter-spacing: $headingLetterSpacing !important;
+  text-transform: $headingTextTransform !important;
+  text-shadow: $heading1TextShadow !important;
+  font-weight: $headingFontWeight !important;
+  font-family: $headingFont !important;
+}
+
+
+// Ensure other headings use the default $headingColor
+h3, h4, h5, h6 {
+  color: $headingColor; // Use the default heading color
+}
+
+// Links and actions
+$linkColor: darkblue;
+$linkColorHover: darken($linkColor, 20%);
+
+// Text selection
+$selectionBackgroundColor: #ff3057;
+$selectionColor: #fff;
+
+// start using css here
+#title-slide > h1 {
+  color: #ffffff;
+}
+
+#title-slide .author {
+  color: #ffffff;
+}
+
+#title-slide {
+  top: 0 !important;
+}
+
+#title-slide > .author:first-of-type {
+  margin-top: 320px;
+}
+
+// alignment
+
+#vcenter {
+  vertical-align: middle;
+}
+
+.v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.v-right-container {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  height: 90%;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  height: 20%;
+}
+
+.center-xy {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%), translateX(-50%);
+  transform: translateY(-50%), translateX(-50%);
+}
+
+
+.rojo {
+  font-family: 'Palatino Linotype', sans-serif; /* Fuente actualizada */
+  font-size: 65px; /* Tamaño de la fuente */
+  color: #ff0000; /* Color rojo */
+}
+
+
+/**************
+ *
+ * Font colours
+ *
+ **************/
+
+
+ .black { color: black; }
+ .red { color: red; }
+ .blue { color: blue; }
+ .dark-blue { color: rgb(29, 29, 103); }
+ .green { color: green; }
+ .yellow { color: yellow; }
+ .orange { color: orange; }
+ .purple { color: purple; }
+ .gray { color: gray; }
+ .grey { color: gray; }
+ .white{ color: white; }
+ 
+ .bold { font-weight: bold; }
+ .bolder { font-weight: bolder; }
+ 
+
+
+
+/******************
+ *
+ * Coloured content boxes
+ *
+ ****************/
+
+
+.content-box {
+  box-sizing: content-box;
+    background-color: #e2e2e2;
+/* Total width: 160px + (2 * 20px) + (2 * 8px) = 216px
+   Total height: 80px + (2 * 20px) + (2 * 8px) = 136px
+   Content box width: 160px
+   Content box height: 80px */
+}
+
+
+.content-box-blue,
+.content-box-gray,
+.content-box-grey,
+.content-box-army,
+.content-box-green,
+.content-box-purple,
+.content-box-red,
+.content-box-yellow {
+  border-radius: 10px;
+  margin: 0 0 15px;
+  overflow: hidden;
+  padding: 10px;
+  width: 100%;
+}
+
+.content-box-blue {
+  background-color: #F0F8FF;
+
+}
+
+.content-box-gray {
+  background-color: #e2e2e2;
+}
+
+.content-box-grey {
+background-color: #F5F5F5;
+}
+
+.content-box-army {
+background-color: #737a36;
+}
+
+.content-box-green {
+background-color: #d9edc2;
+}
+
+.content-box-purple {
+background-color: #e2e2f9;
+}
+
+.content-box-red {
+background-color: #f9dbdb;
+}
+
+.content-box-yellow {
+background-color: #fef5c4;
+}
+
+.full-width {
+  display: flex;
+  width: 100%;
+  flex: 1 1 auto;
+}
