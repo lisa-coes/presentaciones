@@ -1,0 +1,859 @@
+---
+bibliography: "bib/tesis-magister.bib"
+csl: "bib/apa6.csl"
+lang: es
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+    R.options:
+      
+      knitr.graphics.auto_pdf: true
+format:
+  revealjs:
+    #logo: images/edumer.png
+    slide-number: true
+    theme: "libs/edumer.scss"
+    auto-stretch: false
+    title-slide-attributes:
+      visibility: false
+    transition: fade
+    transition-speed: slow
+# data-background-image: images/cover.jpg
+# data-background-size: cover
+    auto-play-media: true
+    mathjax: "default"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup2, include=FALSE}
+ knitr::opts_chunk$set(echo=FALSE, warning = FALSE,message = FALSE, cache = TRUE,out.width = '85%',fig.pos= "H"
+                       # , fig.align = 'center'
+                       )
+ # knitr::opts_knit$set(base.url = "../") #relative path for .html output file
+ # knitr::opts_knit$set(root.dir = "../") #relative path for chunks within .rmd files
+ options(scipen=999)
+ options(kableExtra.auto_format = FALSE)
+ options(knitr.kable.NA = '')
+ options(knitr.graphics.error = FALSE)
+ Sys.setlocale("LC_ALL", "ES_ES.UTF-8")
+ 
+ table_format = if (knitr::is_html_output()) {
+   #conditional instructions for kable
+   "html" #if html set "html" in format
+ } else if (knitr::is_latex_output()) {
+   "latex"#if latex set "latex" in format
+ }
+ 
+ library(conflicted)
+
+conflicts_prefer(dplyr::filter)
+```
+
+```{r}
+#| label: packages
+#| include: false
+
+
+
+if (! require("pacman")) install.packages("pacman")
+
+pacman::p_load(here,
+               kableExtra)
+
+options(scipen=999)
+rm(list = ls())
+
+```
+
+
+```{r}
+#| label: data
+#| include: false
+
+source(file = here("processing/prod_analysis_multinom.R"))
+library(here)
+library(janitor)
+library(dagitty)
+library(ggdag)
+library(tidyverse)
+
+
+```
+
+
+
+::: columns
+
+
+::: {.column width="20%"}
+
+
+![](images/logo_isuc.png)
+
+</br>
+
+![](images/jusmer-logo-vert.png)
+
+
+
+:::
+
+::: {.column .column-right width="80%"}
+
+
+
+# **Preferencias por la comodificación de las pensiones en Chile: el rol de la movilidad social intergeneracional**
+
+------------------------------------------------------------------------
+
+**Andreas Laffert^1^** 
+
+::: {.blue2 .medium}
+
+
+**^1^Instituto de Sociología, Pontificia Universidad Católica de Chile**
+
+:::
+
+Defensa de título para optar al grado de Magíster en Sociología
+
+Comisión: Prof. Mauricio Bucca y Prof. Andrea Canales
+
+15 de enero 2026, Chile
+
+:::
+:::
+
+
+# Problema de investigación {.xlarge data-background-color="#523870"}
+
+
+## Contexto: mercantilización y pensiones
+
+::: {.box-inv-4 .sp-after .fragment style="font-size: 110%;"}
+
+Privatización y mercantilización de bienes públicos y servicios sociales [@gingrich_making_2011; @ferre_welfare_2023]
+
+:::
+
+::: {.box-inv-4 .sp-after .fragment style="font-size: 110%;"}
+
+En América Latina, la privatización de las pensiones y la capitalización individual han sido claves [@huber_political_2000; @verbic_political_2019]
+
+:::
+
+::: {.box-inv-4 .sp-after .fragment style="font-size: 110%;"}
+
+Reasigna los riesgos de la vejez y moldea las normas públicas sobre lo que es justo en materia de bienestar social [@busemeyer_welfare_2020; @madero-cabib_private_2019; @borzutzky_pension_2012]
+
+:::
+
+::: {.box-inv-5 .sp-after-half .fragment style="font-size: 110%;"}
+
+Preferencias por el acceso al bienestar social basado en el mercado [@busemeyer_skills_2014; @castillo_perceptions_2025; @lindh_public_2015; @immergut_it_2020; @svallfors_political_2007]
+
+:::
+
+
+## El caso de Chile
+
+::: {.box-inv-4 .sp-after .fragment style="font-size: 110%;"}
+
+Chile combina una elevada desigualdad con una profunda privatización de servicios sociales [@chancel_world_2025; @madariaga_three_2020; @pnud_desiguales_2017]
+
+:::
+
+
+::: {.box-inv-4 .sp-after .fragment style="font-size: 110%;"}
+
+Sistema de pensiones obligatorio, basado en la capitalización individual de contribuciones definidas administradas por entidades privadas (AFP) [@solimano_rise_2021; @arenas_sistemas_2019]
+
+:::
+
+::: {.box-inv-4 .sp-after .fragment style="font-size: 110%;"}
+
+Pensiones en contestación: conflicto previsional y legitimidad propietaria [@somma_no_2021; @galvez_con_2023]
+
+:::
+
+## ¿Qué sabemos?
+
+
+::::: columns
+::: {.column width="50%" .incremental .highlight-last style="font-size: 110%;"}
+
+### Contextual
+
+- Gasto social [@immergut_it_2020; @busemeyer_skills_2014; @busemeyer_welfare_2020]
+- Desigualdad económica [@koos_moral_2019]
+- Nivel de privatización de servicios y regulación del mercado [@lindh_public_2015; @koos_moral_2019]
+
+:::
+
+::: {.column width="50%" .incremental .highlight-last style="font-size: 110%;"}
+
+### Individual
+
+- Estatus socioeconómico -ingresos, educación y ocupación- y retornos financieros [@lindh_public_2015; @kerner_pension_2020; @busemeyer_welfare_2020]
+- Chile: ↑ ingreso/educación y élites pro-mercado y más tolerancia a desigualdad [@carranza_what_2024; @otero_power_2024; @cortes-orihuela_intergenerational_2022]
+- Percepciones sobre la desigualdad y meritocracia [@castillo_perceptions_2025]
+
+
+:::
+:::::
+
+
+## Preguntas de investigación e hipótesis
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- _RQ1: ¿Cómo afecta la movilidad social intergeneracional a las preferencias por la mercantilización de las pensiones en Chile?_
+
+- La movilidad social modifica los ingresos, la seguridad y la exposición al riesgo, alterando los _intereses materiales_ en un sistema de capitalización individual de contribución definida [@busemeyer_welfare_2020; @helgason_longterm_2023; @mau_inequality_2015]
+
+- Movilidad social y preferencias por la redistribución y el gasto social [@alesina_intergenerational_2018; @rodriguez_intergenerational_2024; @langsaether_explaining_2022; @ares_changing_2020; @gugushvili_subjective_2017]
+
+- $H_1$: En comparación con la inmovilidad, la movilidad social intergeneracional ascendente se asocia con un mayor apoyo, y la movilidad descendente con un menor apoyo, a la comodificación de las pensiones
+
+:::
+
+## Preguntas de investigación e hipótesis
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- _RQ2: ¿Cómo las creencias meritocráticas condicionan la relación entre movilidad social y mercantilización?_
+
+- La movilidad moldea marcos de justicia vía **aculturación**/self-serving bias: ascendente → más meritocracia; descendente → más estructuralismo [@mijs_belief_2022; @gugushvili_intergenerational_2016; @bucca_merit_2016; @traini_climbing_2025; @deng_its_2025; @jaime-castillo_social_2019; @molina_its_2019]
+
+- $H_{2a}$ (Upward × meritocracia): con alta meritocracia, la movilidad ascendente debería tener un efecto más pro-mercantilización
+
+- $H_{2b}$ (Downward × meritocracia): con alta meritocracia, la movilidad descendente debería ser menos desmercantilizadora que con baja meritocracia
+
+:::
+
+
+# Método {.xlarge data-background-color="#523870"}
+
+(M)odel, (I)nquiry, (D)ata, (A)nswer estrategy [@blair_research_2023]
+
+## Enfoque: Mobility effects 
+
+::::: columns
+::: {.column width="50%"}
+::: {.fragment}
+
+
+
+![](images/breen.png)
+
+:::
+
+
+:::
+
+::: {.column width="50%" .incremental .highlight-last style="font-size: 110%;"}
+
+- Sigo la propuesta de @breen_effects_2024 para estimar efectos causales de la movilidad social intergeneracional
+- ¿En qué habría cambiado el resultado $Y$ entre las personas de origen $j$ que llegaron al destino $k$ si, hipotéticamente, hubiesen llegado al destino $k'$? 
+
+:::
+:::::
+
+## Modelo causal (M)
+
+```{r}
+#| label: fig-dag
+#| out-width: '95%'
+#| fig-cap: "Gráfico causal del efecto de la movilidad social intergeneracional sobre las preferencias por la comodificación. (Y) denota las preferencias por la comodificación de las pensiones, (D) la clase de destino del individuo, (O) la clase de origen, (C) diferentes atributos determinados en la infancia o en etapas tempranas que afectan la clase de origen y de destino del individuo y, finalmente, (U) factores no observados que influyen en dichos atributos de origen"
+#| fig-cap-location: bottom
+#| echo: false
+#| warning: false
+#| message: false
+
+dag_mjp <- dagify(
+  Y ~ D + C,
+  D ~ O + C,
+  O ~ C,
+  C ~ U,
+  coords = time_ordered_coords(
+    list(
+      "U",
+      c("C", "O"),
+      "D",
+      "Y"
+    )
+  ),
+  exposure = "D",
+  outcome = "Y",
+  labels = c(
+    Y = "Y",
+    D = "D",
+    O = "O",
+    C = "C",
+    U = "U"
+  )
+)
+
+curvatures <- rep(0, 8)
+curvatures[3] <- -.25
+
+dag_mjp |>
+  tidy_dagitty() |>
+  ggplot(aes(x, y, xend = xend, yend = yend)) +
+  geom_dag_point(shape = 21, fill = "black", size = 14, stroke = 0.8) +
+  geom_dag_edges_arc(curvature = curvatures) +
+  geom_dag_text(aes(label = label), color = "white", fontface = "bold", size = 4) +
+  theme_dag()
+
+```
+
+
+## Pregunta y estimando (I)
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- @breen_effects_2024: efecto causal promedio de pasar desde una clase de origen $j$ a una clase de destino $k$, comparando a los individuos que efectivamente alcanzan $k$ con su resultado contrafactual si hubiesen permanecido en su clase de origen $j$ (@eq-att)
+
+- Formalmente, para individuos con origen $O = j$ que alcanzan el destino $D = k$, el estimando es:
+
+:::
+
+::: {.fragment}
+$$ 
+ATT_{j,k,j} = E\big[Y(D = k) \mid O = j, D = k \big] - E\big[Y(D = j) \mid O = j, D = k \big]
+$${#eq-att}
+:::
+
+## Datos (D)
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- [ELSOC](https://coes.cl/elsoc/) (COES): panel urbano nacional 2016–2023; muestreo probabilístico estratificado, por conglomerados y multietápico; población objetivo: residentes habituales de 18 a 75 años
+
+- Analizo los años 2016, 2018 y 2023 en función de la disponibilidad de variables ocupacionales
+
+- Muestra analítica: *N* = 3.435 observaciones anidadas en *N* = 1.787 individuos (2016: 914; 2018: 1.377; 2023: 1.144)
+
+- Submuestras por trayectorias de movilidad (por ejemplo, baja→baja, baja→media), reteniendo móviles y no móviles emparejados dentro de la misma clase de origen
+
+:::
+
+
+## Outcome
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- **Preferencias por la comodificación de las pensiones**: Se operacionaliza a partir de un ítem que aborda en qué medida los individuos justifican condicionar el acceso a las prestaciones de jubilación en función de los ingresos individuales [@lane_market_1986; @lindh_public_2015]
+
+    * Ítem: _“¿Es justo en Chile que quienes tienen mayores ingresos tengan mejores pensiones que quienes tienen menores ingresos?”_ (Likert 1=“muy en desacuerdo” a 5=“muy de acuerdo”)
+    * Recodificación para el análisis: indicador binario de apoyo a asignación “de mercado” (1 si 4–5; 0 si 1–3, incluyendo neutralidad)
+
+:::
+
+## Tratamiento: matriz de movilidad ocupacional
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- **Asignación de clase (O y D):** A partir de ISCO-08/ISEI, defino el origen ($O$) y el destino ($D$) según terciles ∈ {baja, media, alta}
+- Para cada origen $(O = j)$, el tratamiento consiste en alcanzar una clase de destino $(D = k)$ (móvil) versus permanecer inmóvil $(D = j)$
+
+:::
+
+::: {.fragment}
+
+```{r}
+#| label: tbl-matrix
+#| tbl-cap: "Movilidad ocupacional según grupos ocupacionales"
+#| tbl-cap-location: top
+#| results: asis
+#| echo: false
+library(janitor)
+db %>%
+  tabyl(estrato_orig, estrato_ocupa) %>%
+  adorn_totals(where = c("row", "col")) %>%     # agrega totales
+  adorn_percentages("row") %>%                  # porcentajes por fila
+  adorn_pct_formatting(digits = 1) %>%          # formato %
+  adorn_ns() %>% 
+  as_tibble() %>% 
+  mutate(Offspring = NA) %>% 
+  select(estrato_orig, Offspring, everything()) %>% 
+  kableExtra::kable(format = "html", 
+                    booktabs= T,
+                    align = 'c', 
+                    col.names = c("Father↓", "Offspring→", "Low", "Middle", "High", "Total"),
+                    caption = NULL) %>%
+  kableExtra::kable_styling(latex_options = "hold_position", 
+                            bootstrap_options = "striped",
+                            full_width = F) 
+
+
+```
+
+
+:::
+
+
+
+## Tratamiento: construcción de IPW
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- Dentro de cada clase de origen, construyo ponderadores de probabilidad inversa (IPW) vía *entropy balancing* [@hainmueller_entropy_2012]
+- Repondera a los no móviles de modo que su distribución de covariables $C$ coincida con la de los móviles → IPW–ATT estabilizado
+- Estos pesos identifican el ATT y contribuyen a ajustar por la selección en la movilidad; las diferencias sean más atribuibles al tratamiento que a elementos preexistentes
+
+:::
+
+## Tratamiento: construcción de IPW
+
+::: {style="font-size: 100%;"}
+
+Covariables **pretratamiento** $C$: 
+
+<div style="text-align:center;">
+  <img src="images/propensity.png" style="width:100%; max-width:none;">
+</div>
+:::
+
+## Heterogeneidad
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- **Meritocracia**: 2 ítems (esfuerzo, talento) — Likert 1–5; promedio y dicotomizada en baja (≤3) vs alta (≥4) [@young_rise_1958]
+      
+    * “Se recompensa el esfuerzo” / “Se recompensa la inteligencia y habilidades”
+
+- Estrategia: modelos con interacción movilidad × meritocracia; reporto efectos condicionales (pendientes simples) en meritocracia baja vs alta
+
+:::
+
+
+
+## Estrategia analítica (A)
+
+::: {.incremental .highlight-last style="font-size: 110%;"}
+
+- Dado que el outcome es binario $(Y_{it}\in{0,1})$, estimo modelos de probabilidad lineal ponderada (WLS) utilizando IPW [@wooldridge_introductory_2009] para cada clase de origen:
+
+:::
+
+
+::: {.fragment style="font-size: 120%;"}
+$$
+Y_{it} = \alpha+\beta_{1}T_i+X_i'\gamma+\lambda_t+\varepsilon_{it}
+$$ {#eq-final}
+
+:::
+
+::: {.fragment style="font-size: 120%;"}
+$$
+\begin{align}
+ &= \alpha+\beta_{1}T_i+\beta_{2}M_{i}+\beta_{3}\left(T_i\times M_{i}\right)+X_i'\gamma+\lambda_t+\varepsilon_{it}
+\end{align}
+$$ {#eq-final-int} 
+
+:::
+
+::: {.incremental style="font-size:120%;"}
+
+- Los modelos utilizan pesos IPW–ATT estabilizados, efectos fijos de ola y errores estándar robustos agrupados (CR2) a nivel de individuo
+- En @eq-final, $\beta_1$ se interpreta como $\widehat{ATT}_{j,k,j}$: el efecto causal de alcanzar el destino $k$ vs. permanecer en el origen $j$
+- En @eq-final-int, $\beta_{1}$ es $\widehat{ATT}_{j,k,j}$ entre baja meritocracia $(M_{it}=0)$; $\beta_{1}+\beta_{3}$ es el ATT entre alta meritocracia $(M_{it}=1)$; y $\beta_{3}$ captura la heterogeneidad del ATT por meritocracia
+
+:::
+
+
+# Resultados {.xlarge data-background-color="#523870"}
+
+
+## Descriptivos
+
+::: {.fragment style="font-size: 110%;"}
+```{r}
+#| label: fig-desc
+#| fig-cap-location: top
+#| fig-cap: "Distribución de respuestas sobre las preferencias por la comodificación de las pensiones en Chile (2016–2023)"
+#| fig-align: center
+#| out-width: '130%'
+
+g1 +
+  labs(title = "It is fair that people with higher incomes have better pensions than people\nwith lower incomes?",
+       subtitle = "Likert: 1 (Strongly disagree) - 5 (Strongly agree)") +
+  theme(legend.position = "top",
+        plot.title = element_text(face = "bold"),
+        text = element_text(size = 16)) 
+
+```
+:::
+
+
+
+## Efectos de movilidad
+
+::: {.fragment style="font-size: 110%;"}
+
+```{r}
+#| label: fig-mp
+#| fig-cap-location: top
+#| fig-cap: "Efectos de movilidad en las preferencias por comodificación de las pensiones"
+#| fig-align: center
+#| out-width: '180%'
+#| fig-asp: 0.6
+
+g3_v2 +
+  theme(text = element_text(size = 14))
+```
+
+:::
+
+## El rol de la meritocracia
+
+::: {.fragment style="font-size: 110%;"}
+
+```{r}
+#| label: fig-mp_i
+#| fig-cap-location: top
+#| fig-cap: "Efectos marginales de movilidad en las preferencias por comodificación de las pensiones, según meritocracia"
+#| fig-align: center
+#| out-width: '160%'
+#| fig-asp: 0.6
+
+g4+
+  theme(text = element_text(size = 14))
+```
+
+:::
+
+
+
+# Discusión y conclusiones {data-background-color="#523870"}
+
+
+## Discusión: preferencias por comodificación
+
+::: {.incremental style="font-size: 120%;"}
+
+- La expansión del acceso al bienestar basado en mercado se refleja en actitudes públicas [@busemeyer_welfare_2020; @lindh_public_2015], ayudando a explicar por qué acuerdos neoliberales obtienen aceptación [@mau_inequality_2015]
+
+- En Chile el apoyo es aún minoritario pero va en alza; consistente con evidencia longitudinal y con regímenes liberales/mercantilizados, en un contexto de feedback mixto (conflicto vs defensas propietaristas) [@castillo_perceptions_2025; @galvez_con_2023]
+
+:::
+
+## Discusión: el rol de la movilidad social
+
+::: {.incremental style="font-size: 120%;"}
+
+- La movilidad intergeneracional desde/hacia alto estatus tiene efectos causales en las preferencias por comodificación de las pensiones: Middle→High aumenta el apoyo, mientras High→Low y High→Middle lo reducen ($H_1$ ✓)
+
+- En línea con investigaciones sobre preferencias redistributivas y gasto social [@ares_changing_2020; @gugushvili_subjective_2017; @schmidt_experience_2011; @rodriguez_intergenerational_2024; @alesina_intergenerational_2018]
+
+- Mecanismo de interés material miope [@helgason_longterm_2023; @busemeyer_welfare_2020]
+
+- Efectos solo se encuentran desde y hacia posiciones de alto estatus [@carranza_what_2024; @cortes-orihuela_intergenerational_2022; @busemeyer_welfare_2020; @kerner_pension_2020]
+
+
+:::
+
+## Discusión: meritocracia
+
+::: {.incremental style="font-size: 120%;"}
+
+- Basado en aculturación/self-serving bias, esperaba que la movilidad influyera en estas preferencias vía marcos normativos: la ascendente reforzaría lecturas meritocráticas y la descendente explicaciones estructurales, con la meritocracia como canal central [@jaime-castillo_social_2019; @helgason_longterm_2023; @traini_climbing_2025; @deng_its_2025]
+
+- Las creencias meritocráticas se correlacionan con estas preferencias, pero parecen operar en una vía paralela a la movilidad ($H_2$ ✗)
+
+- En línea con investigaciones recientes que no han encontrado efectos moderadores o mediadores de las creencias meritocráticas [@rodriguez_intergenerational_2024]
+
+:::
+
+
+## Conclusiones {data-background-color="#523870"}
+
+::: {.incremental style="font-size: 120%;"}
+
+1. **Agenda de investigación**: 
+    
+    * Preferencias por la mercantilización de servicios sociales en general y de las pensiones en particular
+    * Primer estudio sistemático de estas preferencias a un caso aplicado (Chile)
+    
+2. **Movilidad social y meritocracia**: 
+
+    * La movilidad social como fuente clave de legitimidad para la mercantilización de las pensiones
+    * Pero solo hacia y desde posiciones de alto estatus
+    * La meritocracia opera por una vía paralela a la movilidad
+:::
+
+
+## Conclusiones {data-background-color="#523870"}
+
+::: {.incremental style="font-size: 120%;"}
+
+3. **Mayor contribución**: 
+
+    * Empírica: evidencia de una relación entre la movilidad social y preferencias por mercantilización
+    * Metodológica: línea de aproximación creciente de los efectos de la movilidad [@breen_effects_2024; @song_there_2025]
+
+3. **Limitaciones y proyecciones**: 
+    
+    * Estimación depende del supuesto de $Y(D)\ \perp\kern-5pt \perp D\ \mid\ (O,C)$ → complementar
+    * No se analizan mecanismos → abre una puerta
+    * Uso de otras mediciones ($Y,T$) y explotar el rol del tiempo
+:::
+
+# Muchas gracias!
+
+-   **Github project:** <https://github.com/Andreas-Lafferte/mobility-market-justice>
+
+## Referencias
+
+::: {#refs}
+:::
+
+
+# Material suplementario
+
+## El rol del tiempo
+
+::: {.fragment style="font-size: 110%;"}
+
+```{r}
+#| label: fig-int-time
+#| fig-cap-location: top
+#| fig-cap: "Efectos de movilidad en las preferencias por comodificación de las pensiones, según ola"
+#| fig-align: center
+#| out-width: '180%'
+#| fig-asp: 0.6
+
+g5 +
+  theme(text = element_text(size = 14))
+```
+
+:::
+
+## ¿Cambia con la edad?
+
+::: {.fragment style="font-size: 110%;"}
+
+```{r}
+#| label: fig-mp_edad
+#| fig-cap-location: top
+#| fig-cap: "Efectos de movilidad en las preferencias por comodificación de las pensiones, según edad"
+#| fig-align: center
+#| out-width: '165%'
+#| fig-asp: 0.6
+
+
+get_marginals_age <- function(model, label){
+
+  # helper: pick the first term name that exists in coef(model)
+  pick <- function(candidates, coef_names){
+    hit <- candidates[candidates %in% coef_names][1]
+    if (is.na(hit)) stop("No encontré el término: ", paste(candidates, collapse = " / "))
+    hit
+  }
+
+  cn <- names(coef(model))
+
+  t_term   <- pick(c("t"), cn)
+  t30_term <- pick(c("t:edad30-49", "t:edad30_49"), cn)
+  t50_term <- pick(c("t:edad50-64", "t:edad50_64"), cn)
+  t65_term <- pick(c("t:edad65 or more", "t:edad65_or_more", "t:edad65+"), cn)
+
+  terms <- c(t_term, t30_term, t50_term, t65_term)
+
+  b <- coef(model)[terms]
+  V <- vcov(model)[terms, terms]
+
+  # Slopes de t por grupo etario (ref = 18–29)
+  L <- rbind(
+    "18-29"      = c(1, 0, 0, 0),
+    "30-49"      = c(1, 1, 0, 0),
+    "50-64"      = c(1, 0, 1, 0),
+    "65 or more" = c(1, 0, 0, 1)
+  )
+  colnames(L) <- terms
+
+  est  <- as.numeric(L %*% b)
+  se   <- sqrt(diag(L %*% V %*% t(L)))
+  z    <- 1.96
+  ci_l <- est - z * se
+  ci_h <- est + z * se
+
+  tibble::tibble(
+    term      = rownames(L),
+    estimate  = est,
+    std.error = se,
+    conf.low  = ci_l,
+    conf.high = ci_h,
+    name = paste0(
+      label, "\n",
+      "(N obs. = ", model$nobs, ";",
+      "\nN clusters = ", model$nclusters, ")"
+    )
+  )
+}
+
+
+df_pension_a <- bind_rows(
+  get_marginals_age(mp_lm_e, "Low-Middle"),
+  get_marginals_age(mp_lh_e, "Low-High"),
+  get_marginals_age(mp_mh_e, "Middle-High"),
+  get_marginals_age(mp_ml_e, "Middle-Low"),
+  get_marginals_age(mp_hm_e, "High-Middle"),
+  get_marginals_age(mp_hl_e, "High-Low")
+)
+
+df_pension_lab_a <- df_pension_a %>%
+  mutate(
+    sig     = ifelse(conf.low * conf.high > 0, "*", ""),  # IC no cruza 0
+    est_lab = sprintf("%.2f%s", estimate, sig),
+    low_lab = sprintf("%.2f", conf.low),
+    high_lab= sprintf("%.2f", conf.high),
+    name = factor(name, levels = unique(name)),
+    term = factor(term, levels = c("18-29", "30-49", "50-64", "65 or more"))
+  )
+
+pos <- position_dodge(width = 0.55)
+
+breaks_w <- c("18-29", "30-49", "50-64", "65 or more")
+
+ggplot(
+  df_pension_lab_a,
+  aes(x = estimate, y = name, group = term, colour = term, shape = term)
+) +
+  geom_vline(xintercept = 0, linewidth = 0.7, color = "grey60", linetype = "dashed") +
+  geom_pointrange(aes(xmin = conf.low, xmax = conf.high),
+                  fatten = 2.5,
+                  size = 1,
+                  position = pos) +
+   scale_color_manual(
+    name   = "Age group",
+    breaks = breaks_w,
+    values = c(
+    "18-29" = "#000004FF",
+    "30-49"  = "#DE4968FF",
+    "50-64"  = "#8C2981FF",
+    "65 or more" = "#FCA636FF")) +
+  scale_shape_manual(
+    name   = "Age group",
+    breaks = breaks_w,
+    values = c("18-29" = 16,  # círculo
+               "30-49" = 15,  # triángulo
+               "50-64" = 17,  # cuadrado
+               "65 or more" = 4))  +
+  labs(x = "Marginal Effect", y = NULL, colour = NULL, shape = NULL, linetype = NULL) +
+  my_pretty_theme() +
+  theme(legend.position = "bottom",
+        text = element_text(size = 14))
+
+
+```
+
+:::
+
+## Evaluación balance
+
+::: {.fragment style="font-size: 110%;"}
+
+```{r}
+#| label: fig-balance
+#| fig-cap: "Balance SMD — Mobility treatment (ATT)"
+#| fig-cap-location: top
+#| echo: false
+#| results: asis
+#| warning: false
+#| out-width: '90%'
+#| fig-asp: 0.6
+
+library(cowplot)
+
+p1 <- cobalt::love.plot(W_lm_ll, stats = "m", abs = TRUE, threshold = .10,
+                  var.order = "unadjusted", line = TRUE,
+                  colors = c("grey70","black")) +
+  ggtitle("Low-Middle")
+
+p2 <- cobalt::love.plot(W_lh_ll, stats = "m", abs = TRUE, threshold = .10,
+                  var.order = "unadjusted", line = TRUE,
+                  colors = c("grey70","black")) +
+  ggtitle("Low-High")
+
+p3 <- cobalt::love.plot(W_mh_mm, stats = "m", abs = TRUE, threshold = .10,
+                  var.order = "unadjusted", line = TRUE,
+                  colors = c("grey70","black")) +
+  ggtitle("Middle-High")
+
+p4 <- cobalt::love.plot(W_ml_mm, stats = "m", abs = TRUE, threshold = .10,
+                  var.order = "unadjusted", line = TRUE,
+                  colors = c("grey70","black")) +
+  ggtitle("Middle-Low")
+
+p5 <- cobalt::love.plot(W_hm_hh, stats = "m", abs = TRUE, threshold = .10,
+                  var.order = "unadjusted", line = TRUE,
+                  colors = c("grey70","black")) +
+  ggtitle("High-Middle")
+
+p6 <- cobalt::love.plot(W_hl_hh, stats = "m", abs = TRUE, threshold = .10,
+                  var.order = "unadjusted", line = TRUE,
+                  colors = c("grey70","black")) +
+  ggtitle("High-Low")
+
+cowplot::plot_grid(p1, p2, p3, p4, p5, p6, label_size = 11, ncol = 2, nrow = 3)
+
+```
+
+:::
+
+## Chequeos de robustez y análisis de sensibilidad
+
+
+::: {.incremental .highlight-last style="font-size: 120%;"}
+
+- **Chequeo de robustez:** Recodificar la VD de tres formas (3–5 vs. 1–2, excluir neutros y escala 5 puntos lineal) se mantiene el patrón: Middle→High (+) y High→Low (−); High→Middle es sensible y deja de ser significativo según codificación
+
+- **Sensibilidad (E-values / Cinelli–Hazlett)**: Middle→High y High→Low son moderadamente robustos (se requeriría un confusor > sexo, ~10–11% varianza residual conjunta para anularlos); High→Middle podría desaparecer con confusores más modestos
+
+:::
+
+
+## Análisis de sensibilidad
+
+::: {.fragment style="font-size: 100%;"}
+
+```{r}
+#| label: tbl-evalues1
+#| tbl-cap: "E-values for ATT estimates for Middle-High trajectory (Cinelli & Hazlett, 2020 approximation)"
+#| tbl-cap-location: top
+#| results: asis
+#| echo: false
+
+ovb_minimal_reporting(mh_evalue, format = "html")
+```
+
+```{r}
+#| label: tbl-evalues3
+#| tbl-cap: "E-values for ATT estimates for High-Low trajectory (Cinelli & Hazlett, 2020 approximation)"
+#| tbl-cap-location: top
+#| results: asis
+#| echo: false
+
+ovb_minimal_reporting(hl_evalue, format = "html")
+```
+
+
+```{r}
+#| label: tbl-evalues2
+#| tbl-cap: "E-values for ATT estimates for High-Middle trajectory (Cinelli & Hazlett, 2020 approximation)"
+#| tbl-cap-location: top
+#| results: asis
+#| echo: false
+
+ovb_minimal_reporting(hm_evalue, format = "html")
+```
+
+
+
+:::
+
+:::

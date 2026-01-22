@@ -3,6 +3,8 @@
 
 Presentaciones del Laboratorio de Investigación Social Abierta (LISA)
 
+- [Charla en conferencia Abre tu Ciencia UC:Protocolos y buenas prácticas para códigos y datos abiertos](https://lisa-coes.github.io/presentaciones/uc-open-science-ENE2026/uc-ENE-2026.html)
+
 - [Taller semilleros COES junio 2025 - Introducción al flujo de investigación abierto](https://lisa-coes.github.io/presentaciones/semilleros-coes-junio2025/semilleros-coes-junio2025.html)
 
 - [Introducción a la Ciencia Abierta - Antropología FACSO 2025](https://lisa-coes.github.io/presentaciones/intro-csabierta-antropologia2025/intro-csabierta-antropologia2025.html)
